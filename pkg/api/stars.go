@@ -10,26 +10,26 @@ func StarDashboard(c *models.ReqContext) response.Response {
 	cmd := models.StarDashboardCommand{UserId: c.UserId, DashboardId: c.ParamsInt64(":id")}
 
 	if cmd.DashboardId <= 0 {
-		return response.Error(400, "Missing dashboard id", nil)
+		return response.Error(400, "Manque id du tableau", nil)
 	}
 
 	if err := bus.Dispatch(&cmd); err != nil {
-		return response.Error(500, "Failed to star dashboard", err)
+		return response.Error(500, "Echec de mise en favoris", err)
 	}
 
-	return response.Success("Dashboard starred!")
+	return response.Success("Tableau mis en favoris !")
 }
 
 func UnstarDashboard(c *models.ReqContext) response.Response {
 	cmd := models.UnstarDashboardCommand{UserId: c.UserId, DashboardId: c.ParamsInt64(":id")}
 
 	if cmd.DashboardId <= 0 {
-		return response.Error(400, "Missing dashboard id", nil)
+		return response.Error(400, "Manque id du tableau", nil)
 	}
 
 	if err := bus.Dispatch(&cmd); err != nil {
-		return response.Error(500, "Failed to unstar dashboard", err)
+		return response.Error(500, "Echec de retirage des favoris", err)
 	}
 
-	return response.Success("Dashboard unstarred")
+	return response.Success("Tableau retiré des favoris")
 }
