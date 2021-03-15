@@ -21,14 +21,14 @@ func init() {
 		Heading:     "Email settings",
 		Options: []alerting.NotifierOption{
 			{
-				Label:        "Single email",
-				Description:  "Send a single email to all recipients",
+				Label:        "Un seul email",
+				Description:  "Envoyer un seul email à tout les destinataires",
 				Element:      alerting.ElementTypeCheckbox,
 				PropertyName: "singleEmail",
 			},
 			{
-				Label:        "Addresses",
-				Description:  "You can enter multiple email addresses using a \";\" separator",
+				Label:        "Adresses",
+				Description:  "Vous pouvez entrer plusieurs adresse email en utilisant \";\"",
 				Element:      alerting.ElementTypeTextArea,
 				PropertyName: "addresses",
 				Required:     true,

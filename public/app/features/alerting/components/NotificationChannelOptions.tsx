@@ -66,7 +66,7 @@ export const NotificationChannelOptions: FC<Props> = ({
                     type="button"
                     size="sm"
                   >
-                    Clear
+                    Effacer
                   </Button>
                 }
               />

@@ -24,8 +24,8 @@ export const BasicSettings: FC<Props> = ({
 }) => {
   return (
     <>
-      <Field label="Name" invalid={!!errors.name} error={errors.name && errors.name.message}>
-        <Input name="name" ref={register({ required: 'Name is required' })} />
+      <Field label="Nom" invalid={!!errors.name} error={errors.name && errors.name.message}>
+        <Input name="name" ref={register({ required: 'Nom requis' })} />
       </Field>
       <Field label="Type">
         <InputControl name="type" as={Select} options={channels} control={control} rules={{ required: true }} />

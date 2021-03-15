@@ -24,7 +24,7 @@ export const AlertDefinitionItem: FC<Props> = ({ alertDefinition, search }) => {
       <Card.Actions>
         {[
           <LinkButton key="edit" variant="secondary" href={`/alerting/${alertDefinition.uid}/edit`} icon="cog">
-            Edit alert
+            Editer alerte
           </LinkButton>,
         ]}
       </Card.Actions>

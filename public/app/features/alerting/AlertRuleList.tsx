@@ -45,7 +45,7 @@ export class AlertRuleListUnconnected extends PureComponent<Props> {
     { label: 'OK', value: 'ok' },
     { label: 'Non OK', value: 'not_ok' },
     { label: 'Alerter', value: 'alerting' },
-    { label: 'Aucune data', value: 'no_data' },
+    { label: 'Aucune données', value: 'no_data' },
     { label: 'Pause', value: 'paused' },
     { label: 'Attente', value: 'pending' },
   ];
@@ -128,7 +128,7 @@ export class AlertRuleListUnconnected extends PureComponent<Props> {
             <div className="page-action-bar__spacer" />
             {config.featureToggles.ngalert && (
               <LinkButton variant="primary" href="alerting/new">
-                Add NG Alert
+                Ajouter alerte NG
               </LinkButton>
             )}
             <Button variant="secondary" onClick={this.onOpenHowTo}>
