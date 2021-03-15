@@ -25,7 +25,7 @@ const fieldTypeMatcher: FieldMatcherInfo<FieldType> = {
 const numericMatcher: FieldMatcherInfo = {
   id: FieldMatcherID.numeric,
   name: 'Numeric Fields',
-  description: 'Fields with type number',
+  description: 'Champs de type nombre',
 
   get: () => {
     return fieldTypeMatcher.get(FieldType.number);
@@ -40,7 +40,7 @@ const numericMatcher: FieldMatcherInfo = {
 const timeMatcher: FieldMatcherInfo = {
   id: FieldMatcherID.time,
   name: 'Time Fields',
-  description: 'Fields with type time',
+  description: 'Champs de type nombre',
 
   get: () => {
     return fieldTypeMatcher.get(FieldType.time);

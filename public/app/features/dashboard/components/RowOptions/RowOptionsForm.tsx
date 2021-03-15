@@ -34,9 +34,9 @@ export const RowOptionsForm: FC<Props> = ({ repeat, title, onUpdate, onCancel })
           </Field>
 
           <HorizontalGroup>
-            <Button type="submit">Update</Button>
+            <Button type="submit">Actualiser</Button>
             <Button variant="secondary" onClick={onCancel}>
-              Cancel
+              Annuler
             </Button>
           </HorizontalGroup>
         </>

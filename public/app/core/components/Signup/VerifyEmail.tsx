@@ -27,10 +27,10 @@ export const VerifyEmail: FC = () => {
   if (emailSent) {
     return (
       <div>
-        <p>An email with a verification link has been sent to the email address. You should receive it shortly.</p>
+        <p>Un mail avec un lien de vérification à été envoyé. Vous aller le recevoir rapidement.</p>
         <Container margin="md" />
         <LinkButton variant="primary" href={getConfig().appSubUrl + '/signup'}>
-          Complete Signup
+          Completer l&apos;inscription
         </LinkButton>
       </div>
     );
@@ -40,7 +40,7 @@ export const VerifyEmail: FC = () => {
     <Form onSubmit={onSubmit}>
       {({ register, errors }) => (
         <>
-          <Legend>Verify Email</Legend>
+          <Legend>Vérifier Email</Legend>
           <Field
             label="Email"
             description="Enter your email address to get a verification link sent to you"
@@ -50,9 +50,9 @@ export const VerifyEmail: FC = () => {
             <Input placeholder="Email" name="email" ref={register({ required: true })} />
           </Field>
           <HorizontalGroup>
-            <Button>Send verification email</Button>
+            <Button>Envoyer email de verification</Button>
             <LinkButton variant="link" href={getConfig().appSubUrl + '/login'}>
-              Back to login
+              Revenir à la connexion
             </LinkButton>
           </HorizontalGroup>
         </>

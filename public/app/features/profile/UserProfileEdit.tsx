@@ -32,7 +32,7 @@ export const UserProfileEdit: FC<Props> = ({ navModel }) => (
         return (
           <Page.Contents>
             {states.loadUser ? (
-              <LoadingPlaceholder text="Loading user profile..." />
+              <LoadingPlaceholder text="Chargement du profil..." />
             ) : (
               <UserProfileEditForm
                 updateProfile={api.updateUserProfile}

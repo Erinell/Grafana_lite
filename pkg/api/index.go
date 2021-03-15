@@ -129,20 +129,20 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 
 	if hasEditPerm {
 		children := []*dtos.NavLink{
-			{Text: "Dashboard", Icon: "apps", Url: hs.Cfg.AppSubURL + "/dashboard/new"},
+			{Text: "Tableau", Icon: "apps", Url: hs.Cfg.AppSubURL + "/dashboard/new"},
 		}
 		if c.OrgRole == models.ROLE_ADMIN || c.OrgRole == models.ROLE_EDITOR {
 			children = append(children, &dtos.NavLink{
-				Text: "Folder", SubTitle: "Create a new folder to organize your dashboards", Id: "folder",
+				Text: "Dossier", SubTitle: "Créer un dossier pour organiser vos tableaux", Id: "folder",
 				Icon: "folder-plus", Url: hs.Cfg.AppSubURL + "/dashboards/folder/new",
 			})
 		}
 		children = append(children, &dtos.NavLink{
-			Text: "Import", SubTitle: "Import dashboard from file or Grafana.com", Id: "import", Icon: "import",
+			Text: "Importer", SubTitle: "Importer un tableau d'un fichier ou sur Grafana.com", Id: "import", Icon: "import",
 			Url: hs.Cfg.AppSubURL + "/dashboard/import",
 		})
 		navTree = append(navTree, &dtos.NavLink{
-			Text:       "Create",
+			Text:       "Créer",
 			Id:         "create",
 			Icon:       "plus",
 			Url:        hs.Cfg.AppSubURL + "/dashboard/new",
@@ -152,9 +152,9 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 	}
 
 	dashboardChildNavs := []*dtos.NavLink{
-		{Text: "Home", Id: "home", Url: hs.Cfg.AppSubURL + "/", Icon: "home-alt", HideFromTabs: true},
+		{Text: "Accueil", Id: "home", Url: hs.Cfg.AppSubURL + "/", Icon: "home-alt", HideFromTabs: true},
 		{Text: "Divider", Divider: true, Id: "divider", HideFromTabs: true},
-		{Text: "Manage", Id: "manage-dashboards", Url: hs.Cfg.AppSubURL + "/dashboards", Icon: "sitemap"},
+		{Text: "Gérer", Id: "manage-dashboards", Url: hs.Cfg.AppSubURL + "/dashboards", Icon: "sitemap"},
 		{Text: "Playlists", Id: "playlists", Url: hs.Cfg.AppSubURL + "/playlists", Icon: "presentation-play"},
 	}
 
@@ -168,9 +168,9 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 	}
 
 	navTree = append(navTree, &dtos.NavLink{
-		Text:       "Dashboards",
+		Text:       "Tableaux",
 		Id:         "dashboards",
-		SubTitle:   "Manage dashboards & folders",
+		SubTitle:   "Gérer les tableaux et les dossiers",
 		Icon:       "apps",
 		Url:        hs.Cfg.AppSubURL + "/",
 		SortWeight: dtos.WeightDashboard,
@@ -194,16 +194,16 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 
 	if setting.AlertingEnabled && (c.OrgRole == models.ROLE_ADMIN || c.OrgRole == models.ROLE_EDITOR) {
 		alertChildNavs := []*dtos.NavLink{
-			{Text: "Alert Rules", Id: "alert-list", Url: hs.Cfg.AppSubURL + "/alerting/list", Icon: "list-ul"},
+			{Text: "Règles d'alerte", Id: "alert-list", Url: hs.Cfg.AppSubURL + "/alerting/list", Icon: "list-ul"},
 			{
-				Text: "Notification channels", Id: "channels", Url: hs.Cfg.AppSubURL + "/alerting/notifications",
+				Text: "Notifications", Id: "channels", Url: hs.Cfg.AppSubURL + "/alerting/notifications",
 				Icon: "comment-alt-share",
 			},
 		}
 
 		navTree = append(navTree, &dtos.NavLink{
-			Text:       "Alerting",
-			SubTitle:   "Alert rules & notifications",
+			Text:       "Alertes",
+			SubTitle:   "Règles et notifications",
 			Id:         "alerting",
 			Icon:       "bell",
 			Url:        hs.Cfg.AppSubURL + "/alerting/list",
@@ -222,16 +222,16 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 
 	if c.OrgRole == models.ROLE_ADMIN {
 		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Data Sources",
+			Text:        "Sources de données",
 			Icon:        "database",
-			Description: "Add and configure data sources",
+			Description: "Ajouter et configurer une source de données",
 			Id:          "datasources",
 			Url:         hs.Cfg.AppSubURL + "/datasources",
 		})
 		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Users",
+			Text:        "Utilisateurs",
 			Id:          "users",
-			Description: "Manage org members",
+			Description: "Gérer les utilisateurs",
 			Icon:        "user",
 			Url:         hs.Cfg.AppSubURL + "/org/users",
 		})
@@ -239,9 +239,9 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 
 	if c.OrgRole == models.ROLE_ADMIN || (hs.Cfg.EditorsCanAdmin && c.OrgRole == models.ROLE_EDITOR) {
 		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Teams",
+			Text:        "Equipes",
 			Id:          "teams",
-			Description: "Manage org groups",
+			Description: "Gérer les équipes",
 			Icon:        "users-alt",
 			Url:         hs.Cfg.AppSubURL + "/org/teams",
 		})
@@ -251,22 +251,22 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		configNodes = append(configNodes, &dtos.NavLink{
 			Text:        "Plugins",
 			Id:          "plugins",
-			Description: "View and configure plugins",
+			Description: "Voir et configurer les plugins",
 			Icon:        "plug",
 			Url:         hs.Cfg.AppSubURL + "/plugins",
 		})
 
 		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Preferences",
+			Text:        "Préférences",
 			Id:          "org-settings",
-			Description: "Organization preferences",
+			Description: "Préférences organisation",
 			Icon:        "sliders-v-alt",
 			Url:         hs.Cfg.AppSubURL + "/org",
 		})
 		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "API Keys",
+			Text:        "Clés API",
 			Id:          "apikeys",
-			Description: "Create & manage API keys",
+			Description: "Gérer et créer les clés API",
 			Icon:        "key-skeleton-alt",
 			Url:         hs.Cfg.AppSubURL + "/org/apikeys",
 		})
@@ -276,7 +276,7 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		navTree = append(navTree, &dtos.NavLink{
 			Id:         dtos.NavIDCfg,
 			Text:       "Configuration",
-			SubTitle:   "Organization: " + c.OrgName,
+			SubTitle:   "Organisation : " + c.OrgName,
 			Icon:       "cog",
 			Url:        configNodes[0].Url,
 			SortWeight: dtos.WeightConfig,
@@ -286,9 +286,9 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 
 	if c.IsGrafanaAdmin {
 		adminNavLinks := []*dtos.NavLink{
-			{Text: "Users", Id: "global-users", Url: hs.Cfg.AppSubURL + "/admin/users", Icon: "user"},
+			{Text: "Utilisateurs", Id: "global-users", Url: hs.Cfg.AppSubURL + "/admin/users", Icon: "user"},
 			{Text: "Orgs", Id: "global-orgs", Url: hs.Cfg.AppSubURL + "/admin/orgs", Icon: "building"},
-			{Text: "Settings", Id: "server-settings", Url: hs.Cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt"},
+			{Text: "Options", Id: "server-settings", Url: hs.Cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt"},
 			{Text: "Stats", Id: "server-stats", Url: hs.Cfg.AppSubURL + "/admin/stats", Icon: "graph-bar"},
 		}
 
@@ -299,8 +299,8 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		}
 
 		navTree = append(navTree, &dtos.NavLink{
-			Text:         "Server Admin",
-			SubTitle:     "Manage all users & orgs",
+			Text:         "Serveur admin",
+			SubTitle:     "Gérer les utilisateurs et orgs",
 			HideFromTabs: true,
 			Id:           "admin",
 			Icon:         "shield",
@@ -316,7 +316,7 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 	}
 
 	navTree = append(navTree, &dtos.NavLink{
-		Text:         "Help",
+		Text:         "Aide",
 		SubTitle:     helpVersion,
 		Id:           "help",
 		Url:          "#",

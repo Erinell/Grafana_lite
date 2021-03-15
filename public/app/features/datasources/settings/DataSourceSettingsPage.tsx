@@ -103,7 +103,7 @@ export class DataSourceSettingsPage extends PureComponent<Props> {
     appEvents.publish(
       new ShowConfirmModalEvent({
         title: 'Delete',
-        text: 'Are you sure you want to delete this data source?',
+        text: 'Êtes-vous sûr de vouloir supprimer cette source de donnée ?',
         yesText: 'Delete',
         icon: 'trash-alt',
         onConfirm: () => {

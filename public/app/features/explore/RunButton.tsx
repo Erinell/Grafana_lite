@@ -22,7 +22,7 @@ export function RunButton(props: Props) {
   }
 
   if (!isSmall) {
-    text = loading ? 'Cancel' : 'Run query';
+    text = loading ? 'Annuler' : 'Executer';
   }
 
   return (

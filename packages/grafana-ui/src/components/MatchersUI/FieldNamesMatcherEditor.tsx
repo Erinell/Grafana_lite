@@ -50,8 +50,8 @@ export const fieldNamesMatcherItem: FieldMatcherUIRegistryItem<ByNamesMatcherOpt
   id: FieldMatcherID.byNames,
   component: FieldNamesMatcherEditor,
   matcher: fieldMatchers.get(FieldMatcherID.byNames),
-  name: 'Fields with name',
-  description: 'Set properties for a specific field',
+  name: 'Champs avec nom',
+  description: "Définir les propriétés d'un champ spécifique",
   optionsToLabel: (options) => (options.names ?? []).join(', '),
   excludeFromPicker: true,
 };

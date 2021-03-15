@@ -87,7 +87,7 @@ export class AnnotationsSrv {
         }
 
         console.error('AnnotationSrv.query error', err);
-        appEvents.emit(AppEvents.alertError, ['Annotation Query Failed', err.message || err]);
+        appEvents.emit(AppEvents.alertError, ["Requête d'annotation échouée", err.message || err]);
         return [];
       });
   }

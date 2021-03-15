@@ -36,6 +36,6 @@ describe('TableContainer', () => {
     };
 
     const wrapper = render(<TableContainer {...props} />);
-    expect(wrapper.find('0 series returned')).toBeTruthy();
+    expect(wrapper.find('0 série retournée')).toBeTruthy();
   });
 });

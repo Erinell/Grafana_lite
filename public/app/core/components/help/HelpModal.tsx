@@ -6,40 +6,40 @@ export class HelpModal extends React.PureComponent {
   static tabIndex = 0;
   static shortcuts = {
     Global: [
-      { keys: ['g', 'h'], description: 'Go to Home Dashboard' },
-      { keys: ['g', 'p'], description: 'Go to Profile' },
-      { keys: ['s', 'o'], description: 'Open search' },
-      { keys: ['esc'], description: 'Exit edit/setting views' },
+      { keys: ['g', 'h'], description: "Aller à l'accueil" },
+      { keys: ['g', 'p'], description: 'Aller au profil' },
+      { keys: ['s', 'o'], description: 'Ouvrir rechercher' },
+      { keys: ['esc'], description: 'Quitter vue edition / option' },
     ],
     Dashboard: [
-      { keys: ['mod+s'], description: 'Save dashboard' },
-      { keys: ['d', 'r'], description: 'Refresh all panels' },
-      { keys: ['d', 's'], description: 'Dashboard settings' },
-      { keys: ['d', 'v'], description: 'Toggle in-active / view mode' },
-      { keys: ['d', 'k'], description: 'Toggle kiosk mode (hides top nav)' },
-      { keys: ['d', 'E'], description: 'Expand all rows' },
-      { keys: ['d', 'C'], description: 'Collapse all rows' },
-      { keys: ['d', 'a'], description: 'Toggle auto fit panels (experimental feature)' },
-      { keys: ['mod+o'], description: 'Toggle shared graph crosshair' },
-      { keys: ['d', 'l'], description: 'Toggle all panel legends' },
+      { keys: ['mod+s'], description: 'Sauvegarder tableau' },
+      { keys: ['d', 'r'], description: 'Rafraichir tout les panneaux' },
+      { keys: ['d', 's'], description: 'Options tableaux' },
+      { keys: ['d', 'v'], description: 'Basculer in-active / view mode' },
+      { keys: ['d', 'k'], description: 'Basculer mode kiosque (cache la bar haute)' },
+      { keys: ['d', 'E'], description: 'Etirer toutes les lignes' },
+      { keys: ['d', 'C'], description: 'Réduire toutes les lignes' },
+      { keys: ['d', 'a'], description: "Basculer l'autofit des panneaux (fonction expérimentale)" },
+      { keys: ['mod+o'], description: 'Basculer le curseur de graphique partagé' },
+      { keys: ['d', 'l'], description: 'Basculer les légendes de tout les panneaux' },
     ],
     'Focused Panel': [
-      { keys: ['e'], description: 'Toggle panel edit view' },
-      { keys: ['v'], description: 'Toggle panel fullscreen view' },
-      { keys: ['p', 's'], description: 'Open Panel Share Modal' },
-      { keys: ['p', 'd'], description: 'Duplicate Panel' },
-      { keys: ['p', 'r'], description: 'Remove Panel' },
-      { keys: ['p', 'l'], description: 'Toggle panel legend' },
+      { keys: ['e'], description: 'Basculer la vue édition du panneau' },
+      { keys: ['v'], description: 'Basculer la vue plein écran du panneau' },
+      { keys: ['p', 's'], description: 'Ouvrir le module de partage de panneau' },
+      { keys: ['p', 'd'], description: 'Dupliquer le panneau' },
+      { keys: ['p', 'r'], description: 'Enlever le panneau' },
+      { keys: ['p', 'l'], description: 'Basculer la légende du panneau' },
     ],
     'Time Range': [
-      { keys: ['t', 'z'], description: 'Zoom out time range' },
+      { keys: ['t', 'z'], description: 'Zoom arrière sur la plage de temps' },
       {
         keys: ['t', '←'],
-        description: 'Move time range back',
+        description: 'Reculer la plage de temps',
       },
       {
         keys: ['t', '→'],
-        description: 'Move time range forward',
+        description: 'Avancer la plage de temps',
       },
     ],
   };
@@ -64,7 +64,7 @@ export class HelpModal extends React.PureComponent {
         <div className="modal-content help-modal">
           <p className="small" style={{ position: 'absolute', top: '13px', right: '44px' }}>
             <span className="shortcut-table-key">mod</span> =
-            <span className="muted"> CTRL on windows or linux and CMD key on Mac</span>
+            <span className="muted"> CTRL sur windows ou linux et CMD sur Mac</span>
           </p>
 
           {Object.entries(HelpModal.shortcuts).map(([category, shortcuts], i) => (

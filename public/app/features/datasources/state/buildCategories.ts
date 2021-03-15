@@ -4,14 +4,14 @@ import { config } from '../../../core/config';
 
 export function buildCategories(plugins: DataSourcePluginMeta[]): DataSourcePluginCategory[] {
   const categories: DataSourcePluginCategory[] = [
-    { id: 'tsdb', title: 'Time series databases', plugins: [] },
-    { id: 'logging', title: 'Logging & document databases', plugins: [] },
+    { id: 'tsdb', title: 'Bases de données séries de temps', plugins: [] },
+    { id: 'logging', title: 'Bases de données de journaux et documents', plugins: [] },
     { id: 'tracing', title: 'Distributed tracing', plugins: [] },
     { id: 'sql', title: 'SQL', plugins: [] },
     { id: 'cloud', title: 'Cloud', plugins: [] },
-    { id: 'enterprise', title: 'Enterprise plugins', plugins: [] },
-    { id: 'iot', title: 'Industrial & IoT', plugins: [] },
-    { id: 'other', title: 'Others', plugins: [] },
+    { id: 'enterprise', title: 'Plugins entreprises', plugins: [] },
+    { id: 'iot', title: 'IoT et industriel', plugins: [] },
+    { id: 'other', title: 'Autres', plugins: [] },
   ].filter((item) => item);
 
   const categoryIndex: Record<string, DataSourcePluginCategory> = {};
@@ -37,7 +37,7 @@ export function buildCategories(plugins: DataSourcePluginMeta[]): DataSourcePlug
     // Fix link name
     if (plugin.info.links) {
       for (const link of plugin.info.links) {
-        link.name = 'Learn more';
+        link.name = 'Lire plus';
       }
     }
 

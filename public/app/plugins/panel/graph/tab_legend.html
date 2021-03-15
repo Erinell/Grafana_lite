@@ -3,7 +3,7 @@
     <h5 class="section-heading">Options</h5>
     <gf-form-switch
       class="gf-form"
-      label="Show"
+      label="Voir"
       label-class="width-7"
       checked="ctrl.panel.legend.show"
       on-change="ctrl.render()"
@@ -12,7 +12,7 @@
     </gf-form-switch>
     <gf-form-switch
       class="gf-form"
-      label="As Table"
+      label="En tableau"
       label-class="width-7"
       checked="ctrl.panel.legend.alignAsTable"
       on-change="ctrl.render()"
@@ -20,19 +20,19 @@
     </gf-form-switch>
     <gf-form-switch
       class="gf-form"
-      label="To the right"
+      label="A droite"
       label-class="width-7"
       checked="ctrl.panel.legend.rightSide"
       on-change="ctrl.render()"
     >
     </gf-form-switch>
     <div ng-if="ctrl.panel.legend.rightSide" class="gf-form">
-      <label class="gf-form-label width-7">Width</label>
+      <label class="gf-form-label width-7">Largeur</label>
       <input
         type="number"
         class="gf-form-input max-width-5"
         placeholder="250"
-        bs-tooltip="'Set a min-width for the legend side table/block'"
+        bs-tooltip="'Définir une largeur minimum pour le coté légende'"
         data-placement="right"
         ng-model="ctrl.panel.legend.sideWidth"
         ng-change="ctrl.render()"
@@ -42,12 +42,12 @@
   </div>
 
   <div class="section gf-form-group">
-    <h5 class="section-heading">Values</h5>
+    <h5 class="section-heading">Valeurs</h5>
 
     <div class="gf-form-inline">
       <gf-form-switch
         class="gf-form"
-        label="Min"
+        label="Minimum"
         label-class="width-7"
         checked="ctrl.panel.legend.min"
         on-change="ctrl.legendValuesOptionChanged()"
@@ -56,7 +56,7 @@
 
       <gf-form-switch
         class="gf-form max-width-12"
-        label="Max"
+        label="Maximum"
         label-class="width-7"
         switch-class="max-width-5"
         checked="ctrl.panel.legend.max"
@@ -68,7 +68,7 @@
     <div class="gf-form-inline">
       <gf-form-switch
         class="gf-form"
-        label="Avg"
+        label="Moyenne"
         label-class="width-7"
         checked="ctrl.panel.legend.avg"
         on-change="ctrl.legendValuesOptionChanged()"
@@ -77,7 +77,7 @@
 
       <gf-form-switch
         class="gf-form max-width-12"
-        label="Current"
+        label="Actuelle"
         label-class="width-7"
         switch-class="max-width-5"
         checked="ctrl.panel.legend.current"
@@ -97,12 +97,12 @@
       </gf-form-switch>
 
       <div class="gf-form">
-        <label class="gf-form-label width-7">Decimals</label>
+        <label class="gf-form-label width-7">Decimales</label>
         <input
           type="number"
           class="gf-form-input width-5"
           placeholder="auto"
-          bs-tooltip="'Override automatic decimal precision for legend and tooltips'"
+          bs-tooltip="'Remplace les décimales auto par une valeur fixe pour la légende et les infobulles'"
           data-placement="right"
           ng-model="ctrl.panel.decimals"
           ng-change="ctrl.render()"
@@ -113,10 +113,10 @@
   </div>
 
   <div class="section gf-form-group">
-    <h5 class="section-heading">Hide series</h5>
+    <h5 class="section-heading">Cacher les séries</h5>
     <gf-form-switch
       class="gf-form"
-      label="With only nulls"
+      label="Avec que nulles"
       label-class="width-7"
       checked="ctrl.panel.legend.hideEmpty"
       on-change="ctrl.render()"
@@ -124,7 +124,7 @@
     </gf-form-switch>
     <gf-form-switch
       class="gf-form"
-      label="With only zeros"
+      label="Avec que zeros"
       label-class="width-7"
       checked="ctrl.panel.legend.hideZero"
       on-change="ctrl.render()"

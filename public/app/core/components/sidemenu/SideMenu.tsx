@@ -32,7 +32,7 @@ export const SideMenu: FC = React.memo(() => {
         <Icon name="bars" size="xl" />
         <span className="sidemenu__close">
           <Icon name="times" />
-          &nbsp;Close
+          &nbsp;Fermer
         </span>
       </div>
       <TopSection key="topsection" />

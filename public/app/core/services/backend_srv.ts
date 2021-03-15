@@ -284,7 +284,7 @@ export class BackendSrv implements BackendService {
   }
 
   processRequestError(options: BackendSrvRequest, err: FetchError): FetchError {
-    err.data = err.data ?? { message: 'Unexpected error' };
+    err.data = err.data ?? { message: 'Erreur survenue' };
 
     if (typeof err.data === 'string') {
       err.data = {

@@ -5,7 +5,7 @@ export enum PanelMenuItems {
   Inspect = 'Inspect',
 }
 
-export const openPanelMenuItem = (menu: PanelMenuItems, panelTitle = 'Panel Title') => {
+export const openPanelMenuItem = (menu: PanelMenuItems, panelTitle = 'Titre du panneau') => {
   e2e.components.Panels.Panel.title(panelTitle).should('be.visible').click();
 
   e2e.components.Panels.Panel.headerItems(menu).should('be.visible').click();

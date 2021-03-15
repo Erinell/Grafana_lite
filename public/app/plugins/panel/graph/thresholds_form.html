@@ -24,18 +24,18 @@
           ng-model="threshold.value"
           class="gf-form-input width-8"
           ng-change="ctrl.render()"
-          placeholder="value"
+          placeholder="valeur"
           ng-disabled="ctrl.disabled"
         />
       </div>
 
       <div class="gf-form">
-        <label class="gf-form-label">Color</label>
+        <label class="gf-form-label">Couleur</label>
         <div class="gf-form-select-wrapper">
           <select
             class="gf-form-input"
             ng-model="threshold.colorMode"
-            ng-options="f for f in ['custom', 'critical', 'warning', 'ok']"
+            ng-options="f for f in ['custom', 'Critique', 'Attention', 'ok']"
             ng-change="ctrl.onThresholdTypeChange($index)"
             ng-disabled="ctrl.disabled"
           >
@@ -52,7 +52,7 @@
       ></gf-form-switch>
 
       <div class="gf-form" ng-if="threshold.fill && threshold.colorMode === 'custom'">
-        <label class="gf-form-label">Fill color</label>
+        <label class="gf-form-label">Remplissage</label>
         <span class="gf-form-label">
           <color-picker color="threshold.fillColor" onChange="ctrl.onFillColorChange($index)"></color-picker>
         </span>
@@ -60,27 +60,27 @@
 
       <gf-form-switch
         class="gf-form"
-        label="Line"
+        label="Ligne"
         checked="threshold.line"
         on-change="ctrl.render()"
         ng-disabled="ctrl.disabled"
       ></gf-form-switch>
 
       <div class="gf-form" ng-if="threshold.line && threshold.colorMode === 'custom'">
-        <label class="gf-form-label">Line color</label>
+        <label class="gf-form-label">Couleur ligne</label>
         <span class="gf-form-label">
           <color-picker color="threshold.lineColor" onChange="ctrl.onLineColorChange($index)"></color-picker>
         </span>
       </div>
 
       <div class="gf-form">
-        <label class="gf-form-label">Y-Axis</label>
+        <label class="gf-form-label">Axe Y</label>
         <div class="gf-form-select-wrapper">
           <select
             class="gf-form-input"
             ng-model="threshold.yaxis"
-            ng-init="threshold.yaxis = threshold.yaxis === 'left' || threshold.yaxis === 'right' ? threshold.yaxis : 'left'"
-            ng-options="f for f in ['left', 'right']"
+            ng-init="threshold.yaxis = threshold.yaxis === 'gauche' || threshold.yaxis === 'droite' ? threshold.yaxis : 'gauche'"
+            ng-options="f for f in ['gauche', 'droite']"
             ng-change="ctrl.render()"
             ng-disabled="ctrl.disabled"
           >
@@ -99,7 +99,7 @@
 
     <div class="gf-form-button-row">
       <button class="btn btn-inverse" ng-click="ctrl.addThreshold()" ng-disabled="ctrl.disabled">
-        <icon name="'plus'"></icon>&nbsp;Add threshold
+        <icon name="'plus'"></icon>&nbsp;Ajouter un seuil
       </button>
     </div>
   </div>

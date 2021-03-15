@@ -101,7 +101,7 @@ export const DataLinksInlineEditor: React.FC<DataLinksInlineEditorProps> = ({ li
       )}
 
       <Button size="sm" icon="plus" onClick={onDataLinkAdd} variant="secondary">
-        Add link
+        Ajouter lien
       </Button>
     </>
   );

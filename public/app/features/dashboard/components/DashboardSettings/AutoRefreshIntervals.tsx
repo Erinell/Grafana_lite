@@ -57,8 +57,8 @@ export const AutoRefreshIntervals: FC<Props> = ({
 
   return (
     <Field
-      label="Auto refresh"
-      description="Define the auto refresh intervals that should be available in the auto refresh dropdown"
+      label="Auto actualisation"
+      description="Défini les intervalles d'actualisation automatique qui devraient être disponibles dans la liste déroulante d'actualisation automatique "
       error={invalidIntervalsMessage}
       invalid={!!invalidIntervalsMessage}
     >

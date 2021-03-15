@@ -143,9 +143,9 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
         title="Delete"
         body={
           <div>
-            Are you sure you want to delete this alert rule?
+            Êtes-vous sûr de vouloir supprimer la règle ?
             <br />
-            <small>You need to save dashboard for the delete to take effect.</small>
+            <small>Vous devez sauvegarder le tableau pour que la suppression prenne effet.</small>
           </div>
         }
         confirmText="Delete Alert"
@@ -194,7 +194,7 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
       title: 'Panel has no alert rule defined',
       buttonIcon: 'bell' as IconName,
       onClick: this.onAddAlert,
-      buttonTitle: 'Create Alert',
+      buttonTitle: 'Créer une alerte',
     };
 
     return (

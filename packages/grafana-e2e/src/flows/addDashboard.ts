@@ -46,7 +46,7 @@ export const addDashboard = (config?: Partial<AddDashboardConfig>) => {
     timeRange: {
       from: '2020-01-01 00:00:00',
       to: '2020-01-01 06:00:00',
-      zone: 'Coordinated Universal Time',
+      zone: 'Temps universel',
       ...config?.timeRange,
     },
   };

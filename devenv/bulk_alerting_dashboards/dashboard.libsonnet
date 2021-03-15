@@ -93,7 +93,7 @@
         ],
         timeFrom: null,
         timeShift: null,
-        title: "Panel Title",
+        title: "Titre du panneau",
         tooltip: {
           shared: true,
           sort: 0,

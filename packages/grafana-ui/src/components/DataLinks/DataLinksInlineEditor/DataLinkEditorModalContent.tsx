@@ -41,7 +41,7 @@ export const DataLinkEditorModalContent: FC<DataLinkEditorModalContentProps> = (
           Save
         </Button>
         <Button variant="secondary" onClick={() => onCancel(index)}>
-          Cancel
+          Annuler
         </Button>
       </HorizontalGroup>
     </>

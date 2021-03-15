@@ -187,12 +187,13 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
             width={9}
             tooltip={
               <>
-                The maximum data points per series. Used directly by some data sources and used in calculation of auto
-                interval. With streaming data this value is used for the rolling buffer.
+                Le nombre maximal de points de données par séries. Utilisé derictement par certaines sources de données
+                et utilisé dans le calcul de l&apos;intervalle automatique. Avec les données en continu, cette valeur
+                est utilisée pour le tampon de roulement.
               </>
             }
           >
-            Max data points
+            Données max
           </InlineFormLabel>
           <Input
             type="number"
@@ -205,7 +206,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
           {isAuto && (
             <>
               <div className="gf-form-label query-segment-operator">=</div>
-              <div className="gf-form-label">Width of panel</div>
+              <div className="gf-form-label">Longueur du panneau</div>
             </>
           )}
         </div>
@@ -226,13 +227,14 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
               width={9}
               tooltip={
                 <>
-                  A lower limit for the interval. Recommended to be set to write frequency, for example <code>1m</code>{' '}
-                  if your data is written every minute. Default value can be set in data source settings for most data
+                  Une limite inférieure pour l&apos;intervalle. Il est recommandé de définir la fréquence
+                  d&apos;écriture, par exemple <code>1m</code> si vos données sont écrites toutes les minutes. La valeur
+                  par défaut peut être définie dans les paramètres de source de données pour la plupart des données
                   sources.
                 </>
               }
             >
-              Min interval
+              Intervalle min
             </InlineFormLabel>
             <Input
               type="text"
@@ -250,16 +252,16 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
               width={9}
               tooltip={
                 <>
-                  The evaluated Interval that is sent to data source and is used in <code>$__interval</code> and{' '}
+                  Intervalle évalué qui est envoyé à la source de données et utilisé dans <code>$__interval</code> et{' '}
                   <code>$__interval_ms</code>
                 </>
               }
             >
-              Interval
+              Intervalle
             </InlineFormLabel>
             <InlineFormLabel width={6}>{realInterval}</InlineFormLabel>
             <div className="gf-form-label query-segment-operator">=</div>
-            <div className="gf-form-label">Max data points / time range</div>
+            <div className="gf-form-label">Points de données max / intervalle de temps</div>
           </div>
         </div>
       </>
@@ -309,7 +311,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
       <QueryOperationRow
         id="Query options"
         index={0}
-        title="Query options"
+        title="Options de requêtes"
         headerElement={this.renderCollapsedText(styles)}
         isOpen={isOpen}
         onOpen={this.onOpenOptions}
@@ -320,7 +322,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
         {this.renderCacheTimeoutOption()}
 
         <div className="gf-form">
-          <InlineFormLabel width={9}>Relative time</InlineFormLabel>
+          <InlineFormLabel width={9}>Temps relatif</InlineFormLabel>
           <Input
             type="text"
             className="width-6"
@@ -333,7 +335,7 @@ export class QueryGroupOptionsEditor extends PureComponent<Props, State> {
         </div>
 
         <div className="gf-form">
-          <span className="gf-form-label width-9">Time shift</span>
+          <span className="gf-form-label width-9">Décalage de temps</span>
           <Input
             type="text"
             className="width-6"

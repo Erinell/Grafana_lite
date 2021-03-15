@@ -161,7 +161,7 @@ export class UnConnectedExploreToolbar extends PureComponent<Props> {
               {exploreId === 'left' && !splitted ? (
                 <ToolbarButton
                   iconOnly={splitted}
-                  title="Split"
+                  title="Séparer"
                   /* This way ToolbarButton doesn't add event as a parameter when invoking split function
                    * which breaks splitting functionality
                    */
@@ -169,11 +169,11 @@ export class UnConnectedExploreToolbar extends PureComponent<Props> {
                   icon="columns"
                   disabled={isLive}
                 >
-                  Split
+                  Séparer
                 </ToolbarButton>
               ) : null}
 
-              <Tooltip content={'Copy shortened link'} placement="bottom">
+              <Tooltip content={'Copier lien raccourci'} placement="bottom">
                 <ToolbarButton icon="share-alt" onClick={() => createAndCopyShortLink(window.location.href)} />
               </Tooltip>
 
@@ -192,8 +192,8 @@ export class UnConnectedExploreToolbar extends PureComponent<Props> {
               )}
 
               {!isLive && (
-                <ToolbarButton title="Clear all" onClick={this.onClearAll} icon="trash-alt" iconOnly={splitted}>
-                  Clear all
+                <ToolbarButton title="Effacer tout" onClick={this.onClearAll} icon="trash-alt" iconOnly={splitted}>
+                  Effacer tout
                 </ToolbarButton>
               )}
 

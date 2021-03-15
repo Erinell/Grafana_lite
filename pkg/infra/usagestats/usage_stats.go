@@ -222,7 +222,7 @@ func (uss *UsageStatsService) registerExternalMetrics(metrics map[string]interfa
 	for name, fn := range uss.externalMetrics {
 		result, err := fn()
 		if err != nil {
-			metricsLogger.Error("Failed to fetch external metric", "name", name, "error", err)
+			metricsLogger.Error("Echec de récupération de la métrique externe", "name", name, "error", err)
 			continue
 		}
 		metrics[name] = result

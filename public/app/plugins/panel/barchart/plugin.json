@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Bar chart",
+  "name": "Graphique barres",
   "id": "barchart",
 
   "state": "alpha",

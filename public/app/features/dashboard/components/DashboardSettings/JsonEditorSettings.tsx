@@ -24,10 +24,10 @@ export const JsonEditorSettings: React.FC<Props> = ({ dashboard }) => {
 
   return (
     <>
-      <h3 className="dashboard-settings__header">JSON Model</h3>
+      <h3 className="dashboard-settings__header">Modèle JSON</h3>
       <div className="dashboard-settings__subheader">
-        The JSON Model below is data structure that defines the dashboard. Including settings, panel settings & layout,
-        queries etc.
+        Le modèle JSON est la strucutre de données qui définissent le tableau. Inclus options, requêtes, options de
+        panneaux etc.
       </div>
 
       <div>
@@ -46,7 +46,7 @@ export const JsonEditorSettings: React.FC<Props> = ({ dashboard }) => {
       </div>
       {dashboard.meta.canSave && (
         <Button className="m-t-3" onClick={onClick}>
-          Save Changes
+          Sauvegarder
         </Button>
       )}
     </>

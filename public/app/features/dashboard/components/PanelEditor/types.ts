@@ -21,9 +21,9 @@ export enum DisplayMode {
 }
 
 export const displayModes = [
-  { value: DisplayMode.Fill, label: 'Fill', description: 'Use all available space' },
-  { value: DisplayMode.Fit, label: 'Fit', description: 'Fit in the space keeping ratio' },
-  { value: DisplayMode.Exact, label: 'Exact', description: 'Same size as the dashboard' },
+  { value: DisplayMode.Fill, label: 'Remplir', description: 'Utilise toute la place disponible' },
+  { value: DisplayMode.Fit, label: 'Ajuster', description: 'Ajuster dans la place en gardant le ratio' },
+  { value: DisplayMode.Exact, label: 'Exacte', description: 'Même taille que le tableau' },
 ];
 
 /** @internal */

@@ -56,7 +56,7 @@ export const VisualizationTabUnconnected = React.forwardRef<HTMLInputElement, Pr
       searchQuery !== '' ? (
         <span className={styles.searchClear} onClick={() => setSearchQuery('')}>
           <Icon name="times" />
-          Clear filter
+          Enlever
         </span>
       ) : null;
 
@@ -73,7 +73,7 @@ export const VisualizationTabUnconnected = React.forwardRef<HTMLInputElement, Pr
             onKeyPress={onKeyPress}
             prefix={<Icon name="filter" className={styles.icon} />}
             suffix={suffix}
-            placeholder="Filter visualizations"
+            placeholder="Filtrer"
             ref={ref}
           />
         </Field>

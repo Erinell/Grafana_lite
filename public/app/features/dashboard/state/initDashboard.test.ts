@@ -66,7 +66,7 @@ function describeInitScenario(description: string, scenarioFn: ScenarioFn) {
             {
               type: 'add-panel',
               gridPos: { x: 0, y: 0, w: 12, h: 9 },
-              title: 'Panel Title',
+              title: 'Titre du panneau',
               id: 2,
               targets: [
                 {
@@ -179,7 +179,7 @@ describeInitScenario('Initializing new dashboard', (ctx) => {
 
   it('Should send action dashboardInitCompleted', () => {
     expect(ctx.actions[7].type).toBe(dashboardInitCompleted.type);
-    expect(ctx.actions[7].payload.title).toBe('New dashboard');
+    expect(ctx.actions[7].payload.title).toBe('Nouveau tableau');
   });
 
   it('Should initialize services', () => {

@@ -24,7 +24,7 @@ export const FeatureInfoBox = React.memo(
     ) : (
       <h3>{title}</h3>
     );
-    return <InfoBox branded title={titleEl} urlTitle="Read documentation" ref={ref} {...otherProps} />;
+    return <InfoBox branded title={titleEl} urlTitle="Lire la doc" ref={ref} {...otherProps} />;
   })
 );
 FeatureInfoBox.displayName = 'FeatureInfoBox';

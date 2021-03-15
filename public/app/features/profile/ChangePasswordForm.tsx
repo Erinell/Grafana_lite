@@ -16,10 +16,12 @@ export const ChangePasswordForm: FC<Props> = ({ user, onChangePassword, isSaving
   const authSource = user.authLabels?.length && user.authLabels[0];
 
   if (ldapEnabled || authProxyEnabled) {
-    return <p>You cannot change password when ldap or auth proxy authentication is enabled.</p>;
+    return (
+      <p>Vous ne pouvez pas changer de mot de passe quand l&apos;authentification ldap ou auth proxy est activé.</p>
+    );
   }
   if (authSource && disableLoginForm) {
-    return <p>Password cannot be changed here!</p>;
+    return <p>Le mot de passe ne peux pas être changé ici !</p>;
   }
 
   return (
@@ -62,10 +64,10 @@ export const ChangePasswordForm: FC<Props> = ({ user, onChangePassword, isSaving
               </Field>
               <HorizontalGroup>
                 <Button variant="primary" disabled={isSaving}>
-                  Change Password
+                  Changer
                 </Button>
                 <LinkButton variant="secondary" href={`${config.appSubUrl}/profile`}>
-                  Cancel
+                  Annuler
                 </LinkButton>
               </HorizontalGroup>
             </>

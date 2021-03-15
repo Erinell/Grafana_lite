@@ -37,13 +37,13 @@ export interface Props {
 }
 
 const emptyListModel = {
-  title: 'There are no data sources defined yet',
+  title: "Il n'y à pas encore de source ici.",
   buttonIcon: 'database' as IconName,
   buttonLink: 'datasources/new',
-  buttonTitle: 'Add data source',
-  proTip: 'You can also define data sources through configuration files.',
+  buttonTitle: 'Ajouter une source',
+  proTip: 'Vous pouvez aussi définir une source de données avec le fichier configuration.',
   proTipLink: 'http://docs.grafana.org/administration/provisioning/#datasources?utm_source=grafana_ds_list',
-  proTipLinkTitle: 'Learn more',
+  proTipLinkTitle: 'Lire plus',
   proTipTarget: '_blank',
 };
 
@@ -65,7 +65,7 @@ export class DataSourcesListPage extends PureComponent<Props> {
 
     const linkButton = {
       href: 'datasources/new',
-      title: 'Add data source',
+      title: 'Ajouter une source',
     };
 
     return (

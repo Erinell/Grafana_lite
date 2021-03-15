@@ -39,7 +39,7 @@ const series: GraphSeriesXY[] = [
     seriesIndex: 0,
     timeField: {
       type: FieldType.time,
-      name: 'time',
+      name: 'temps',
       values: new ArrayVector([1546372800000, 1546376400000, 1546380000000]),
       config: {},
     },
@@ -72,7 +72,7 @@ const series: GraphSeriesXY[] = [
     seriesIndex: 1,
     timeField: {
       type: FieldType.time,
-      name: 'time',
+      name: 'temps',
       values: new ArrayVector([1546372800000, 1546376400000, 1546380000000]),
       config: {},
     },

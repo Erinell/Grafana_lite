@@ -35,7 +35,7 @@ export function SecondaryActions(props: Props) {
             disabled={props.addQueryRowButtonDisabled}
             icon="plus"
           >
-            Add query
+            Ajouter une requête
           </Button>
         )}
         <Button
@@ -45,7 +45,7 @@ export function SecondaryActions(props: Props) {
           onClick={props.onClickRichHistoryButton}
           icon="history"
         >
-          Query history
+          Historique de requêtes
         </Button>
         <Button
           variant="secondary"
@@ -54,7 +54,7 @@ export function SecondaryActions(props: Props) {
           onClick={props.onClickQueryInspectorButton}
           icon="info-circle"
         >
-          Query inspector
+          Inspecteur de requêtes
         </Button>
       </HorizontalGroup>
     </div>

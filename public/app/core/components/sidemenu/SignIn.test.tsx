@@ -12,7 +12,7 @@ describe('Render', () => {
       </Router>
     );
 
-    const link = await screen.getByText('Sign In');
+    const link = await screen.getByText('Connexion');
     expect(link).toBeInTheDocument();
   });
 });

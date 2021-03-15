@@ -63,7 +63,7 @@ describe('Manage dashboards reducer', () => {
         {
           id: 4072,
           uid: 'OzAIf_rWz',
-          title: 'New dashboard Copy 3',
+          title: 'Nouveau tableau Copie 3',
           type: 'dash-db',
           isStarred: false,
         },

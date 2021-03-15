@@ -30,9 +30,9 @@ export class UserTeams extends PureComponent<Props> {
                 <thead>
                   <tr>
                     <th />
-                    <th>Name</th>
+                    <th>Nom</th>
                     <th>Email</th>
-                    <th>Members</th>
+                    <th>Membres</th>
                   </tr>
                 </thead>
                 <tbody>

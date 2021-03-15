@@ -162,9 +162,9 @@ class DashNav extends PureComponent<Props> {
   renderPlaylistControls() {
     return (
       <ButtonGroup key="playlist-buttons">
-        <ToolbarButton tooltip="Go to previous dashboard" icon="backward" onClick={this.onPlaylistPrev} narrow />
+        <ToolbarButton tooltip="Aller au tableau précédent" icon="backward" onClick={this.onPlaylistPrev} narrow />
         <ToolbarButton onClick={this.onPlaylistStop}>Stop playlist</ToolbarButton>
-        <ToolbarButton tooltip="Go to next dashboard" icon="forward" onClick={this.onPlaylistNext} narrow />
+        <ToolbarButton tooltip="Aller au tableau suivant" icon="forward" onClick={this.onPlaylistNext} narrow />
       </ButtonGroup>
     );
   }
@@ -176,7 +176,7 @@ class DashNav extends PureComponent<Props> {
     const snapshotUrl = snapshot && snapshot.originalUrl;
     const buttons: ReactNode[] = [];
     const tvButton = (
-      <ToolbarButton tooltip="Cycle view mode" icon="monitor" onClick={this.onToggleTVMode} key="tv-button" />
+      <ToolbarButton tooltip="Mode vue cycle" icon="monitor" onClick={this.onToggleTVMode} key="tv-button" />
     );
     const timeControls = (
       <DashNavTimeControls dashboard={dashboard} onChangeTimeZone={updateTimeZoneForSession} key="time-controls" />
@@ -191,12 +191,14 @@ class DashNav extends PureComponent<Props> {
     }
 
     if (canEdit && !isFullscreen) {
-      buttons.push(<ToolbarButton tooltip="Add panel" icon="panel-add" onClick={onAddPanel} key="button-panel-add" />);
+      buttons.push(
+        <ToolbarButton tooltip="Ajouter un tableau" icon="panel-add" onClick={onAddPanel} key="button-panel-add" />
+      );
       buttons.push(
         <ModalsController key="button-save">
           {({ showModal, hideModal }) => (
             <ToolbarButton
-              tooltip="Save dashboard"
+              tooltip="Sauvegarder"
               icon="save"
               onClick={() => {
                 showModal(SaveDashboardModalProxy, {
@@ -213,7 +215,7 @@ class DashNav extends PureComponent<Props> {
     if (snapshotUrl) {
       buttons.push(
         <ToolbarButton
-          tooltip="Open original dashboard"
+          tooltip="Ouvrir le tableau original"
           onClick={() => this.gotoSnapshotOrigin(snapshotUrl)}
           icon="link"
           key="button-snapshot"
@@ -222,9 +224,7 @@ class DashNav extends PureComponent<Props> {
     }
 
     if (showSettings) {
-      buttons.push(
-        <ToolbarButton tooltip="Dashboard settings" icon="cog" onClick={this.onOpenSettings} key="button-settings" />
-      );
+      buttons.push(<ToolbarButton tooltip="Options" icon="cog" onClick={this.onOpenSettings} key="button-settings" />);
     }
 
     this.addCustomContent(customRightActions, buttons);

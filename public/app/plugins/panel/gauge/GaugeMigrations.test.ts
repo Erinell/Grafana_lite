@@ -73,7 +73,7 @@ describe('Gauge Panel Migrations', () => {
       ],
       timeFrom: null,
       timeShift: null,
-      title: 'Panel Title',
+      title: 'Titre du panneau',
       type: 'gauge',
     } as Omit<PanelModel, 'fieldConfig'>;
 

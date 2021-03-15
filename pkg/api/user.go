@@ -262,7 +262,7 @@ func redirectToChangePassword(c *models.ReqContext) {
 func SearchUsers(c *models.ReqContext) response.Response {
 	query, err := searchUser(c)
 	if err != nil {
-		return response.Error(500, "Failed to fetch users", err)
+		return response.Error(500, "Echec de récupération des utilisateurs", err)
 	}
 
 	return response.JSON(200, query.Result.Users)
@@ -272,7 +272,7 @@ func SearchUsers(c *models.ReqContext) response.Response {
 func SearchUsersWithPaging(c *models.ReqContext) response.Response {
 	query, err := searchUser(c)
 	if err != nil {
-		return response.Error(500, "Failed to fetch users", err)
+		return response.Error(500, "Echec de récupération des utilisateurs", err)
 	}
 
 	return response.JSON(200, query.Result)

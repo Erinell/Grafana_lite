@@ -101,7 +101,7 @@ local alertDashboardTemplate = {
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Titre du panneau",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -171,7 +171,7 @@ local alertDashboardTemplate = {
     ]
   },
   "timezone": "",
-  "title": "New dashboard",
+  "title": "Nouveau tableau",
   "uid": null,
   "version": 0
 };

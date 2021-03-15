@@ -10,86 +10,86 @@ import { timeZoneAbbrevation, dateTimeFormat, dateTimeFormatTimeAgo } from './fo
 import { dateTimeParse } from './parser';
 
 const spans: { [key: string]: { display: string; section?: number } } = {
-  s: { display: 'second' },
+  s: { display: 'seconde' },
   m: { display: 'minute' },
-  h: { display: 'hour' },
-  d: { display: 'day' },
-  w: { display: 'week' },
-  M: { display: 'month' },
-  y: { display: 'year' },
+  h: { display: 'heure' },
+  d: { display: 'jour' },
+  w: { display: 'semaine' },
+  M: { display: 'mois' },
+  y: { display: 'année' },
 };
 
 const rangeOptions = [
-  { from: 'now/d', to: 'now/d', display: 'Today', section: 2 },
-  { from: 'now/d', to: 'now', display: 'Today so far', section: 2 },
-  { from: 'now/w', to: 'now/w', display: 'This week', section: 2 },
-  { from: 'now/w', to: 'now', display: 'This week so far', section: 2 },
-  { from: 'now/M', to: 'now/M', display: 'This month', section: 2 },
-  { from: 'now/M', to: 'now', display: 'This month so far', section: 2 },
-  { from: 'now/y', to: 'now/y', display: 'This year', section: 2 },
-  { from: 'now/y', to: 'now', display: 'This year so far', section: 2 },
+  { from: 'now/d', to: 'now/d', display: "Ajourd'hui", section: 2 },
+  { from: 'now/d', to: 'now', display: "Ajourd'hui jusqu'à présent", section: 2 },
+  { from: 'now/w', to: 'now/w', display: 'Cette semaine', section: 2 },
+  { from: 'now/w', to: 'now', display: "Cette semaine jusqu'à présent", section: 2 },
+  { from: 'now/M', to: 'now/M', display: 'Ce mois', section: 2 },
+  { from: 'now/M', to: 'now', display: "Ce mois jusqu'à présent", section: 2 },
+  { from: 'now/y', to: 'now/y', display: 'Cette année', section: 2 },
+  { from: 'now/y', to: 'now', display: "Cette année jusqu'à présent", section: 2 },
 
-  { from: 'now-1d/d', to: 'now-1d/d', display: 'Yesterday', section: 1 },
+  { from: 'now-1d/d', to: 'now-1d/d', display: 'Hier', section: 1 },
   {
     from: 'now-2d/d',
     to: 'now-2d/d',
-    display: 'Day before yesterday',
+    display: 'Avant-hier',
     section: 1,
   },
   {
     from: 'now-7d/d',
     to: 'now-7d/d',
-    display: 'This day last week',
+    display: 'Ce jour la semaine dernière',
     section: 1,
   },
-  { from: 'now-1w/w', to: 'now-1w/w', display: 'Previous week', section: 1 },
-  { from: 'now-1M/M', to: 'now-1M/M', display: 'Previous month', section: 1 },
-  { from: 'now-1y/y', to: 'now-1y/y', display: 'Previous year', section: 1 },
+  { from: 'now-1w/w', to: 'now-1w/w', display: 'Semaine dernière', section: 1 },
+  { from: 'now-1M/M', to: 'now-1M/M', display: 'Mois dernier', section: 1 },
+  { from: 'now-1y/y', to: 'now-1y/y', display: 'Année dernière', section: 1 },
 
-  { from: 'now-5m', to: 'now', display: 'Last 5 minutes', section: 3 },
-  { from: 'now-15m', to: 'now', display: 'Last 15 minutes', section: 3 },
-  { from: 'now-30m', to: 'now', display: 'Last 30 minutes', section: 3 },
-  { from: 'now-1h', to: 'now', display: 'Last 1 hour', section: 3 },
-  { from: 'now-3h', to: 'now', display: 'Last 3 hours', section: 3 },
-  { from: 'now-6h', to: 'now', display: 'Last 6 hours', section: 3 },
-  { from: 'now-12h', to: 'now', display: 'Last 12 hours', section: 3 },
-  { from: 'now-24h', to: 'now', display: 'Last 24 hours', section: 3 },
-  { from: 'now-2d', to: 'now', display: 'Last 2 days', section: 0 },
-  { from: 'now-7d', to: 'now', display: 'Last 7 days', section: 0 },
-  { from: 'now-30d', to: 'now', display: 'Last 30 days', section: 0 },
-  { from: 'now-90d', to: 'now', display: 'Last 90 days', section: 0 },
-  { from: 'now-6M', to: 'now', display: 'Last 6 months', section: 0 },
-  { from: 'now-1y', to: 'now', display: 'Last 1 year', section: 0 },
-  { from: 'now-2y', to: 'now', display: 'Last 2 years', section: 0 },
-  { from: 'now-5y', to: 'now', display: 'Last 5 years', section: 0 },
+  { from: 'now-5m', to: 'now', display: 'Dernières 5 minutes', section: 3 },
+  { from: 'now-15m', to: 'now', display: 'Dernières 15 minutes', section: 3 },
+  { from: 'now-30m', to: 'now', display: 'Dernières 30 minutes', section: 3 },
+  { from: 'now-1h', to: 'now', display: 'Dernière heure', section: 3 },
+  { from: 'now-3h', to: 'now', display: 'Dernières 3 heures', section: 3 },
+  { from: 'now-6h', to: 'now', display: 'Dernières 6 heures', section: 3 },
+  { from: 'now-12h', to: 'now', display: 'Dernières 12 heures', section: 3 },
+  { from: 'now-24h', to: 'now', display: 'Dernières 24 heures', section: 3 },
+  { from: 'now-2d', to: 'now', display: 'Derniers 2 days', section: 0 },
+  { from: 'now-7d', to: 'now', display: 'Derniers 7 jours', section: 0 },
+  { from: 'now-30d', to: 'now', display: 'Derniers 30 jours', section: 0 },
+  { from: 'now-90d', to: 'now', display: 'Derniers 90 jours', section: 0 },
+  { from: 'now-6M', to: 'now', display: 'Derniers 6 mois', section: 0 },
+  { from: 'now-1y', to: 'now', display: 'Dernier 1 an', section: 0 },
+  { from: 'now-2y', to: 'now', display: 'Derniers 2 ans', section: 0 },
+  { from: 'now-5y', to: 'now', display: 'Derniers 5 ans', section: 0 },
 ];
 
 const hiddenRangeOptions = [
-  { from: 'now', to: 'now+1m', display: 'Next minute', section: 3 },
-  { from: 'now', to: 'now+5m', display: 'Next 5 minutes', section: 3 },
-  { from: 'now', to: 'now+15m', display: 'Next 15 minutes', section: 3 },
-  { from: 'now', to: 'now+30m', display: 'Next 30 minutes', section: 3 },
-  { from: 'now', to: 'now+1h', display: 'Next hour', section: 3 },
-  { from: 'now', to: 'now+3h', display: 'Next 3 hours', section: 3 },
-  { from: 'now', to: 'now+6h', display: 'Next 6 hours', section: 3 },
-  { from: 'now', to: 'now+12h', display: 'Next 12 hours', section: 3 },
-  { from: 'now', to: 'now+24h', display: 'Next 24 hours', section: 3 },
-  { from: 'now', to: 'now+2d', display: 'Next 2 days', section: 0 },
-  { from: 'now', to: 'now+7d', display: 'Next 7 days', section: 0 },
-  { from: 'now', to: 'now+30d', display: 'Next 30 days', section: 0 },
-  { from: 'now', to: 'now+90d', display: 'Next 90 days', section: 0 },
-  { from: 'now', to: 'now+6M', display: 'Next 6 months', section: 0 },
-  { from: 'now', to: 'now+1y', display: 'Next year', section: 0 },
-  { from: 'now', to: 'now+2y', display: 'Next 2 years', section: 0 },
-  { from: 'now', to: 'now+5y', display: 'Next 5 years', section: 0 },
+  { from: 'now', to: 'now+1m', display: 'Prochaine minute', section: 3 },
+  { from: 'now', to: 'now+5m', display: 'Prochaines 5 minutes', section: 3 },
+  { from: 'now', to: 'now+15m', display: 'Prochaines 15 minutes', section: 3 },
+  { from: 'now', to: 'now+30m', display: 'Prochaines 30 minutes', section: 3 },
+  { from: 'now', to: 'now+1h', display: 'Prochaine heure', section: 3 },
+  { from: 'now', to: 'now+3h', display: 'Prochaines 3 heures', section: 3 },
+  { from: 'now', to: 'now+6h', display: 'Prochaines 6 heures', section: 3 },
+  { from: 'now', to: 'now+12h', display: 'Prochaines 12 heures', section: 3 },
+  { from: 'now', to: 'now+24h', display: 'Prochaines 24 heures', section: 3 },
+  { from: 'now', to: 'now+2d', display: 'Prochains 2 jours', section: 0 },
+  { from: 'now', to: 'now+7d', display: 'Prochains 7 jours', section: 0 },
+  { from: 'now', to: 'now+30d', display: 'Prochains 30 jours', section: 0 },
+  { from: 'now', to: 'now+90d', display: 'Prochains 90 jours', section: 0 },
+  { from: 'now', to: 'now+6M', display: 'Prochains 6 mois', section: 0 },
+  { from: 'now', to: 'now+1y', display: 'Prochain année', section: 0 },
+  { from: 'now', to: 'now+2y', display: 'Prochains 2 ans', section: 0 },
+  { from: 'now', to: 'now+5y', display: 'Prochains 5 ans', section: 0 },
 ];
 
 const rangeIndex: any = {};
 each(rangeOptions, (frame: any) => {
-  rangeIndex[frame.from + ' to ' + frame.to] = frame;
+  rangeIndex[frame.from + ' à ' + frame.to] = frame;
 });
 each(hiddenRangeOptions, (frame: any) => {
-  rangeIndex[frame.from + ' to ' + frame.to] = frame;
+  rangeIndex[frame.from + ' à ' + frame.to] = frame;
 });
 
 export function getRelativeTimesList(timepickerSettings: any, currentDisplay: any) {
@@ -120,7 +120,7 @@ export function describeTextRange(expr: any) {
     expr = (isLast ? 'now-' : 'now') + expr;
   }
 
-  let opt = rangeIndex[expr + ' to now'];
+  let opt = rangeIndex[expr + ' à now'];
   if (opt) {
     return opt;
   }
@@ -137,7 +137,7 @@ export function describeTextRange(expr: any) {
     const amount = parseInt(parts[2], 10);
     const span = spans[unit];
     if (span) {
-      opt.display = isLast ? 'Last ' : 'Next ';
+      opt.display = isLast ? 'Dernier ' : 'Prochain ';
       opt.display += amount + ' ' + span.display;
       opt.section = span.section;
       if (amount > 1) {
@@ -145,7 +145,7 @@ export function describeTextRange(expr: any) {
       }
     }
   } else {
-    opt.display = opt.from + ' to ' + opt.to;
+    opt.display = opt.from + ' à ' + opt.to;
     opt.invalid = true;
   }
 
@@ -165,7 +165,7 @@ export function describeTextRange(expr: any) {
  * @alpha
  */
 export function describeTimeRange(range: RawTimeRange, timeZone?: TimeZone): string {
-  const option = rangeIndex[range.from.toString() + ' to ' + range.to.toString()];
+  const option = rangeIndex[range.from.toString() + ' à ' + range.to.toString()];
 
   if (option) {
     return option.display;
@@ -174,17 +174,17 @@ export function describeTimeRange(range: RawTimeRange, timeZone?: TimeZone): str
   const options = { timeZone };
 
   if (isDateTime(range.from) && isDateTime(range.to)) {
-    return dateTimeFormat(range.from, options) + ' to ' + dateTimeFormat(range.to, options);
+    return dateTimeFormat(range.from, options) + ' à ' + dateTimeFormat(range.to, options);
   }
 
   if (isDateTime(range.from)) {
     const parsed = dateMath.parse(range.to, true, 'utc');
-    return parsed ? dateTimeFormat(range.from, options) + ' to ' + dateTimeFormatTimeAgo(parsed, options) : '';
+    return parsed ? dateTimeFormat(range.from, options) + ' à ' + dateTimeFormatTimeAgo(parsed, options) : '';
   }
 
   if (isDateTime(range.to)) {
     const parsed = dateMath.parse(range.from, false, 'utc');
-    return parsed ? dateTimeFormatTimeAgo(parsed, options) + ' to ' + dateTimeFormat(range.to, options) : '';
+    return parsed ? dateTimeFormatTimeAgo(parsed, options) + ' à ' + dateTimeFormat(range.to, options) : '';
   }
 
   if (range.to.toString() === 'now') {
@@ -192,7 +192,7 @@ export function describeTimeRange(range: RawTimeRange, timeZone?: TimeZone): str
     return res.display;
   }
 
-  return range.from.toString() + ' to ' + range.to.toString();
+  return range.from.toString() + ' à ' + range.to.toString();
 }
 
 export const isValidTimeSpan = (value: string) => {
@@ -260,7 +260,7 @@ export function secondsToHms(seconds: number): string {
     return numMilliseconds + 'ms';
   }
 
-  return 'less than a millisecond'; //'just now' //or other string you like;
+  return 'inférieur à une milliseconde'; //'just now' //or other string you like;
 }
 
 export function calculateInterval(range: TimeRange, resolution: number, lowLimitInterval?: string): IntervalValues {

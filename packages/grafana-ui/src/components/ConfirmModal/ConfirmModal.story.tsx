@@ -58,7 +58,7 @@ export const Basic: Story<StoryProps> = ({ title, bodyText, confirmText, dismiss
 
 Basic.args = {
   title: 'Delete user',
-  bodyText: 'Are you sure you want to delete this user?',
+  bodyText: 'Êtes-vous sûr de vouloir supprimer cet utilisateur ?',
   confirmText: 'Delete',
   dismissText: 'Cancel',
   icon: 'exclamation-triangle',

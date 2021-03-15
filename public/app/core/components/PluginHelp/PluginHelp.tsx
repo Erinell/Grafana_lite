@@ -67,7 +67,7 @@ export class PluginHelp extends PureComponent<Props, State> {
     const { isError, isLoading, help } = this.state;
 
     if (isLoading) {
-      return <h2>Loading help...</h2>;
+      return <h2>Chargement aide...</h2>;
     }
 
     if (isError) {

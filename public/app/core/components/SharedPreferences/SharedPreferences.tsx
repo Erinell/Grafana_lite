@@ -32,9 +32,9 @@ export interface State {
 }
 
 const themes: SelectableValue[] = [
-  { value: '', label: 'Default' },
-  { value: 'dark', label: 'Dark' },
-  { value: 'light', label: 'Light' },
+  { value: '', label: 'Défaut' },
+  { value: 'dark', label: 'Sombre' },
+  { value: 'light', label: 'Clair' },
 ];
 
 export class SharedPreferences extends PureComponent<Props, State> {
@@ -56,7 +56,7 @@ export class SharedPreferences extends PureComponent<Props, State> {
     const dashboards = await backendSrv.search({ starred: true });
     const defaultDashboardHit: DashboardSearchHit = {
       id: 0,
-      title: 'Default',
+      title: 'Défaut',
       tags: [],
       type: '' as DashboardSearchItemType,
       uid: '',
@@ -128,7 +128,7 @@ export class SharedPreferences extends PureComponent<Props, State> {
         {() => {
           return (
             <FieldSet label="Preferences">
-              <Field label="UI Theme">
+              <Field label="Thème interface">
                 <RadioButtonGroup
                   options={themes}
                   value={themes.find((item) => item.value === theme)?.value}
@@ -139,8 +139,8 @@ export class SharedPreferences extends PureComponent<Props, State> {
               <Field
                 label={
                   <Label>
-                    <span className={styles.labelText}>Home Dashboard</span>
-                    <Tooltip content="Not finding dashboard you want? Star it first, then it should appear in this select box.">
+                    <span className={styles.labelText}>Tableau accueil</span>
+                    <Tooltip content="Vous ne trouvez pas votre tableau ? Vous devez d'abord le mettre en favoris et il apparaitra ici.">
                       <Icon name="info-circle" />
                     </Tooltip>
                   </Label>
@@ -152,15 +152,15 @@ export class SharedPreferences extends PureComponent<Props, State> {
                   getOptionLabel={this.getFullDashName}
                   onChange={(dashboard: DashboardSearchHit) => this.onHomeDashboardChanged(dashboard.id)}
                   options={dashboards}
-                  placeholder="Choose default dashboard"
+                  placeholder="Choisir un tableau par défaut"
                 />
               </Field>
 
-              <Field label="Timezone" aria-label={selectors.components.TimeZonePicker.container}>
+              <Field label="Fuseau horaire" aria-label={selectors.components.TimeZonePicker.container}>
                 <TimeZonePicker includeInternal={true} value={timezone} onChange={this.onTimeZoneChanged} />
               </Field>
               <div className="gf-form-button-row">
-                <Button variant="primary">Save</Button>
+                <Button variant="primary">Sauvegarder</Button>
               </div>
             </FieldSet>
           );

@@ -25,9 +25,9 @@ export const plugin = new PanelPlugin<TextOptions>(TextPanel)
         path: 'content',
         name: 'Content',
         description: 'Content of the panel',
-        defaultValue: `# Title
+        defaultValue: `# Titre
 
-For markdown syntax help: [commonmark.org/help](https://commonmark.org/help/)
+Pour la syntaxe markdown [cliquer ici](https://commonmark.org/help/)
          `,
         editor: TextPanelEditor,
       });

@@ -1,21 +1,21 @@
 <page-header model="ctrl.navModel"></page-header>
 
 <div class="page-container page-body" ng-form="ctrl.playlistEditForm">
-  <h3 class="page-sub-heading" ng-hide="ctrl.isNew">Edit Playlist</h3>
-  <h3 class="page-sub-heading" ng-show="ctrl.isNew">New Playlist</h3>
+  <h3 class="page-sub-heading" ng-hide="ctrl.isNew">Editer la Playlist</h3>
+  <h3 class="page-sub-heading" ng-show="ctrl.isNew">Nouvelle Playlist</h3>
 
   <p class="playlist-description">
-    A playlist rotates through a pre-selected list of Dashboards. A Playlist can be a great way to build situational
-    awareness, or just show off your metrics to your team or visitors.
+    Une playlist tourne dans une liste préselectionnée de tableaux.
+    Une playlist peut être un excellent moyen de faire une présentation à une équipe.
   </p>
 
   <div class="gf-form-group">
     <div class="gf-form">
-      <span class="gf-form-label width-7">Name</span>
+      <span class="gf-form-label width-7">Nom</span>
       <input type="text" required ng-model="ctrl.playlist.name" class="gf-form-input max-width-21" />
     </div>
     <div class="gf-form">
-      <span class="gf-form-label width-7">Interval</span>
+      <span class="gf-form-label width-7">Intervalle</span>
       <input
         type="text"
         required
@@ -27,7 +27,7 @@
   </div>
 
   <div class="gf-form-group">
-    <h3 class="page-headering">Dashboards</h3>
+    <h3 class="page-headering">Tableaux</h3>
 
     <table class="filter-table playlist-available-list">
       <tr ng-repeat="playlistItem in ctrl.playlistItems">
@@ -54,13 +54,13 @@
         </td>
       </tr>
       <tr ng-if="ctrl.playlistItems.length === 0">
-        <td><em>Playlist is empty, add dashboards below.</em></td>
+        <td><em>Playlist vide, ajouter des tableaux en dessous.</em></td>
       </tr>
     </table>
   </div>
 
   <div class="gf-form-group">
-    <h3 class="page-headering">Add dashboards</h3>
+    <h3 class="page-headering">Ajouter des tableaux</h3>
     <playlist-search class="playlist-search-container" search-started="ctrl.searchStarted(promise)"></playlist-search>
 
     <div ng-if="ctrl.filteredDashboards.length > 0">
@@ -74,7 +74,7 @@
           <td class="add-dashboard">
             <button class="btn btn-inverse btn-small pull-right" ng-click="ctrl.addPlaylistItem(playlistItem)">
               <icon name="'plus'"></icon>
-              Add to playlist
+              Ajouter à la playlist
             </button>
           </td>
         </tr>
@@ -92,7 +92,7 @@
           <td class="add-dashboard">
             <button class="btn btn-inverse btn-small pull-right" ng-click="ctrl.addTagPlaylistItem(tag)">
               <icon name="'plus'"></icon>
-              Add to playlist
+              Ajouter à la playlist
             </button>
           </td>
         </tr>
@@ -108,14 +108,14 @@
       ng-show="ctrl.isNew"
       ng-disabled="ctrl.playlistEditForm.$invalid || ctrl.isPlaylistEmpty()"
       ng-click="ctrl.savePlaylist(ctrl.playlist, ctrl.playlistItems)"
-      >Create</a
+      >Créer</a
     >
     <a
       class="btn btn-primary"
       ng-show="!ctrl.isNew"
       ng-disabled="ctrl.playlistEditForm.$invalid || ctrl.isPlaylistEmpty()"
       ng-click="ctrl.savePlaylist(ctrl.playlist, ctrl.playlistItems)"
-      >Save</a
+      >Sauvegarder</a
     >
     <a class="btn-text" ng-click="ctrl.backToList()">Cancel</a>
   </div>

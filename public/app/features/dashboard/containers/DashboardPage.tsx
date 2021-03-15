@@ -196,7 +196,7 @@ export class DashboardPage extends PureComponent<Props, State> {
 
     if (!panel) {
       // Panel not found
-      this.props.notifyApp(createErrorNotification(`Panel with id ${urlPanelId} not found`));
+      this.props.notifyApp(createErrorNotification(`Panneau avec id ${urlPanelId} non trouvé`));
       // Clear url state
       locationService.partial({ editPanel: null, viewPanel: null });
       return;
@@ -238,7 +238,7 @@ export class DashboardPage extends PureComponent<Props, State> {
     dashboard.addPanel({
       type: 'add-panel',
       gridPos: { x: 0, y: 0, w: 12, h: 8 },
-      title: 'Panel Title',
+      title: 'Titre du panneau',
     });
 
     // scroll to top after adding panel

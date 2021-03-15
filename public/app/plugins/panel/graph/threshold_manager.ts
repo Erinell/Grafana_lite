@@ -19,7 +19,7 @@ export class ThresholdManager {
   getHandleHtml(handleIndex: any, model: { colorMode: string }, valueStr: any) {
     let stateClass = model.colorMode;
     if (model.colorMode === 'custom') {
-      stateClass = 'critical';
+      stateClass = 'Critique';
     }
 
     return `
@@ -206,12 +206,12 @@ export class ThresholdManager {
       let fillColor, lineColor;
 
       switch (threshold.colorMode) {
-        case 'critical': {
+        case 'Critique': {
           fillColor = 'rgba(234, 112, 112, 0.12)';
           lineColor = 'rgba(237, 46, 24, 0.60)';
           break;
         }
-        case 'warning': {
+        case 'Attention': {
           fillColor = 'rgba(235, 138, 14, 0.12)';
           lineColor = 'rgba(247, 149, 32, 0.60)';
           break;
@@ -230,7 +230,7 @@ export class ThresholdManager {
 
       // fill
       if (threshold.fill) {
-        if (threshold.yaxis === 'right' && this.hasSecondYAxis) {
+        if (threshold.yaxis === 'droite' && this.hasSecondYAxis) {
           options.grid.markings.push({
             y2axis: { from: threshold.value, to: limit },
             color: getColorForTheme(fillColor, config.theme),
@@ -243,7 +243,7 @@ export class ThresholdManager {
         }
       }
       if (threshold.line) {
-        if (threshold.yaxis === 'right' && this.hasSecondYAxis) {
+        if (threshold.yaxis === 'droite' && this.hasSecondYAxis) {
           options.grid.markings.push({
             y2axis: { from: threshold.value, to: threshold.value },
             color: getColorForTheme(lineColor, config.theme),

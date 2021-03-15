@@ -1,46 +1,46 @@
 ![Grafana](docs/logo-horizontal.png)
 
-The open-source platform for monitoring and observability.
+La platforme open source pour surveiller et visualiser.
 
 [![License](https://img.shields.io/github/license/grafana/grafana)](LICENSE)
 [![Circle CI](https://img.shields.io/circleci/build/gh/grafana/grafana)](https://circleci.com/gh/grafana/grafana)
 [![Go Report Card](https://goreportcard.com/badge/github.com/grafana/grafana)](https://goreportcard.com/report/github.com/grafana/grafana)
 
-Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored. Create, explore, and share dashboards with your team and foster a data driven culture:
+Grafana vous permet d'interroger, de visualiser et d'alerter et de comprendres vos données, peu importe leurs emplacements. Créer, explorer et partager des tableaux avec votre équipe et encourager une culture des données :
 
-- **Visualize:** Fast and flexible client side graphs with a multitude of options. Panel plugins offer many different ways to visualize metrics and logs.
-- **Dynamic Dashboards:** Create dynamic & reusable dashboards with template variables that appear as dropdowns at the top of the dashboard.
-- **Explore Metrics:** Explore your data through ad-hoc queries and dynamic drilldown. Split view and compare different time ranges, queries and data sources side by side.
-- **Explore Logs:** Experience the magic of switching from metrics to logs with preserved label filters. Quickly search through all your logs or streaming them live.
-- **Alerting:** Visually define alert rules for your most important metrics. Grafana will continuously evaluate and send notifications to systems like Slack, PagerDuty, VictorOps, OpsGenie.
-- **Mixed Data Sources:** Mix different data sources in the same graph! You can specify a data source on a per-query basis. This works for even custom datasources.
+- **Visualiser :** Graphiques coté client rapide et flexible avec une multitude d'options. Les plugins offrent beaucoup de façon de visualiser des données et des journaux.
+- **Tableaux dynamiques :** Créer des tableaux dynamiques et réutilisable avec des modèles de variables qui apparaissent en listes déroulantes en haut du tableau.
+- **Explorer les données :** Explorer vos données à travers des requêtes et des explorations dynamiques. Séparer les vues et comparer différentes plages de temps, requêtes et données cote à cote.
+- **Explorer les journaux :** Expérimentez la magie de passer entre métriques et journaux avec la préservation des filtres. Recherchez rapidement à travers touts vos journaux ou diffuser les en direct.
+- **Alerter :** Définir des alertes visuelles pour vos métriques les plus importantes. Grafana va continuellement évaluer et envoyer des notifications aux systèmes comme Slack, PagerDuty, VictorOps, OpsGenie.
+- **Mélanger des sources :** Mélangez différentes sources de données dans le même graphique ! Vous pouvez spécifier une source de donnée basée par requête. Ceci fonctionne pour la plupart des sources de données customisées.
 
-## Get started
+## Commencer
 
-- [Get Grafana](https://grafana.com/get)
+- [Avoir Grafana](https://grafana.com/get)
 - [Installation guides](http://docs.grafana.org/installation/)
 
-Unsure if Grafana is for you? Watch Grafana in action on [play.grafana.org](https://play.grafana.org/)!
+Pas sûr que Grafana soit pour vous ? regardez ici [play.grafana.org](https://play.grafana.org/)!
 
 ## Documentation
 
-The Grafana documentation is available at [grafana.com/docs](https://grafana.com/docs/).
+La documentation Grafana est disponible [grafana.com/docs](https://grafana.com/docs/).
 
-## Contributing
+## Contribuer
 
-If you're interested in contributing to the Grafana project:
+Si vous voulez contribuer au projet Grafana :
 
-- Start by reading the [Contributing guide](/CONTRIBUTING.md).
-- Learn how to set up your local environment, in our [Developer guide](/contribute/developer-guide.md).
-- Explore our [beginner-friendly issues](https://github.com/grafana/grafana/issues?q=is%3Aopen+is%3Aissue+label%3A%22beginner+friendly%22).
+- Commencer par lire [Guide de contribution](/CONTRIBUTING.md).
+- Apprendre l'environnement [Guide développeur](/contribute/developer-guide.md).
+- Explorer notre [beginner-friendly issues](https://github.com/grafana/grafana/issues?q=is%3Aopen+is%3Aissue+label%3A%22beginner+friendly%22).
 
-## Get involved
+## Être informer
 
-- Follow [@grafana on Twitter](https://twitter.com/grafana/).
-- Read and subscribe to the [Grafana blog](https://grafana.com/blog/).
-- If you have a specific question, check out our [discussion forums](https://community.grafana.com/).
-- For general discussions, join us on the [official Slack](http://slack.raintank.io/) team.
+- Suivre [@grafana sur Twitter](https://twitter.com/grafana/).
+- Lire et souscrire au [blog Grafana](https://grafana.com/blog/).
+- Si vous avez une question spécifique [discussion forums](https://community.grafana.com/).
+- Pour les discussions générales, rejoignez [Slack officiel](http://slack.raintank.io/) team.
 
-## License
+## Licence
 
-Grafana is distributed under the [Apache 2.0 License](https://github.com/grafana/grafana/blob/master/LICENSE).
+Grafana est distribué par [Apache 2.0 Licence](https://github.com/grafana/grafana/blob/master/LICENSE).

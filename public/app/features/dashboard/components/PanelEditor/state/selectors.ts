@@ -21,14 +21,14 @@ export const getPanelEditorTabs = memoizeOne((tab?: string, plugin?: PanelPlugin
 
     tabs.push({
       id: PanelEditorTabId.Query,
-      text: 'Query',
+      text: 'Requêtes',
       icon: 'database',
       active: false,
     });
 
     tabs.push({
       id: PanelEditorTabId.Transform,
-      text: 'Transform',
+      text: 'Transformations',
       icon: 'process',
       active: false,
     });
@@ -37,7 +37,7 @@ export const getPanelEditorTabs = memoizeOne((tab?: string, plugin?: PanelPlugin
   if (getConfig().alertingEnabled && plugin.meta.id === 'graph') {
     tabs.push({
       id: PanelEditorTabId.Alert,
-      text: 'Alert',
+      text: 'Alertes',
       icon: 'bell',
       active: false,
     });

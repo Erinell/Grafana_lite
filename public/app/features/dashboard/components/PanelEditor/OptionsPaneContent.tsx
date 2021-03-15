@@ -223,7 +223,7 @@ export const TabsBarContent: React.FC<{
         </>
       )}
       <div className={styles.tabsButton}>
-        <ToolbarButton icon="angle-right" tooltip="Close options pane" onClick={onClose} />
+        <ToolbarButton icon="angle-right" tooltip="Fermer les options" onClick={onClose} />
       </div>
     </>
   );
@@ -231,19 +231,19 @@ export const TabsBarContent: React.FC<{
 
 const tabSelections: Array<SelectableValue<string>> = [
   {
-    label: 'Panel',
+    label: 'Panneau',
     value: 'options',
-    tooltip: 'Configure panel display options',
+    tooltip: 'Configurer le panneau',
   },
   {
-    label: 'Field',
+    label: 'Champs',
     value: 'defaults',
-    tooltip: 'Configure field options',
+    tooltip: 'Configurer les champs',
   },
   {
-    label: 'Overrides',
+    label: 'Remplacements',
     value: 'overrides',
-    tooltip: 'Configure field option overrides',
+    tooltip: 'Configurer les remplacements de champs',
   },
 ];
 

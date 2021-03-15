@@ -36,15 +36,15 @@ const getModalBody = (panels: PanelModel[], title: string) => {
   const totalAlerts = sumBy(panels, (panel) => (panel.alert ? 1 : 0));
   return totalAlerts > 0 ? (
     <>
-      <p>Do you want to delete this dashboard?</p>
+      <p>Voulez vous supprimer ce tableau ?</p>
       <p>
-        This dashboard contains {totalAlerts} alert{totalAlerts > 1 ? 's' : ''}. Deleting this dashboard will also
-        delete those alerts
+        Ce tableau contiens {totalAlerts} alerte{totalAlerts > 1 ? 's' : ''}. Supprimer ce tableau supprimera toutes les
+        alertes
       </p>
     </>
   ) : (
     <>
-      <p>Do you want to delete this dashboard?</p>
+      <p>Voulez vous supprimer ce tableau ?</p>
       <p>{title}</p>
     </>
   );
@@ -61,13 +61,10 @@ const ProvisionedDeleteModal = ({ hideModal, provisionedId }: { hideModal(): voi
       width: 500px;
     `}
   >
-    <p>
-      This dashboard is managed by Grafanas provisioning and cannot be deleted. Remove the dashboard from the config
-      file to delete it.
-    </p>
+    <p>Ce tableau est gérer par Grafana et ne peut être supprimer que par la config.</p>
     <p>
       <i>
-        See{' '}
+        Voir{' '}
         <a
           className="external-link"
           href="http://docs.grafana.org/administration/provisioning/#dashboards"
@@ -76,10 +73,10 @@ const ProvisionedDeleteModal = ({ hideModal, provisionedId }: { hideModal(): voi
         >
           documentation
         </a>{' '}
-        for more information about provisioning.
+        pour plus d&apos;information.
       </i>
       <br />
-      File path: {provisionedId}
+      Chemin du fichier : {provisionedId}
     </p>
     <HorizontalGroup justify="center">
       <Button variant="secondary" onClick={hideModal}>

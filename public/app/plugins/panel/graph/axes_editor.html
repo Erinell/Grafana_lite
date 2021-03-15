@@ -1,11 +1,11 @@
 <div class="editor-row">
   <div class="gf-form-group" ng-repeat="yaxis in ctrl.panel.yaxes">
-    <h5 class="section-heading" ng-show="$index === 0">Left Y</h5>
-    <h5 class="section-heading" ng-show="$index === 1">Right Y</h5>
+    <h5 class="section-heading" ng-show="$index === 0">Y Gauche</h5>
+    <h5 class="section-heading" ng-show="$index === 1">Y Droite</h5>
 
     <gf-form-switch
       class="gf-form"
-      label="Show"
+      label="Voir"
       label-class="width-6"
       checked="yaxis.show"
       on-change="ctrl.render()"
@@ -14,7 +14,7 @@
     <div ng-if="yaxis.show">
       <div class="gf-form gf-form--grow">
         <label class="gf-form-label width-6">
-          Unit
+          Unité
 				  <info-popover mode="right-normal">The default unit used when not defined by the datasource or in the Fields or Overrides configuration.</info-popover>
         </label>
         <unit-picker onChange="ctrl.setUnitFormat(yaxis)" value="yaxis.format" class="flex-grow-1" />
@@ -22,7 +22,7 @@
     </div>
 
     <div class="gf-form">
-      <label class="gf-form-label width-6">Scale</label>
+      <label class="gf-form-label width-6">Echelle</label>
       <div class="gf-form-select-wrapper max-width-20">
         <select
           class="gf-form-input"
@@ -60,13 +60,13 @@
 
     <div ng-if="yaxis.show">
       <div class="gf-form">
-        <label class="gf-form-label width-6">Decimals</label>
+        <label class="gf-form-label width-6">Décimales</label>
         <input
           type="number"
           class="gf-form-input width-5"
           placeholder="auto"
           empty-to-null
-          bs-tooltip="'Override automatic decimal precision for y-axis'"
+          bs-tooltip="'Remplace la précision de décimale pour axe y'"
           data-placement="right"
           ng-model="yaxis.decimals"
           ng-change="ctrl.render()"
@@ -75,7 +75,7 @@
       </div>
 
       <div class="gf-form">
-        <label class="gf-form-label width-6">Label</label>
+        <label class="gf-form-label width-6">Nom</label>
         <input
           type="text"
           class="gf-form-input max-width-20"
@@ -88,10 +88,10 @@
   </div>
 
   <div class="gf-form-group">
-    <h5 class="section-heading">Y-Axes</h5>
+    <h5 class="section-heading">Axes Y</h5>
     <gf-form-switch
       class="gf-form"
-      label="Align Y-Axes"
+      label="Aligner axes Y"
       label-class="width-6"
       switch-class="width-5"
       checked="ctrl.panel.yaxis.align"
@@ -99,7 +99,7 @@
     ></gf-form-switch>
     <div class="gf-form" ng-show="ctrl.panel.yaxis.align">
       <label class="gf-form-label width-6">
-        Level
+        Niveau
       </label>
       <input
         type="number"
@@ -108,17 +108,17 @@
         ng-model="ctrl.panel.yaxis.alignLevel"
         ng-change="ctrl.render()"
         ng-model-onblur
-        bs-tooltip="'Alignment of Y-axes are based on this value, starting from Y=0'"
+        bs-tooltip="'Alignement axes Y basés sur cette valeur, commence à Y=0'"
         data-placement="right"
       />
     </div>
   </div>
 
   <div class="gf-form-group" aria-label="{{ctrl.selectors.xAxisSection}}">
-    <h5 class="section-heading">X-Axis</h5>
+    <h5 class="section-heading">Axes X</h5>
     <gf-form-switch
       class="gf-form"
-      label="Show"
+      label="Voir"
       label-class="width-6"
       checked="ctrl.panel.xaxis.show"
       on-change="ctrl.render()"
@@ -139,7 +139,7 @@
 
     <!-- Series mode -->
     <div class="gf-form" ng-if="ctrl.panel.xaxis.mode === 'series'">
-      <label class="gf-form-label width-6">Value</label>
+      <label class="gf-form-label width-6">Valeur</label>
       <metric-segment-model
         property="ctrl.panel.xaxis.values[0]"
         options="ctrl.xAxisStatOptions"
@@ -151,8 +151,8 @@
     </div>
 
     <!-- Histogram mode -->
-    <div class="gf-form" ng-if="ctrl.panel.xaxis.mode === 'histogram'">
-      <label class="gf-form-label width-6">Buckets</label>
+    <div class="gf-form" ng-if="ctrl.panel.xaxis.mode === 'histogramme'">
+      <label class="gf-form-label width-6">Sceaux</label>
       <input
         type="number"
         class="gf-form-input max-width-8"
@@ -160,12 +160,12 @@
         placeholder="auto"
         ng-change="ctrl.render()"
         ng-model-onblur
-        bs-tooltip="'Number of buckets'"
+        bs-tooltip="'Nombre de sceaux'"
         data-placement="right"
       />
     </div>
 
-    <div class="gf-form-inline" ng-if="ctrl.panel.xaxis.mode === 'histogram'">
+    <div class="gf-form-inline" ng-if="ctrl.panel.xaxis.mode === 'histogramme'">
       <div class="gf-form">
         <label class="gf-form-label width-6">X-Min</label>
         <input

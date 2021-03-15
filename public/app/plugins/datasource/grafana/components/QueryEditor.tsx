@@ -14,14 +14,14 @@ const labelWidth = 12;
 export class QueryEditor extends PureComponent<Props> {
   queryTypes: Array<SelectableValue<GrafanaQueryType>> = [
     {
-      label: 'Random Walk',
+      label: 'Avance aléatoire',
       value: GrafanaQueryType.RandomWalk,
-      description: 'Random signal within the selected time range',
+      description: 'Valeur aléatoire dans la plage de temps',
     },
     {
-      label: 'Live Measurements',
+      label: 'Mesures en direct',
       value: GrafanaQueryType.LiveMeasurements,
-      description: 'Stream real-time measurements from Grafana',
+      description: 'Diffuse en direct les mesures de Grafana',
     },
   ];
 
@@ -57,7 +57,7 @@ export class QueryEditor extends PureComponent<Props> {
       currentChannel = {
         value: channel,
         label: channel,
-        description: `Connected to ${channel}`,
+        description: `Connecté à ${channel}`,
       };
       channels.push(currentChannel);
     }
@@ -66,7 +66,7 @@ export class QueryEditor extends PureComponent<Props> {
       measurements = {};
     }
     const names: Array<SelectableValue<string>> = [
-      { value: '', label: 'All measurements', description: 'Show every measurement streamed to this channel' },
+      { value: '', label: 'All measurements', description: 'Voir chaques mesures streamé à ce canal' },
     ];
 
     let info: LiveMeasurements | undefined = undefined;
@@ -96,7 +96,7 @@ export class QueryEditor extends PureComponent<Props> {
         names.push({
           label: measurements.name,
           value: measurements.name,
-          description: `Frames with name ${measurements.name}`,
+          description: `Cadres avec nom ${measurements.name}`,
         });
       }
     }
@@ -104,17 +104,17 @@ export class QueryEditor extends PureComponent<Props> {
     return (
       <>
         <div className="gf-form">
-          <InlineField label="Channel" grow={true} labelWidth={labelWidth}>
+          <InlineField label="Canal" grow={true} labelWidth={labelWidth}>
             <Select
               options={channels}
               value={currentChannel || ''}
               onChange={this.onChannelChange}
               allowCustomValue={true}
               backspaceRemovesValue={true}
-              placeholder="Select measurements channel"
+              placeholder="Sélectionner le canal de mesure"
               isClearable={true}
-              noOptionsMessage="Enter channel name"
-              formatCreateLabel={(input: string) => `Connect to: ${input}`}
+              noOptionsMessage="Entrer un nom de canal"
+              formatCreateLabel={(input: string) => `Connecté à : ${input}`}
             />
           </InlineField>
         </div>
@@ -127,20 +127,21 @@ export class QueryEditor extends PureComponent<Props> {
                 onChange={this.onMeasurementNameChanged}
                 allowCustomValue={true}
                 backspaceRemovesValue={true}
-                placeholder="Filter by name"
+                placeholder="Filtrer par nom"
                 isClearable={true}
-                noOptionsMessage="Filter by name"
-                formatCreateLabel={(input: string) => `Show: ${input}`}
+                noOptionsMessage="Filtrer par nom"
+                formatCreateLabel={(input: string) => `Voir : ${input}`}
                 isSearchable={true}
               />
             </InlineField>
           </div>
         )}
 
-        <FeatureInfoBox title="Grafana Live - Measurements" featureState={FeatureState.alpha}>
+        <FeatureInfoBox title="Grafana Live - Mesures" featureState={FeatureState.alpha}>
           <p>
-            This supports real-time event streams in Grafana core. This feature is under heavy development. Expect the
-            interfaces and structures to change as this becomes more production ready.
+            Cela prend en charge les strems en temps réel dans le noyau Grafana. Cette fonctionnalité est en cours de
+            développement intensif. Attendez-vous à ce que les interfaces et les structures changent à mesure du
+            développement.
           </p>
         </FeatureInfoBox>
       </>
@@ -152,7 +153,7 @@ export class QueryEditor extends PureComponent<Props> {
     return (
       <>
         <div className="gf-form">
-          <InlineField label="Query type" grow={true} labelWidth={labelWidth}>
+          <InlineField label="Type requête" grow={true} labelWidth={labelWidth}>
             <Select
               options={this.queryTypes}
               value={this.queryTypes.find((v) => v.value === query.queryType) || this.queryTypes[0]}

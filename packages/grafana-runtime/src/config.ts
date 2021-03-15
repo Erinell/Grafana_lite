@@ -81,7 +81,7 @@ export class GrafanaBootConfig implements GrafanaConfig {
       datasources: {},
       windowTitlePrefix: 'Grafana - ',
       panels: {},
-      newPanelTitle: 'Panel Title',
+      newPanelTitle: 'Titre du panneau',
       playlist_timespan: '1m',
       unsaved_changes_warning: true,
       appUrl: '',

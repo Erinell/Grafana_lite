@@ -12,7 +12,7 @@ export enum InternalTimeZones {
 export const timeZoneFormatUserFriendly = (timeZone: TimeZone | undefined) => {
   switch (getTimeZone({ timeZone })) {
     case 'browser':
-      return 'Local browser time';
+      return 'Temps local navigateur';
     case 'utc':
       return 'UTC';
     default:
@@ -98,7 +98,7 @@ const mapInternal = (zone: string, timestamp: number): TimeZoneInfo | undefined 
   switch (zone) {
     case InternalTimeZones.utc: {
       return {
-        name: 'Coordinated Universal Time',
+        name: 'Temps universel',
         ianaName: 'UTC',
         zone,
         countries: [],
@@ -118,7 +118,7 @@ const mapInternal = (zone: string, timestamp: number): TimeZoneInfo | undefined 
         offsetInMins: 0,
         ...info,
         ianaName: (info as TimeZoneInfo).ianaName,
-        name: 'Default',
+        name: 'Defaut',
         zone,
       };
     }
@@ -129,10 +129,10 @@ const mapInternal = (zone: string, timestamp: number): TimeZoneInfo | undefined 
 
       return {
         countries: countriesByTimeZone[tz] ?? [],
-        abbreviation: 'Your local time',
+        abbreviation: 'Votre temps local',
         offsetInMins: new Date().getTimezoneOffset(),
         ...info,
-        name: 'Browser Time',
+        name: 'Temps navigateur',
         ianaName: (info as TimeZoneInfo).ianaName,
         zone,
       };

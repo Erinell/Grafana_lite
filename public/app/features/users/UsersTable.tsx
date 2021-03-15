@@ -59,7 +59,7 @@ const UsersTable: FC<Props> = (props) => {
               <td>
                 <Button size="sm" variant="destructive" onClick={() => setShowRemoveModal(user.login)} icon="times" />
                 <ConfirmModal
-                  body={`Are you sure you want to delete user ${user.login}?`}
+                  body={`Êtes-vous sûr de vouloir supprimer l'utilisateur ${user.login}?`}
                   confirmText="Delete"
                   title="Delete"
                   onDismiss={() => setShowRemoveModal(false)}

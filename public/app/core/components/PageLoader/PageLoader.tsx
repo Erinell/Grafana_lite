@@ -6,7 +6,7 @@ interface Props {
 }
 
 const PageLoader: FC<Props> = ({ pageName = '' }) => {
-  const loadingText = `Loading ${pageName}...`;
+  const loadingText = `Chargement ${pageName}...`;
   return (
     <div className="page-loader-wrapper">
       <LoadingPlaceholder text={loadingText} />

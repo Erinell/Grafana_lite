@@ -40,8 +40,8 @@ export const AdminOrgsTable: FC<Props> = ({ orgs, onDelete }) => {
           title="Delete"
           body={
             <div>
-              Are you sure you want to delete &apos;{deleteOrg.name}&apos;?
-              <br /> <small>All dashboards for this organization will be removed!</small>
+              Êtes-vous sûr de vouloir supprimer &apos;{deleteOrg.name}&apos;?
+              <br /> <small>Toutes les organisations seront supprimées !</small>
             </div>
           }
           confirmText="Delete"

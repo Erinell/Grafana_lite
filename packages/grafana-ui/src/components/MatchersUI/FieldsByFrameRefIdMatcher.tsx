@@ -36,8 +36,8 @@ export const fieldsByFrameRefIdItem: FieldMatcherUIRegistryItem<string> = {
   id: FieldMatcherID.byFrameRefID,
   component: FieldsByFrameRefIdMatcher,
   matcher: fieldMatchers.get(FieldMatcherID.byFrameRefID),
-  name: 'Fields returned by query',
-  description: 'Set properties for fields from a specific query',
+  name: 'Champs renvoyés par requête',
+  description: "Définir les propriétés des champs à partir d'une requête spécifique",
   optionsToLabel: (options) => options,
 };
 

@@ -15,7 +15,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = (props) => {
   if (error) {
     return (
       <ErrorWithStack
-        title="Code editor failed to load"
+        title="Erreur de chargement de l'éditeur de code"
         error={error}
         errorInfo={{ componentStack: error?.stack || '' }}
       />

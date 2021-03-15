@@ -64,7 +64,7 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
 
   const editableOptions = [
     { label: 'Editable', value: true },
-    { label: 'Read-only', value: false },
+    { label: 'Lecture', value: false },
   ];
 
   return (
@@ -73,7 +73,7 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
         General
       </h3>
       <div className="gf-form-group">
-        <Field label="Name">
+        <Field label="Nom">
           <Input name="title" onBlur={onBlur} defaultValue={dashboard.title} />
         </Field>
         <Field label="Description">
@@ -82,7 +82,7 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
         <Field label="Tags">
           <TagsInput tags={dashboard.tags} onChange={onTagsChange} />
         </Field>
-        <Field label="Folder">
+        <Field label="Dossiers">
           <FolderPicker
             initialTitle={dashboard.meta.folderTitle}
             initialFolderId={dashboard.meta.folderId}
@@ -94,7 +94,7 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
 
         <Field
           label="Editable"
-          description="Set to read-only to disable all editing. Reload the dashboard for changes to take effect"
+          description="Mettre en mode lecture pour désactiver l'édition. Relancer le tableau pour prendre effet."
         >
           <RadioButtonGroup value={dashboard.editable} options={editableOptions} onChange={onEditableChange} />
         </Field>
@@ -111,10 +111,10 @@ export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {
         timezone={dashboard.timezone}
       />
 
-      <CollapsableSection label="Panel options" isOpen={true}>
+      <CollapsableSection label="Options panneau" isOpen={true}>
         <Field
-          label="Graph tooltip"
-          description="Controls tooltip and hover highlight behavior across different panels"
+          label="Infobulle graphique"
+          description="Contrôle le comportement de l'infobulle et du survol des différents panneaux"
         >
           <Select
             onChange={onTooltipChange}

@@ -49,7 +49,7 @@ export const FilterPopup: FC<Props> = ({ column: { preFilteredRows, filterValue,
       <div className={cx(styles.filterContainer)} onClick={stopPropagation}>
         <VerticalGroup spacing="lg">
           <VerticalGroup spacing="xs">
-            <Label>Filter by values:</Label>
+            <Label>Filtrer par valeurs :</Label>
             <div className={cx(styles.listDivider)} />
             <FilterList onChange={setValues} values={values} options={options} />
           </VerticalGroup>
@@ -59,13 +59,13 @@ export const FilterPopup: FC<Props> = ({ column: { preFilteredRows, filterValue,
                 Ok
               </Button>
               <Button size="sm" variant="secondary" onClick={onCancel}>
-                Cancel
+                Annuler
               </Button>
             </HorizontalGroup>
             {clearFilterVisible && (
               <HorizontalGroup>
                 <Button variant="link" size="sm" onClick={onClearFilter}>
-                  Clear filter
+                  Enlever filtres
                 </Button>
               </HorizontalGroup>
             )}

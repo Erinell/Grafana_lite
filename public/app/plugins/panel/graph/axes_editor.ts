@@ -25,24 +25,24 @@ export class AxesEditorCtrl {
     };
 
     this.xAxisModes = {
-      Time: 'time',
+      Time: 'temps',
       Series: 'series',
-      Histogram: 'histogram',
+      Histogram: 'histogramme',
       // 'Data field': 'field',
     };
 
     this.xAxisStatOptions = [
-      { text: 'Avg', value: 'avg' },
+      { text: 'Moy', value: 'avg' },
       { text: 'Min', value: 'min' },
       { text: 'Max', value: 'max' },
       { text: 'Total', value: 'total' },
-      { text: 'Count', value: 'count' },
-      { text: 'Current', value: 'current' },
+      { text: 'Compte', value: 'count' },
+      { text: 'Actuel', value: 'current' },
     ];
 
     if (this.panel.xaxis.mode === 'custom') {
       if (!this.panel.xaxis.name) {
-        this.panel.xaxis.name = 'specify field';
+        this.panel.xaxis.name = 'specifier';
       }
     }
     this.selectors = selectors.components.Panels.Visualization.Graph.VisualizationTab;

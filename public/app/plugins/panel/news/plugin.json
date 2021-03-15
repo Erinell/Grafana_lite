@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "News",
+  "name": "Informations",
   "id": "news",
 
   "skipDataQuery": true,

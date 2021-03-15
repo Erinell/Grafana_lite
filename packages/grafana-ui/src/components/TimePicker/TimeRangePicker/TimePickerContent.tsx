@@ -177,7 +177,7 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = (p
             {!hideQuickRanges && (
               <>
                 <TimeRangeList
-                  title="Relative time ranges"
+                  title="Plage de temps relatifs"
                   options={quickOptions}
                   onSelect={onChange}
                   value={value}
@@ -185,7 +185,7 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = (p
                 />
                 <div className={styles.spacing} />
                 <TimeRangeList
-                  title="Other quick ranges"
+                  title="Autre plage rapide"
                   options={otherOptions}
                   onSelect={onChange}
                   value={value}
@@ -227,7 +227,7 @@ const NarrowScreenForm: React.FC<FormProps> = (props) => {
           }
         }}
       >
-        <TimePickerTitle>Absolute time range</TimePickerTitle>
+        <TimePickerTitle>Plage de temps absolue</TimePickerTitle>
         {!hideQuickRanges && <Icon name={!collapsed ? 'angle-up' : 'angle-down'} />}
       </div>
       {!collapsed && (
@@ -237,7 +237,7 @@ const NarrowScreenForm: React.FC<FormProps> = (props) => {
           </div>
           {showHistory && (
             <TimeRangeList
-              title="Recently used absolute ranges"
+              title="Plages utilisées récemment"
               options={historyOptions}
               onSelect={onChange}
               value={value}
@@ -259,7 +259,7 @@ const FullScreenForm: React.FC<FormProps> = (props) => {
     <>
       <div className={styles.container}>
         <div aria-label="TimePicker absolute time range" className={styles.title}>
-          <TimePickerTitle>Absolute time range</TimePickerTitle>
+          <TimePickerTitle>Plage de temps absolue</TimePickerTitle>
         </div>
         <TimeRangeForm
           value={props.value}
@@ -272,7 +272,7 @@ const FullScreenForm: React.FC<FormProps> = (props) => {
       {props.showHistory && (
         <div className={styles.recent}>
           <TimeRangeList
-            title="Recently used absolute ranges"
+            title="Plages utilisées récemment"
             options={props.historyOptions || []}
             onSelect={props.onChange}
             value={props.value}
@@ -292,10 +292,7 @@ const EmptyRecentList = memo(() => {
   return (
     <div className={styles.container}>
       <div>
-        <span>
-          It looks like you haven&apos;t used this time picker before. As soon as you enter some time intervals,
-          recently used intervals will appear here.
-        </span>
+        <span>Les plages de temps utilisées récemment sont affichées ici.</span>
       </div>
       <div>
         <a
@@ -303,9 +300,9 @@ const EmptyRecentList = memo(() => {
           href="https://grafana.com/docs/grafana/latest/dashboards/time-range-controls"
           target="_new"
         >
-          Read the documentation
+          Lire la documentation
         </a>
-        <span> to find out more about how to enter custom time ranges.</span>
+        <span> pour en savoir plus sur les plages de temps personnalisées</span>
       </div>
     </div>
   );

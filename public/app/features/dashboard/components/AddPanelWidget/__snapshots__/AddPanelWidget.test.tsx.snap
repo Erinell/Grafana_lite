@@ -18,7 +18,7 @@ exports[`Render should render component 1`] = `
       }
     }
   >
-    Add panel
+    Ajouter un panneau
   </AddPanelWidgetHandle>
   <div
     className="css-gxxmom"
@@ -34,7 +34,7 @@ exports[`Render should render component 1`] = `
           name="file-blank"
           size="xl"
         />
-        Add an empty panel
+        Ajouter un panneau vide
       </div>
       <div
         onClick={[Function]}
@@ -43,7 +43,7 @@ exports[`Render should render component 1`] = `
           name="wrap-text"
           size="xl"
         />
-        Add a new row
+        Ajouter une nouvelle ligne
       </div>
     </div>
   </div>

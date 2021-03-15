@@ -72,7 +72,7 @@ export function getPanelMenu(
 
   if (!panel.isEditing) {
     menu.push({
-      text: 'View',
+      text: 'Vue',
       iconClassName: 'eye',
       onClick: onViewPanel,
       shortcut: 'v',
@@ -81,7 +81,7 @@ export function getPanelMenu(
 
   if (dashboard.canEditPanel(panel) && !panel.isEditing) {
     menu.push({
-      text: 'Edit',
+      text: 'Editer',
       iconClassName: 'edit',
       onClick: onEditPanel,
       shortcut: 'e',
@@ -89,7 +89,7 @@ export function getPanelMenu(
   }
 
   menu.push({
-    text: 'Share',
+    text: 'Partager',
     iconClassName: 'share-alt',
     onClick: onSharePanel,
     shortcut: 'p s',
@@ -97,7 +97,7 @@ export function getPanelMenu(
 
   if (contextSrv.hasAccessToExplore() && !(panel.plugin && panel.plugin.meta.skipDataQuery)) {
     menu.push({
-      text: 'Explore',
+      text: 'Explorer',
       iconClassName: 'compass',
       shortcut: 'x',
       onClick: onNavigateToExplore,
@@ -109,26 +109,26 @@ export function getPanelMenu(
   // Only show these inspect actions for data plugins
   if (panel.plugin && !panel.plugin.meta.skipDataQuery) {
     inspectMenu.push({
-      text: 'Data',
+      text: 'Données',
       onClick: (e: React.MouseEvent<any>) => onInspectPanel('data'),
     });
 
     if (dashboard.meta.canEdit) {
       inspectMenu.push({
-        text: 'Query',
+        text: 'Requête',
         onClick: (e: React.MouseEvent<any>) => onInspectPanel('query'),
       });
     }
   }
 
   inspectMenu.push({
-    text: 'Panel JSON',
+    text: 'Panneau JSON',
     onClick: (e: React.MouseEvent<any>) => onInspectPanel('json'),
   });
 
   menu.push({
     type: 'submenu',
-    text: 'Inspect',
+    text: 'Inspecter',
     iconClassName: 'info-circle',
     onClick: (e: React.MouseEvent<any>) => onInspectPanel(),
     shortcut: 'i',
@@ -139,13 +139,13 @@ export function getPanelMenu(
 
   if (dashboard.canEditPanel(panel) && !(panel.isViewing || panel.isEditing)) {
     subMenu.push({
-      text: 'Duplicate',
+      text: 'Dupliquer',
       onClick: onDuplicatePanel,
       shortcut: 'p d',
     });
 
     subMenu.push({
-      text: 'Copy',
+      text: 'Copier',
       onClick: onCopyPanel,
     });
   }
@@ -176,7 +176,7 @@ export function getPanelMenu(
   if (!panel.isEditing && subMenu.length) {
     menu.push({
       type: 'submenu',
-      text: 'More...',
+      text: 'Plus...',
       iconClassName: 'cube',
       subMenu,
       onClick: onMore,
@@ -187,7 +187,7 @@ export function getPanelMenu(
     menu.push({ type: 'divider', text: '' });
 
     menu.push({
-      text: 'Remove',
+      text: 'Supprimer',
       iconClassName: 'trash-alt',
       onClick: onRemovePanel,
       shortcut: 'p r',

@@ -28,12 +28,12 @@ const NotificationsListPage: FC = () => {
   const deleteNotification = (id: number) => {
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Delete',
-        text: 'Do you want to delete this notification channel?',
-        text2: `Deleting this notification channel will not delete from alerts any references to it`,
+        title: 'Supprimer',
+        text: 'Voulez-vous supprimer ce canal de notifications ?',
+        text2: `Supprimer ce canal de notification ne va pas supprimer les références aux alertes.`,
         icon: 'trash-alt',
-        confirmText: 'Delete',
-        yesText: 'Delete',
+        confirmText: 'Supprimer',
+        yesText: 'Supprimer',
         onConfirm: async () => {
           deleteNotificationConfirmed(id);
         },
@@ -56,14 +56,14 @@ const NotificationsListPage: FC = () => {
             <div className="page-action-bar">
               <div className="page-action-bar__spacer" />
               <LinkButton icon="channel-add" href="alerting/notification/new">
-                New channel
+                Nouveau canal
               </LinkButton>
             </div>
             <table className="filter-table filter-table--hover">
               <thead>
                 <tr>
                   <th style={{ minWidth: '200px' }}>
-                    <strong>Name</strong>
+                    <strong>Nom</strong>
                   </th>
                   <th style={{ minWidth: '100px' }}>Type</th>
                   <th style={{ width: '1%' }}></th>
@@ -82,7 +82,7 @@ const NotificationsListPage: FC = () => {
                       <HorizontalGroup justify="flex-end">
                         {notification.isDefault && (
                           <Button disabled variant="secondary" size="sm">
-                            default
+                            defaut
                           </Button>
                         )}
                         <Button
@@ -104,13 +104,13 @@ const NotificationsListPage: FC = () => {
 
         {!(notifications.length || state.loading) && (
           <EmptyListCTA
-            title="There are no notification channels defined yet"
+            title="Il n'y a pas de canal de notifications pour le moment"
             buttonIcon="channel-add"
             buttonLink="alerting/notification/new"
-            buttonTitle="Add channel"
-            proTip="You can include images in your alert notifications."
+            buttonTitle="Ajouter un canal"
+            proTip="Vous pouvez ajouter des images dans vos notification d'alerte."
             proTipLink="http://docs.grafana.org/alerting/notifications/"
-            proTipLinkTitle="Learn more"
+            proTipLinkTitle="Savoir plus"
             proTipTarget="_blank"
           />
         )}

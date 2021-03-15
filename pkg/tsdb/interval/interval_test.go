@@ -18,10 +18,10 @@ func TestIntervalCalculator_Calculate(t *testing.T) {
 		timeRange plugins.DataTimeRange
 		expected  string
 	}{
-		{"from 5m to now", plugins.NewDataTimeRange("5m", "now"), "200ms"},
-		{"from 15m to now", plugins.NewDataTimeRange("15m", "now"), "500ms"},
-		{"from 30m to now", plugins.NewDataTimeRange("30m", "now"), "1s"},
-		{"from 1h to now", plugins.NewDataTimeRange("1h", "now"), "2s"},
+		{"de 5m à now", plugins.NewDataTimeRange("5m", "now"), "200ms"},
+		{"de 15m à now", plugins.NewDataTimeRange("15m", "now"), "500ms"},
+		{"de 30m à now", plugins.NewDataTimeRange("30m", "now"), "1s"},
+		{"de 1h à now", plugins.NewDataTimeRange("1h", "now"), "2s"},
 	}
 
 	for _, tc := range testCases {

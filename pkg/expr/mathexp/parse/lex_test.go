@@ -70,7 +70,7 @@ var (
 var lexTests = []lexTest{
 	{"empty", "", []item{tEOF}},
 	{"spaces", " \t\n", []item{tEOF}},
-	{"text", `"now is the time"`, []item{{itemString, 0, `"now is the time"`}, tEOF}},
+	{"text", `"now est le temps"`, []item{{itemString, 0, `"now est le temps"`}, tEOF}},
 	{"operators", "! && || < > <= >= == != + - * / %", []item{
 		tNot,
 		tAnd,

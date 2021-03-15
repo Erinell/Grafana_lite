@@ -68,11 +68,11 @@ export class HistoryListCtrl {
   restore(version: number) {
     appEvents.publish(
       new ShowConfirmModalEvent({
-        title: 'Restore version',
+        title: 'Restorer version',
         text: '',
-        text2: `Are you sure you want to restore the dashboard to version ${version}? All unsaved changes will be lost.`,
+        text2: `Êtes-vous sûr de vouloir restorer le tableau version ${version} ? Modifications non sauvegardées supprimées.`,
         icon: 'history',
-        yesText: `Yes, restore to version ${version}`,
+        yesText: `Oui, restorer la version ${version}`,
         onConfirm: this.restoreConfirm.bind(this, version),
       })
     );

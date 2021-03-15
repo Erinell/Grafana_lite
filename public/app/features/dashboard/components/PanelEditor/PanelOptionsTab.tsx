@@ -64,17 +64,17 @@ export const PanelOptionsTab: FC<Props> = ({
 
   // First common panel settings Title, description
   elements.push(
-    <OptionsGroup title="Settings" id="Panel settings" key="Panel settings">
-      <Field label="Panel title">
+    <OptionsGroup title="Options" id="Panel settings" key="Panel settings">
+      <Field label="Titre du panneau">
         <Input defaultValue={panel.title} onBlur={(e) => onPanelConfigChange('title', e.currentTarget.value)} />
       </Field>
-      <Field label="Description" description="Panel description supports markdown and links.">
+      <Field label="Description" description="La description supporte le markdown et les liens.">
         <TextArea
           defaultValue={panel.description}
           onBlur={(e) => onPanelConfigChange('description', e.currentTarget.value)}
         />
       </Field>
-      <Field label="Transparent" description="Display panel without a background.">
+      <Field label="Transparent" description="Affiche le tableau sans fond.">
         <Switch
           value={panel.transparent}
           onChange={(e) => onPanelConfigChange('transparent', e.currentTarget.checked)}
@@ -84,7 +84,7 @@ export const PanelOptionsTab: FC<Props> = ({
   );
 
   elements.push(
-    <OptionsGroup title="Visualization" id="Panel type" key="Panel type" defaultToClosed onToggle={focusVisPickerInput}>
+    <OptionsGroup title="Visualisation" id="Panel type" key="Panel type" defaultToClosed onToggle={focusVisPickerInput}>
       {(toggleExpand) => <VisualizationTab panel={panel} ref={visTabInputRef} onToggleOptionGroup={toggleExpand} />}
     </OptionsGroup>
   );
@@ -121,7 +121,7 @@ export const PanelOptionsTab: FC<Props> = ({
   elements.push(
     <OptionsGroup
       renderTitle={(isExpanded) => (
-        <>Links {!isExpanded && panelLinksCount > 0 && <Counter value={panelLinksCount} />}</>
+        <>Liens {!isExpanded && panelLinksCount > 0 && <Counter value={panelLinksCount} />}</>
       )}
       id="panel links"
       key="panel links"
@@ -137,12 +137,12 @@ export const PanelOptionsTab: FC<Props> = ({
   );
 
   elements.push(
-    <OptionsGroup title="Repeat options" id="panel repeats" key="panel repeats" defaultToClosed>
+    <OptionsGroup title="Options répétés" id="panel repeats" key="panel repeats" defaultToClosed>
       <Field
-        label="Repeat by variable"
-        description="Repeat this panel for each value in the selected variable.
-          This is not visible while in edit mode. You need to go back to dashboard and then update the variable or
-          reload the dashboard."
+        label="Répéter par variable"
+        description="Répéter ce panneau pour chaque valeur dans dans la variable sélectionnée.
+        Ceci n'est pas visible en mode édition. Vous devez revenir au tableau et mettre à jour la variable ou
+        relancer le tableau."
       >
         <RepeatRowSelect repeat={panel.repeat} onChange={onRepeatRowSelectChange} />
       </Field>

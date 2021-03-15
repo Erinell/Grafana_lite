@@ -498,7 +498,7 @@ class GraphElement {
         this.addXSeriesAxis(options);
         break;
       }
-      case 'histogram': {
+      case 'histogramme': {
         let bucketSize: number;
 
         if (this.data.length) {
@@ -523,7 +523,7 @@ class GraphElement {
         this.addXHistogramAxis(options, bucketSize);
         break;
       }
-      case 'table': {
+      case 'tableau': {
         options.series.bars.barWidth = 0.7;
         options.series.bars.align = 'center';
         this.addXTableAxis(options);
@@ -740,7 +740,7 @@ class GraphElement {
       mode: null,
       min: min,
       max: max,
-      label: 'Histogram',
+      label: 'Histogramme',
       ticks: ticks,
     };
 
@@ -796,14 +796,14 @@ class GraphElement {
       this.applyLogScale(options.yaxes[1], data);
       this.configureAxisMode(
         options.yaxes[1],
-        this.panel.percentage && this.panel.stack ? 'percent' : this.panel.yaxes[1].format,
+        this.panel.percentage && this.panel.stack ? 'pourcent' : this.panel.yaxes[1].format,
         this.panel.yaxes[1].decimals
       );
     }
     this.applyLogScale(options.yaxes[0], data);
     this.configureAxisMode(
       options.yaxes[0],
-      this.panel.percentage && this.panel.stack ? 'percent' : this.panel.yaxes[0].format,
+      this.panel.percentage && this.panel.stack ? 'pourcent' : this.panel.yaxes[0].format,
       this.panel.yaxes[0].decimals
     );
   }

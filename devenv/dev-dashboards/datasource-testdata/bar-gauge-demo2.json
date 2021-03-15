@@ -127,7 +127,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Titre du panneau",
       "type": "bargauge"
     },
     {
@@ -206,7 +206,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Titre du panneau",
       "type": "bargauge"
     },
     {
@@ -309,7 +309,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Titre du panneau",
       "type": "bargauge"
     },
     {
@@ -388,7 +388,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Titre du panneau",
       "type": "bargauge"
     },
     {
@@ -467,7 +467,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Panel Title",
+      "title": "Titre du panneau",
       "type": "bargauge"
     }
   ],

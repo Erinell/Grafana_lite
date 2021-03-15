@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Graph",
+  "name": "Graphique",
   "id": "graph",
 
   "info": {
-    "description": "Graph Panel for Grafana",
+    "description": "Graphique pour Grafana",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

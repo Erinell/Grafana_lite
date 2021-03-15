@@ -259,7 +259,7 @@ export class InspectDataTab extends PureComponent<Props, State> {
     if (isLoading) {
       return (
         <div>
-          <Spinner inline={true} /> Loading
+          <Spinner inline={true} /> Chargement
         </div>
       );
     }
@@ -267,7 +267,7 @@ export class InspectDataTab extends PureComponent<Props, State> {
     const dataFrames = this.getProcessedData();
 
     if (!dataFrames || !dataFrames.length) {
-      return <div>No Data</div>;
+      return <div>Aucune donnée</div>;
     }
 
     // let's make sure we don't try to render a frame that doesn't exists

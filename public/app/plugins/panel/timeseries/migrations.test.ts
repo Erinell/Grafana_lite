@@ -85,7 +85,7 @@ const stairscase = {
   steppedLine: true,
   thresholds: [],
   timeRegions: [],
-  title: 'Panel Title',
+  title: 'Titre du panneau',
   tooltip: {
     shared: true,
     sort: 0,
@@ -266,7 +266,7 @@ const stepedColordLine = {
   steppedLine: true,
   thresholds: [],
   timeRegions: [],
-  title: 'Panel Title',
+  title: 'Titre du panneau',
   tooltip: {
     shared: true,
     sort: 0,
@@ -360,7 +360,7 @@ const legend = {
   steppedLine: true,
   thresholds: [],
   timeRegions: [],
-  title: 'Panel Title',
+  title: 'Titre du panneau',
   tooltip: {
     shared: true,
     sort: 0,

@@ -21,13 +21,13 @@ export const RepeatRowSelect: FC<Props> = ({ repeat, onChange }) => {
 
     if (options.length === 0) {
       options.unshift({
-        label: 'No template variables found',
+        label: 'Aucune variable de modèle trouvée',
         value: null,
       });
     }
 
     options.unshift({
-      label: 'Disable repeating',
+      label: 'désactiver la répétition',
       value: null,
     });
 

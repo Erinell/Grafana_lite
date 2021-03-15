@@ -52,7 +52,7 @@ export default function GraphTooltip(this: any, elem: any, dashboard: any, scope
   };
 
   this.renderAndShow = (absoluteTime: string, innerHtml: string, pos: { pageX: number; pageY: any }, xMode: string) => {
-    if (xMode === 'time') {
+    if (xMode === 'temps') {
       innerHtml = '<div class="graph-tooltip-time">' + absoluteTime + '</div>' + innerHtml;
     }
     $tooltip.html(innerHtml).place_tt(pos.pageX, pos.pageY, { offset: 10 });

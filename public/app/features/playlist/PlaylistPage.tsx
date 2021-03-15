@@ -30,13 +30,13 @@ export const PlaylistPage: FC<Props> = ({ navModel }) => {
 
   let content = (
     <EmptyListCTA
-      title="There are no playlists created yet"
+      title="Il n'y a pas de playlists pour le moment"
       buttonIcon="plus"
       buttonLink="playlists/create"
-      buttonTitle="Create Playlist"
-      proTip="You can use playlists to cycle dashboards on TVs without user control"
+      buttonTitle="Créer une playlist"
+      proTip="Vous pouvez utiliser les playlists pour faire un cycle de tableaux sur une TV sans contrôle"
       proTipLink="http://docs.grafana.org/reference/playlist/"
-      proTipLinkTitle="Learn more"
+      proTipLinkTitle="En savoir plus"
       proTipTarget="_blank"
     />
   );
@@ -48,7 +48,7 @@ export const PlaylistPage: FC<Props> = ({ navModel }) => {
           <Card heading={playlist.name} key={playlist.id.toString()}>
             <Card.Actions>
               <Button variant="secondary" icon="play" onClick={() => setStartPlaylist(playlist)}>
-                Start playlist
+                Commencer la playlist
               </Button>
               {contextSrv.isEditor && (
                 <LinkButton
@@ -57,9 +57,9 @@ export const PlaylistPage: FC<Props> = ({ navModel }) => {
                   href={`/playlists/edit/${playlist.id}`}
                   icon="cog"
                   disabled
-                  title="Feature temporarily disabled"
+                  title="Fonction temporairement désactivée"
                 >
-                  Edit playlist
+                  Editer la playlist
                 </LinkButton>
               )}
             </Card.Actions>
@@ -75,7 +75,7 @@ export const PlaylistPage: FC<Props> = ({ navModel }) => {
         {hasPlaylists && (
           <OrgActionBar
             searchQuery={searchQuery}
-            linkButton={{ title: 'New playlist', href: '/playlists/new' }}
+            linkButton={{ title: 'Nouvelle playlist', href: '/playlists/new' }}
             setSearchQuery={setSearchQuery}
           />
         )}

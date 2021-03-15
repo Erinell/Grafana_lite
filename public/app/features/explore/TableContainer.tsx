@@ -64,7 +64,7 @@ export class TableContainer extends PureComponent<TableContainerProps> {
             onCellFilterAdded={onCellFilterAdded}
           />
         ) : (
-          <MetaInfoText metaItems={[{ value: '0 series returned' }]} />
+          <MetaInfoText metaItems={[{ value: '0 série retournée' }]} />
         )}
       </Collapse>
     );

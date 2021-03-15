@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Heatmap",
+  "name": "Carte de chaleur",
   "id": "heatmap",
 
   "info": {
-    "description": "Heatmap Panel for Grafana",
+    "description": "Carte de chaleur pour Grafana",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

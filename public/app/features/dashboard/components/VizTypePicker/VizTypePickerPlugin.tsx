@@ -26,7 +26,7 @@ const VizTypePickerPlugin: React.FC<Props> = ({ isCurrent, plugin, onClick, disa
       <div
         className={cssClass}
         onClick={disabled ? () => {} : onClick}
-        title={isCurrent ? 'Click again to close this section' : plugin.name}
+        title={isCurrent ? 'Cliquer encore pour fermer cette section' : plugin.name}
       >
         <div className={styles.bg} />
         <div className={styles.itemContent}>

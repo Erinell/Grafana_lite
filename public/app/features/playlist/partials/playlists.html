@@ -5,13 +5,13 @@
     <div class="page-action-bar" ng-if="ctrl.canEditPlaylists">
       <div class="page-action-bar__spacer"></div>
       <a class="btn btn-primary pull-right" href="playlists/create">
-        New playlist
+        Nouvelle playlist
       </a>
     </div>
 
     <table class="filter-table filter-table--hover">
       <thead>
-        <th><strong>Name</strong></th>
+        <th><strong>Nom</strong></th>
         <th style="width: 100px"></th>
         <th ng-if="ctrl.canEditPlaylists" style="width: 78px"></th>
       </thead>
@@ -22,25 +22,25 @@
         </td>
         <td class="dropdown">
           <button class="btn btn-inverse btn-small" data-toggle="dropdown">
-            Start playlist
+            Commencer la playlist
             <icon name="'angle-down'"></icon>
           </button>
           <ul class="dropdown-menu" role="menu">
             <li>
               <a href="{{playlist.startUrl}}">
-                <icon name="'play'"></icon> In Normal mode</span>
+                <icon name="'play'"></icon> En mode normal</span>
               </a>
               <a href="{{playlist.startUrl}}?kiosk=tv">
-                <icon name="'play'"></icon> In TV mode</span>
+                <icon name="'play'"></icon> En mode TV</span>
               </a>
               <a href="{{playlist.startUrl}}?kiosk=tv&autofitpanels">
-                <icon name="'play'"></icon> In TV mode <span class="muted">(with auto fit panels)</span>
+                <icon name="'play'"></icon> En mode TV <span class="muted">(with auto fit panels)</span>
               </a>
               <a href="{{playlist.startUrl}}?kiosk">
-                <icon name="'play'"></icon> In Kiosk mode</span>
+                <icon name="'play'"></icon> En mode kiosque</span>
               </a>
               <a ng-href="{{playlist.startUrl}}?kiosk&autofitpanels">
-                <icon name="'play'"></icon> In Kiosk mode <span class="muted">(with auto fit panels)</span>
+                <icon name="'play'"></icon> En mode kiosque <span class="muted">(with auto fit panels)</span>
               </a>
             </li>
           </ul>
@@ -59,15 +59,15 @@
         title="'There are no playlists created yet'"
         buttonIcon="'plus'"
         buttonLink="'playlists/create'"
-        buttonTitle="'Create Playlist'"
+        buttonTitle="'Créer une playlist'"
         proTip="'You can use playlists to cycle dashboards on TVs without user control'"
         proTipLink="'http://docs.grafana.org/reference/playlist/'"
         proTipLinkTitle="'Learn more'"
         proTipTarget="'_blank'" />
     </div>
     <div class="grafana-info-box" ng-if="!ctrl.canEditPlaylists">
-      <h5>There are no playlists created yet</h5>
-      <p>Unfortunately you don't have permission to create playlists.</p>
+      <h5>Il n&apos;y a pas de playlist pour le moment</h5>
+      <p>Malheureusement, vous n&apos;avez pas la permission.</p>
     </div>
   </div>
   

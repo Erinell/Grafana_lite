@@ -78,7 +78,7 @@ export const OverrideFieldConfigEditor: React.FC<Props> = (props) => {
       <Container padding="md">
         <ValuePicker
           icon="plus"
-          label="Add an override for"
+          label="Ajouter un remplacement pour"
           variant="secondary"
           options={fieldMatchersUI
             .list()
@@ -95,13 +95,14 @@ export const OverrideFieldConfigEditor: React.FC<Props> = (props) => {
     <div aria-label={selectors.components.OverridesConfigEditor.content}>
       {config.overrides.length === 0 && (
         <FeatureInfoBox
-          title="Overrides"
+          title="Remplacements"
           url={getDocsLink(DocsId.FieldConfigOverrides)}
           className={css`
             margin: ${theme.spacing.md};
           `}
         >
-          Field override rules give you a fine grained control over how your data is displayed.
+          Les règles de remplacement de champ vous donnent un contrôle précis sur la façon dont vos données sont
+          affichées.
         </FeatureInfoBox>
       )}
 

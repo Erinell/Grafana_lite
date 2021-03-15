@@ -59,7 +59,7 @@ export function getExceptionNav(error: any): NavModel {
 }
 
 export function getNotFoundNav(): NavModel {
-  return getWarningNav('Page not found', '404 Error');
+  return getWarningNav('Page non trouvée', 'Erreur 404');
 }
 
 export function getWarningNav(text: string, subTitle?: string): NavModel {

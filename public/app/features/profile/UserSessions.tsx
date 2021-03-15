@@ -31,21 +31,21 @@ export class UserSessions extends PureComponent<Props> {
               <table className="filter-table form-inline">
                 <thead>
                   <tr>
-                    <th>Last seen</th>
-                    <th>Logged on</th>
-                    <th>IP address</th>
-                    <th>Browser &amp; OS</th>
+                    <th>Vu en dernier</th>
+                    <th>Connecté</th>
+                    <th>Adresse IP</th>
+                    <th>Navigateur &amp; OS</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   {sessions.map((session: UserSession, index) => (
                     <tr key={index}>
-                      {session.isActive ? <td>Now</td> : <td>{session.seenAt}</td>}
+                      {session.isActive ? <td>Maintenant</td> : <td>{session.seenAt}</td>}
                       <td>{session.createdAt}</td>
                       <td>{session.clientIp}</td>
                       <td>
-                        {session.browser} on {session.os} {session.osVersion}
+                        {session.browser} sur {session.os} {session.osVersion}
                       </td>
                       <td>
                         <Button size="sm" variant="destructive" onClick={() => revokeUserSession(session.id)}>

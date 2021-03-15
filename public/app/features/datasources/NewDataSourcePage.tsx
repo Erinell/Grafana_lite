@@ -81,7 +81,7 @@ class NewDataSourcePage extends PureComponent<Props> {
             target="_blank"
             rel="noopener"
           >
-            Find more data source plugins on grafana.com
+            Trouvez plus de sources sur Grafana.com
           </LinkButton>
         </div>
       </>
@@ -95,9 +95,13 @@ class NewDataSourcePage extends PureComponent<Props> {
       <Page navModel={navModel}>
         <Page.Contents isLoading={isLoading}>
           <div className="page-action-bar">
-            <FilterInput value={searchQuery} onChange={this.onSearchQueryChange} placeholder="Filter by name or type" />
+            <FilterInput
+              value={searchQuery}
+              onChange={this.onSearchQueryChange}
+              placeholder="Filtrer par type ou nom"
+            />
             <div className="page-action-bar__spacer" />
-            <LinkButton href="datasources">Cancel</LinkButton>
+            <LinkButton href="datasources">Annuler</LinkButton>
           </div>
           {!searchQuery && (
             <PluginsErrorsInfo>
@@ -153,7 +157,7 @@ const DataSourceTypeCard: FC<DataSourceTypeCardProps> = (props) => {
               {learnMoreLink.name}
             </LinkButton>
           )}
-          {!isPhantom && <Button disabled={plugin.unlicensed}>Select</Button>}
+          {!isPhantom && <Button disabled={plugin.unlicensed}>Selectionner</Button>}
         </>
       }
       labels={!isPhantom && <PluginSignatureBadge status={plugin.signature} />}
@@ -168,9 +172,9 @@ export function getNavModel(): NavModel {
   const main = {
     icon: 'database',
     id: 'datasource-new',
-    text: 'Add data source',
+    text: 'Ajouter une source',
     href: 'datasources/new',
-    subTitle: 'Choose a data source type',
+    subTitle: 'Choisir une source de données',
   };
 
   return {

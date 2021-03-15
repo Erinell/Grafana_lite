@@ -10,7 +10,7 @@ exports[`TableContainer should render component 1`] = `
     metaItems={
       Array [
         Object {
-          "value": "0 series returned",
+          "value": "0 série retournée",
         },
       ]
     }

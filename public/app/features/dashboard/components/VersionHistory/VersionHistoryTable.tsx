@@ -15,7 +15,7 @@ export const VersionHistoryTable: React.FC<VersionsTableProps> = ({ versions, on
         <th className="width-4"></th>
         <th className="width-4">Version</th>
         <th className="width-14">Date</th>
-        <th className="width-10">Updated By</th>
+        <th className="width-10">Mis à jour par</th>
         <th>Notes</th>
         <th></th>
       </tr>
@@ -38,7 +38,7 @@ export const VersionHistoryTable: React.FC<VersionsTableProps> = ({ versions, on
           <td>{version.message}</td>
           <td className="text-right">
             {idx === 0 ? (
-              <Tag name="Latest" colorIndex={17} />
+              <Tag name="Dernier" colorIndex={17} />
             ) : (
               <ModalsController>
                 {({ showModal, hideModal }) => (
@@ -53,7 +53,7 @@ export const VersionHistoryTable: React.FC<VersionsTableProps> = ({ versions, on
                       });
                     }}
                   >
-                    Restore
+                    Restorer
                   </Button>
                 )}
               </ModalsController>

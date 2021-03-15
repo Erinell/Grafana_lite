@@ -9,7 +9,7 @@ e2e.scenario({
   scenario: () => {
     e2e.flows.openDashboard({ uid: '5SdHCasdf' });
 
-    const fromTimeZone = 'Coordinated Universal Time';
+    const fromTimeZone = 'Temps universel';
     const toTimeZone = 'America/Chicago';
     const offset = -5;
 
@@ -64,7 +64,7 @@ e2e.scenario({
               const utc = timesInUtc[title];
               const tz = element.text();
               const isCorrect = isTimeCorrect(utc, tz, offset);
-              assert.isTrue(isCorrect, `Panel with title: "${title}"`);
+              assert.isTrue(isCorrect, `Panneau vec titre : "${title}"`);
             })
         );
     }

@@ -66,8 +66,8 @@ export class TimePickerSettings extends PureComponent<Props, State> {
           onRefreshIntervalChange={this.props.onRefreshIntervalChange}
         />
         <Field
-          label="Now delay now"
-          description="Enter 1m to ignore the last minute (because it can contain incomplete metrics)"
+          label="Actuel délai actuel"
+          description="Entrer 1m pour ignorer la dernière minute (car peux contenir des métriques incomplets)"
         >
           <Input
             invalid={!this.state.isNowDelayValid}
@@ -76,7 +76,7 @@ export class TimePickerSettings extends PureComponent<Props, State> {
             defaultValue={this.props.nowDelay}
           />
         </Field>
-        <Field label="Hide time picker">
+        <Field label="Cacher le sélécteur de temps">
           <Switch value={!!this.props.timePickerHidden} onChange={this.onHideTimePickerChange} />
         </Field>
       </CollapsableSection>

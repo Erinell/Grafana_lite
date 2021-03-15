@@ -27,9 +27,9 @@ export const ChangePasswordPage: FC<Props> = ({ navModel }) => (
       ) => {
         return (
           <Page.Contents>
-            <h3 className="page-sub-heading">Change Your Password</h3>
+            <h3 className="page-sub-heading">Changer votre mot de passe</h3>
             {states.loadUser ? (
-              <LoadingPlaceholder text="Loading user profile..." />
+              <LoadingPlaceholder text="Chargement du profil..." />
             ) : (
               <ChangePasswordForm user={user!} onChangePassword={api.changePassword} isSaving={states.changePassword} />
             )}

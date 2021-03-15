@@ -41,13 +41,13 @@ export type Props = OwnProps & ConnectedProps<typeof connector>;
 
 export class AlertRuleListUnconnected extends PureComponent<Props> {
   stateFilters = [
-    { label: 'All', value: 'all' },
+    { label: 'Tout', value: 'all' },
     { label: 'OK', value: 'ok' },
-    { label: 'Not OK', value: 'not_ok' },
-    { label: 'Alerting', value: 'alerting' },
-    { label: 'No Data', value: 'no_data' },
-    { label: 'Paused', value: 'paused' },
-    { label: 'Pending', value: 'pending' },
+    { label: 'Non OK', value: 'not_ok' },
+    { label: 'Alerter', value: 'alerting' },
+    { label: 'Aucune data', value: 'no_data' },
+    { label: 'Pause', value: 'paused' },
+    { label: 'Attente', value: 'pending' },
   ];
 
   componentDidMount() {
@@ -109,13 +109,13 @@ export class AlertRuleListUnconnected extends PureComponent<Props> {
               <FilterInput
                 labelClassName="gf-form--has-input-icon gf-form--grow"
                 inputClassName="gf-form-input"
-                placeholder="Search alerts"
+                placeholder="Chercher des alertes"
                 value={search}
                 onChange={this.onSearchQueryChange}
               />
             </div>
             <div className="gf-form">
-              <label className="gf-form-label">States</label>
+              <label className="gf-form-label">Status</label>
 
               <div className="width-13">
                 <Select
@@ -132,7 +132,7 @@ export class AlertRuleListUnconnected extends PureComponent<Props> {
               </LinkButton>
             )}
             <Button variant="secondary" onClick={this.onOpenHowTo}>
-              How to add an alert
+              Comment ajouter une alerte
             </Button>
           </div>
           <VerticalGroup spacing="none">

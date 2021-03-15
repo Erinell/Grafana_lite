@@ -21,17 +21,22 @@ export const UserProfileEditForm: FC<Props> = ({ user, isSavingUser, updateProfi
     <Form onSubmit={onSubmitProfileUpdate} validateOn="onBlur">
       {({ register, errors }) => {
         return (
-          <FieldSet label="Edit Profile">
-            <Field label="Name" invalid={!!errors.name} error="Name is required" disabled={disableLoginForm}>
+          <FieldSet label="Edition profile">
+            <Field label="Nom" invalid={!!errors.name} error="Le nom est requis" disabled={disableLoginForm}>
               <Input
                 name="name"
                 ref={register({ required: true })}
-                placeholder="Name"
+                placeholder="Nom"
                 defaultValue={user.name}
                 suffix={<InputSuffix />}
               />
             </Field>
-            <Field label="Email" invalid={!!errors.email} error="Email is required" disabled={disableLoginForm}>
+            <Field
+              label="Email"
+              invalid={!!errors.email}
+              error="L'adresse Email est requise"
+              disabled={disableLoginForm}
+            >
               <Input
                 name="email"
                 ref={register({ required: true })}
@@ -40,18 +45,18 @@ export const UserProfileEditForm: FC<Props> = ({ user, isSavingUser, updateProfi
                 suffix={<InputSuffix />}
               />
             </Field>
-            <Field label="Username" disabled={disableLoginForm}>
+            <Field label="Nom d'utilisateur" disabled={disableLoginForm}>
               <Input
                 name="login"
                 ref={register}
                 defaultValue={user.login}
-                placeholder="Username"
+                placeholder="Nom d'utilisateur"
                 suffix={<InputSuffix />}
               />
             </Field>
             <div className="gf-form-button-row">
               <Button variant="primary" disabled={isSavingUser}>
-                Save
+                Sauvegarder
               </Button>
             </div>
           </FieldSet>
@@ -65,7 +70,7 @@ export default UserProfileEditForm;
 
 const InputSuffix: FC = () => {
   return disableLoginForm ? (
-    <Tooltip content="Login Details Locked - managed in another system.">
+    <Tooltip content="Détails de connexion verrouillés.">
       <Icon name="lock" />
     </Tooltip>
   ) : null;

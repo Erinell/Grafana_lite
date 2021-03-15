@@ -114,7 +114,7 @@ async function fetchDashboard(
       return null;
     }
 
-    dispatch(dashboardInitFailed({ message: 'Failed to fetch dashboard', error: err }));
+    dispatch(dashboardInitFailed({ message: 'Echec de récupération du tableau', error: err }));
     console.error(err);
     return null;
   }
@@ -249,12 +249,12 @@ function getNewDashboardModelData(urlFolderId?: string | null): any {
       folderId: 0,
     },
     dashboard: {
-      title: 'New dashboard',
+      title: 'Nouveau tableau',
       panels: [
         {
           type: 'add-panel',
           gridPos: { x: 0, y: 0, w: 12, h: 9 },
-          title: 'Panel Title',
+          title: 'Titre du panneau',
         },
       ],
     },

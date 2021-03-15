@@ -4,9 +4,9 @@ import { DataSourceSrv } from '@grafana/runtime';
 export const getDefaultCondition = () => ({
   type: 'query',
   query: { params: ['A', '5m', 'now'] },
-  reducer: { type: 'avg', params: [] as any[] },
+  reducer: { type: 'Moy', params: [] as any[] },
   evaluator: { type: 'gt', params: [null] as any[] },
-  operator: { type: 'and' },
+  operator: { type: 'et' },
 });
 
 export const getAlertingValidationMessage = async (
@@ -16,11 +16,11 @@ export const getAlertingValidationMessage = async (
   datasourceName: string | null
 ): Promise<string> => {
   if (targets.length === 0) {
-    return 'Could not find any metric queries';
+    return 'Aucune requête métrique trouvée';
   }
 
   if (transformations && transformations.length) {
-    return 'Transformations are not supported in alert queries';
+    return "Transformations non supportées en requêtes d'alerte";
   }
 
   let alertingNotSupported = 0;
@@ -37,7 +37,7 @@ export const getAlertingValidationMessage = async (
   }
 
   if (alertingNotSupported === targets.length) {
-    return 'The datasource does not support alerting queries';
+    return "La source de données ne supporte pas les requêtes d'alerte";
   }
 
   if (templateVariablesNotSupported === targets.length) {

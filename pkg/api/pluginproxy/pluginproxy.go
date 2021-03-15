@@ -25,7 +25,7 @@ func NewApiPluginProxy(ctx *models.ReqContext, proxyPath string, route *plugins.
 	director := func(req *http.Request) {
 		query := models.GetPluginSettingByIdQuery{OrgId: ctx.OrgId, PluginId: appID}
 		if err := bus.Dispatch(&query); err != nil {
-			ctx.JsonApiErr(500, "Failed to fetch plugin settings", err)
+			ctx.JsonApiErr(500, "Echec de récupération des options plugin", err)
 			return
 		}
 

@@ -132,7 +132,7 @@ export class UserProfile extends PureComponent<Props, State> {
             <ConfirmModal
               isOpen={showDeleteModal}
               title="Delete user"
-              body="Are you sure you want to delete this user?"
+              body="Êtes-vous sûr de vouloir supprimer cet utilisateur ?"
               confirmText="Delete user"
               onConfirm={this.onUserDelete}
               onDismiss={this.showDeleteUserModal(false)}
@@ -149,7 +149,7 @@ export class UserProfile extends PureComponent<Props, State> {
             <ConfirmModal
               isOpen={showDisableModal}
               title="Disable user"
-              body="Are you sure you want to disable this user?"
+              body="Êtes-vous sûr de vouloir désactiver cet utilisateur?"
               confirmText="Disable user"
               onConfirm={this.onUserDisable}
               onDismiss={this.showDisableUserModal(false)}

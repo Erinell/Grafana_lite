@@ -76,7 +76,7 @@ export const sections = [
       {
         id: 4072,
         uid: 'OzAIf_rWz',
-        title: 'New dashboard Copy 3',
+        title: 'Nouveau tableau Copie 3',
 
         type: DashboardSearchItemType.DashDB,
         isStarred: false,
@@ -99,7 +99,7 @@ export const sections = [
       {
         id: 4073,
         uid: 'j9SHflrWk',
-        title: 'New dashboard Copy 4',
+        title: 'Nouveau tableau Copie 4',
         type: DashboardSearchItemType.DashDB,
         isStarred: false,
         folderId: 2,
@@ -146,7 +146,7 @@ export const sections = [
       {
         id: 4069,
         uid: 'LCFWfl9Zz',
-        title: 'New dashboard Copy',
+        title: 'Nouveau tableau Copie',
         uri: 'db/new-dashboard-copy',
         url: '/d/LCFWfl9Zz/new-dashboard-copy',
         slug: '',
@@ -156,7 +156,7 @@ export const sections = [
       {
         id: 4072,
         uid: 'OzAIf_rWz',
-        title: 'New dashboard Copy 3',
+        title: 'Nouveau tableau Copie 3',
         type: DashboardSearchItemType.DashDB,
         isStarred: false,
       },

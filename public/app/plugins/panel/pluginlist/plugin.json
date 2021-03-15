@@ -1,12 +1,12 @@
 {
   "type": "panel",
-  "name": "Plugin list",
+  "name": "Liste de plugins",
   "id": "pluginlist",
 
   "skipDataQuery": true,
 
   "info": {
-    "description": "Plugin List for Grafana",
+    "description": "Liste de plugins pour Grafana",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

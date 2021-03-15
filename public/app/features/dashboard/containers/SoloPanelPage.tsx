@@ -81,11 +81,11 @@ export class SoloPanelPage extends Component<Props, State> {
     const { notFound, panel } = this.state;
 
     if (notFound) {
-      return <div className="alert alert-error">Panel with id {this.getPanelId()} not found</div>;
+      return <div className="alert alert-error">Panneau avec id {this.getPanelId()} non trouvé</div>;
     }
 
     if (!panel || !dashboard) {
-      return <div>Loading & initializing dashboard</div>;
+      return <div>Chargement et initialisation du tableau</div>;
     }
 
     return (

@@ -36,38 +36,31 @@ export class ErrorPage extends PureComponent<Props> {
                   <div className="error-column image-box">
                     <img src="public/img/graph404.svg" width="100%" alt="graph" />
                     <div className="error-row error-space-between">
-                      <p className="graph-text">Then</p>
-                      <p className="graph-text">Now</p>
+                      <p className="graph-text">Et</p>
+                      <p className="graph-text">Mantenant</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="error-column info-box">
                 <div className="error-row current-box">
-                  <p className="current-text">current</p>
+                  <p className="current-text">Actuel</p>
                 </div>
                 <div className="error-row" style={{ flex: 1 }}>
                   <Icon name="minus-circle" className="error-minus" />
                   <div className="error-column error-space-between error-full-width">
                     <div className="error-row error-space-between">
-                      <p>Chances you are on the page you are looking for.</p>
+                      <p>Chance d&apos;être sur la page voulue.</p>
                       <p className="left-margin">0%</p>
                     </div>
                     <div>
-                      <h3>Sorry for the inconvenience</h3>
+                      <h3>Désolé pour le trouble</h3>
                       <p>
-                        Please go back to your{' '}
+                        Revenez à{' '}
                         <a href={config.appSubUrl} className="error-link">
-                          home dashboard
+                          l&apos;accueil
                         </a>{' '}
-                        and try again.
-                      </p>
-                      <p>
-                        If the error persists, seek help on the{' '}
-                        <a href="https://community.grafana.com" target="_blank" rel="noreferrer" className="error-link">
-                          community site
-                        </a>
-                        .
+                        et réessayez.
                       </p>
                     </div>
                   </div>

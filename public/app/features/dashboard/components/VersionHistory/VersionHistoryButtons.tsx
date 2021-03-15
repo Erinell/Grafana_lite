@@ -18,12 +18,12 @@ export const VersionsHistoryButtons: React.FC<VersionsButtonsType> = ({
   <HorizontalGroup>
     {hasMore && (
       <Button type="button" onClick={() => getVersions(true)} variant="secondary" disabled={isLastPage}>
-        Show more versions
+        Voir plus de versions
       </Button>
     )}
     <Tooltip content="Select 2 versions to start comparing" placement="bottom">
       <Button type="button" disabled={canCompare} onClick={() => getDiff('basic')} icon="code-branch">
-        Compare versions
+        Comparer les versions
       </Button>
     </Tooltip>
   </HorizontalGroup>

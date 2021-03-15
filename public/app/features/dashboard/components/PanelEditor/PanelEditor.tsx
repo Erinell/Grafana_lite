@@ -297,7 +297,7 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
             <DashNavTimeControls dashboard={dashboard} onChangeTimeZone={updateTimeZoneForSession} />
             {!uiState.isPanelOptionsVisible && (
               <ToolbarButton onClick={this.onTogglePanelOptions} tooltip="Open options pane" icon="angle-left">
-                Show options
+                Voir options
               </ToolbarButton>
             )}
           </HorizontalGroup>
@@ -311,33 +311,37 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
       <ToolbarButton
         icon="cog"
         onClick={this.onOpenDashboardSettings}
-        title="Open dashboard settings"
+        title="Ouvrir les options du tableau"
         key="settings"
       />,
-      <ToolbarButton onClick={this.onDiscard} title="Undo all changes" key="discard">
-        Discard
+      <ToolbarButton onClick={this.onDiscard} title="Annuler les changements" key="discard">
+        Annuler
       </ToolbarButton>,
       this.props.panel.libraryPanel ? (
         <ToolbarButton
           onClick={this.onSaveLibraryPanel}
           variant="primary"
-          title="Apply changes and save library panel"
+          title="Appliquer les changements et sauvegarder la librairie"
           key="save-panel"
         >
-          Save library panel
+          Sauvegarder la librairie
         </ToolbarButton>
       ) : (
-        <ToolbarButton onClick={this.onSaveDashboard} title="Apply changes and save dashboard" key="save">
-          Save
+        <ToolbarButton
+          onClick={this.onSaveDashboard}
+          title="Appliquer les changements et sauvegarder le tableau"
+          key="save"
+        >
+          Sauvegarder
         </ToolbarButton>
       ),
       <ToolbarButton
         onClick={this.props.exitPanelEditor}
         variant="primary"
-        title="Apply changes and go back to dashboard"
+        title="Appliquer les changements et revenir au tableau"
         key="apply"
       >
-        Apply
+        Appliquer
       </ToolbarButton>,
     ];
 
@@ -363,7 +367,7 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
                 title="Disconnects this panel from the reusable panel so that you can edit it regularly."
                 key="unlink"
               >
-                Unlink
+                Délier
               </ToolbarButton>
             );
           }}
@@ -413,7 +417,7 @@ export class PanelEditorUnconnected extends PureComponent<Props> {
 
     return (
       <div className={styles.wrapper} aria-label={selectors.components.PanelEditor.General.content}>
-        <PageToolbar title={`${dashboard.title} / Edit Panel`} onGoBack={exitPanelEditor}>
+        <PageToolbar title={`${dashboard.title} / Edition panneau`} onGoBack={exitPanelEditor}>
           {this.renderEditorActions()}
         </PageToolbar>
         <div className={styles.verticalSplitPanesWrapper}>

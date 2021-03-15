@@ -11,24 +11,24 @@ type TimeRegionColorDefinition = {
 export const colorModes: any = {
   gray: {
     themeDependent: true,
-    title: 'Gray',
+    title: 'Gris',
     darkColor: { fill: 'rgba(255, 255, 255, 0.09)', line: 'rgba(255, 255, 255, 0.2)' },
     lightColor: { fill: 'rgba(0, 0, 0, 0.09)', line: 'rgba(0, 0, 0, 0.2)' },
   },
   red: {
-    title: 'Red',
+    title: 'Rouge',
     color: { fill: 'rgba(234, 112, 112, 0.12)', line: 'rgba(237, 46, 24, 0.60)' },
   },
   green: {
-    title: 'Green',
+    title: 'Vert',
     color: { fill: 'rgba(11, 237, 50, 0.090)', line: 'rgba(6,163,69, 0.60)' },
   },
   blue: {
-    title: 'Blue',
+    title: 'Bleu',
     color: { fill: 'rgba(11, 125, 238, 0.12)', line: 'rgba(11, 125, 238, 0.60)' },
   },
   yellow: {
-    title: 'Yellow',
+    title: 'Jaune',
     color: { fill: 'rgba(235, 138, 14, 0.12)', line: 'rgba(247, 149, 32, 0.60)' },
   },
   custom: { title: 'Custom' },

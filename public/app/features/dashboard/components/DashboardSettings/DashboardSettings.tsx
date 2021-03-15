@@ -60,7 +60,7 @@ export class DashboardSettings extends PureComponent<Props> {
       });
 
       pages.push({
-        title: 'Links',
+        title: 'Liens',
         id: 'links',
         icon: 'link',
         render: () => <LinksSettings dashboard={dashboard} />,
@@ -69,7 +69,7 @@ export class DashboardSettings extends PureComponent<Props> {
 
     if (dashboard.meta.canMakeEditable) {
       pages.push({
-        title: 'General',
+        title: 'Général',
         icon: 'sliders-v-alt',
         id: 'settings',
         render: () => this.renderMakeEditable(),
@@ -95,7 +95,7 @@ export class DashboardSettings extends PureComponent<Props> {
     }
 
     pages.push({
-      title: 'JSON Model',
+      title: 'Modèle JSON',
       id: 'dashboard_json',
       icon: 'arrow',
       render: () => <JsonEditorSettings dashboard={dashboard} />,
@@ -121,15 +121,15 @@ export class DashboardSettings extends PureComponent<Props> {
   renderMakeEditable(): React.ReactNode {
     return (
       <div>
-        <div className="dashboard-settings__header">Dashboard not editable</div>
-        <Button onClick={this.onMakeEditable}>Make editable</Button>
+        <div className="dashboard-settings__header">Tableau non éditable</div>
+        <Button onClick={this.onMakeEditable}>Rendre éditable</Button>
       </div>
     );
   }
 
   getGeneralPage(): SettingsPage {
     return {
-      title: 'General',
+      title: 'Général',
       id: 'settings',
       icon: 'sliders-v-alt',
       render: () => <GeneralSettings dashboard={this.props.dashboard} />,

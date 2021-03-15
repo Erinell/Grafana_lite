@@ -17,7 +17,7 @@ export const HelpToggle: React.FunctionComponent = ({ children }) => {
   return (
     <>
       <button className="gf-form-label query-keyword pointer" onClick={(_) => setIsHelpVisible(!isHelpVisible)}>
-        Help
+        Aide
         <Icon name={isHelpVisible ? 'angle-down' : 'angle-right'} />
       </button>
       {isHelpVisible && <InfoBox className={cx(styles.infoBox)}>{children}</InfoBox>}

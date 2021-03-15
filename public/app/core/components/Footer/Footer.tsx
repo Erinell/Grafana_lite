@@ -24,7 +24,7 @@ export let getFooterLinks = (): FooterLink[] => {
       target: '_blank',
     },
     {
-      text: 'Community',
+      text: 'Communauté',
       icon: 'comments-alt',
       url: 'https://community.grafana.com/?utm_source=grafana_footer',
       target: '_blank',
@@ -45,14 +45,15 @@ export let getVersionLinks = (): FooterLink[] => {
 
   links.push({ text: `v${buildInfo.version} (${buildInfo.commit})` });
 
+  /* pas faire de maj
   if (buildInfo.hasUpdate) {
     links.push({
-      text: `New version available!`,
+      text: `Nouvelle version disponible !`,
       icon: 'download-alt',
       url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
       target: '_blank',
     });
-  }
+  }*/
 
   return links;
 };

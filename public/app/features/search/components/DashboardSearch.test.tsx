@@ -40,7 +40,7 @@ describe('DashboardSearch', () => {
     locationService.push('/');
     setup();
 
-    await waitFor(() => screen.getByPlaceholderText('Search dashboards by name'));
+    await waitFor(() => screen.getByPlaceholderText('Chercher des tableaux par nom'));
 
     expect(mockSearch).toHaveBeenCalledTimes(1);
     expect(mockSearch).toHaveBeenCalledWith({
@@ -60,7 +60,7 @@ describe('DashboardSearch', () => {
     locationService.push('/');
     setup();
 
-    const input = await screen.findByPlaceholderText('Search dashboards by name');
+    const input = await screen.findByPlaceholderText('Chercher des tableaux par nom');
     await act((async () => {
       await fireEvent.input(input, { target: { value: 'Test' } });
       jest.runAllTimers();

@@ -4,8 +4,8 @@ import { NavModel } from './navModel';
 import { PluginMeta, GrafanaPlugin, PluginIncludeType } from './plugin';
 
 export enum CoreApp {
-  Dashboard = 'dashboard',
-  Explore = 'explore',
+  Dashboard = 'Tableau',
+  Explore = 'explorer',
 }
 
 export interface AppRootProps<T = KeyValue> {

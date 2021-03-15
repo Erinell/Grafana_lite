@@ -60,7 +60,7 @@ export function AlertList(props: PanelProps<AlertListOptions>) {
     if (currentAlerts.length > props.options.maxItems) {
       currentAlerts = currentAlerts.slice(0, props.options.maxItems);
     }
-    setNoAlertsMessage(currentAlerts.length === 0 ? 'No alerts' : '');
+    setNoAlertsMessage(currentAlerts.length === 0 ? 'Aucune alertes' : '');
 
     return currentAlerts;
   }, [

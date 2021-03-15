@@ -55,9 +55,9 @@ export class DataProcessor {
     }
 
     // Merge all the rows if we want to show a histogram
-    if (this.panel.xaxis.mode === 'histogram' && !this.panel.stack && list.length > 1) {
+    if (this.panel.xaxis.mode === 'histogramme' && !this.panel.stack && list.length > 1) {
       const first = list[0];
-      first.alias = first.aliasEscaped = 'Count';
+      first.alias = first.aliasEscaped = 'Compte';
 
       for (let i = 1; i < list.length; i++) {
         first.datapoints = first.datapoints.concat(list[i].datapoints);
@@ -107,7 +107,7 @@ export class DataProcessor {
 
   setPanelDefaultsForNewXAxisMode() {
     switch (this.panel.xaxis.mode) {
-      case 'time': {
+      case 'temps': {
         this.panel.bars = false;
         this.panel.lines = true;
         this.panel.points = false;
@@ -126,7 +126,7 @@ export class DataProcessor {
         this.panel.xaxis.values = ['total'];
         break;
       }
-      case 'histogram': {
+      case 'histogramme': {
         this.panel.bars = true;
         this.panel.lines = false;
         this.panel.points = false;
@@ -160,11 +160,11 @@ export class DataProcessor {
     switch (this.panel.xaxis.mode) {
       case 'series': {
         return [
-          { text: 'Avg', value: 'avg' },
+          { text: 'Moy', value: 'avg' },
           { text: 'Min', value: 'min' },
           { text: 'Max', value: 'max' },
           { text: 'Total', value: 'total' },
-          { text: 'Count', value: 'count' },
+          { text: 'Compte', value: 'count' },
         ];
       }
     }

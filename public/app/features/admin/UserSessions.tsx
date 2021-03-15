@@ -89,7 +89,7 @@ export class UserSessions extends PureComponent<Props, State> {
             <ConfirmModal
               isOpen={showLogoutModal}
               title="Force logout from all devices"
-              body="Are you sure you want to force logout from all devices?"
+              body="Êtes-vous sûr de vouloir vous déconnecter de tout les appareils ?"
               confirmText="Force logout"
               onConfirm={this.onAllSessionsRevoke}
               onDismiss={this.showLogoutConfirmationModal(false)}

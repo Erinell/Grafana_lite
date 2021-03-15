@@ -94,7 +94,7 @@ export default class BottomNavLinks extends PureComponent<Props, State> {
           {link.id === 'help' && (
             <li key="keyboard-shortcuts">
               <a onClick={() => this.onOpenShortcuts()}>
-                <Icon name="keyboard" className={subMenuIconClassName} /> Keyboard shortcuts
+                <Icon name="keyboard" className={subMenuIconClassName} /> Raccourcis clavier
               </a>
             </li>
           )}

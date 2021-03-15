@@ -128,7 +128,7 @@ export class InspectJSONTab extends PureComponent<Props, State> {
           </Field>
           {isPanelJSON && canEdit && (
             <Button className={styles.toolbarItem} onClick={this.onApplyPanelModel}>
-              Apply
+              Appliquer
             </Button>
           )}
         </div>

@@ -1,6 +1,6 @@
 {
   "type": "panel",
-  "name": "Node Graph",
+  "name": "Graphe de noeuds",
   "id": "nodeGraph",
   "state": "beta",
 

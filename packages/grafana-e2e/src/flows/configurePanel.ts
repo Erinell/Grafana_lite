@@ -145,7 +145,7 @@ export const configurePanel = (config: PartialAddPanelConfig | PartialEditPanelC
         if (changeTitle) {
           openOptionsGroup('settings');
           getOptionsGroup('settings')
-            .find('[value="Panel Title"]')
+            .find('[value="Titre du panneau"]')
             .scrollIntoView()
             .clear()
             .type(panelTitle as string);
@@ -186,7 +186,7 @@ export const configurePanel = (config: PartialAddPanelConfig | PartialEditPanelC
     //e2e().wait('@chartData');
 
     if (!isExplore) {
-      e2e().get('button[title="Apply changes and go back to dashboard"]').click();
+      e2e().get('button[title="Appliquer les changements et revenir"]').click();
       e2e().url().should('include', `/d/${dashboardUid}`);
     }
 
@@ -285,19 +285,19 @@ const openOptionsGroup = (name: string): any =>
 
 const toggleOptionsGroup = (name: string) => getOptionsGroup(name).find('.editor-options-group-toggle').click();
 
-export const VISUALIZATION_ALERT_LIST = 'Alert list';
-export const VISUALIZATION_BAR_GAUGE = 'Bar gauge';
-export const VISUALIZATION_CLOCK = 'Clock';
-export const VISUALIZATION_DASHBOARD_LIST = 'Dashboard list';
-export const VISUALIZATION_GAUGE = 'Gauge';
-export const VISUALIZATION_GRAPH = 'Graph';
-export const VISUALIZATION_HEAT_MAP = 'Heatmap';
-export const VISUALIZATION_LOGS = 'Logs';
-export const VISUALIZATION_NEWS = 'News';
-export const VISUALIZATION_PIE_CHART = 'Pie Chart';
-export const VISUALIZATION_PLUGIN_LIST = 'Plugin list';
+export const VISUALIZATION_ALERT_LIST = "Liste d'alerte";
+export const VISUALIZATION_BAR_GAUGE = 'Jauge à barres';
+export const VISUALIZATION_CLOCK = 'Horloge';
+export const VISUALIZATION_DASHBOARD_LIST = 'Liste de tableau';
+export const VISUALIZATION_GAUGE = 'Jauge';
+export const VISUALIZATION_GRAPH = 'Graphique';
+export const VISUALIZATION_HEAT_MAP = 'Carte de chaleur';
+export const VISUALIZATION_LOGS = 'Journaux';
+export const VISUALIZATION_NEWS = 'Nouveautés';
+export const VISUALIZATION_PIE_CHART = 'Diagramme circulaire';
+export const VISUALIZATION_PLUGIN_LIST = 'Liste de plugins';
 export const VISUALIZATION_POLYSTAT = 'Polystat';
-export const VISUALIZATION_STAT = 'Stat';
-export const VISUALIZATION_TABLE = 'Table';
-export const VISUALIZATION_TEXT = 'Text';
-export const VISUALIZATION_WORLD_MAP = 'Worldmap Panel';
+export const VISUALIZATION_STAT = 'Statistique';
+export const VISUALIZATION_TABLE = 'Tableau';
+export const VISUALIZATION_TEXT = 'Texte';
+export const VISUALIZATION_WORLD_MAP = 'carte du monde';

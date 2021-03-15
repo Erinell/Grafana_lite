@@ -3,9 +3,9 @@ import { NavModel, NavModelItem, NavIndex } from '@grafana/data';
 const getNotFoundModel = (): NavModel => {
   const node: NavModelItem = {
     id: 'not-found',
-    text: 'Page not found',
+    text: 'Page non trouvée',
     icon: 'exclamation-triangle',
-    subTitle: '404 Error',
+    subTitle: 'Erreur 404',
     url: 'not-found',
   };
 

@@ -136,7 +136,7 @@ export const LoginServiceButtons = () => {
         target="_self"
       >
         <i className={`btn-service-icon fa fa-${service.icon ? service.icon : key}`} />
-        Sign in with {service.name}
+        Connexion avec {service.name}
       </a>
     );
   });

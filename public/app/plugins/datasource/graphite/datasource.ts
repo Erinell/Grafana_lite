@@ -55,7 +55,7 @@ export class GraphiteDatasource extends DataSourceApi<GraphiteQuery, GraphiteOpt
       cacheTimeout: true,
       links: [
         {
-          text: 'Help',
+          text: 'Aide',
           url: 'http://docs.grafana.org/features/datasources/graphite/#using-graphite-in-grafana',
         },
       ],

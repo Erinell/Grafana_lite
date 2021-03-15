@@ -40,7 +40,7 @@ export function QueryRowActions(props: Props) {
         </div>
       )}
       <div className="gf-form">
-        <button disabled className="gf-form-label" title="Query row latency">
+        <button disabled className="gf-form-label" title="Latence des lignes de requête">
           {formatLatency(latency)}
         </button>
       </div>
@@ -49,13 +49,13 @@ export function QueryRowActions(props: Props) {
           disabled={isNotStarted}
           className="gf-form-label gf-form-label--btn"
           onClick={onClickToggleDisabled}
-          title={isDisabled ? 'Enable query' : 'Disable query'}
+          title={isDisabled ? 'Activer la requête' : 'Désactiver la requête'}
         >
           <Icon name={isDisabled ? 'eye-slash' : 'eye'} />
         </button>
       </div>
       <div className="gf-form">
-        <button className="gf-form-label gf-form-label--btn" onClick={onClickRemoveButton} title="Remove query">
+        <button className="gf-form-label gf-form-label--btn" onClick={onClickRemoveButton} title="Supprimer la requête">
           <Icon name="minus" />
         </button>
       </div>

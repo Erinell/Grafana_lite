@@ -43,7 +43,7 @@ func GetAlertStatesForDashboard(c *models.ReqContext) response.Response {
 	}
 
 	if err := bus.Dispatch(&query); err != nil {
-		return response.Error(500, "Failed to fetch alert states", err)
+		return response.Error(500, "Echec de récupération des états d'alertes", err)
 	}
 
 	return response.JSON(200, query.Result)

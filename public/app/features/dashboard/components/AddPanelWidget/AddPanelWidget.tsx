@@ -70,7 +70,7 @@ export const AddPanelWidgetUnconnected: React.FC<Props> = ({ panel, dashboard })
 
     const newPanel: Partial<PanelModel> = {
       type: 'graph',
-      title: 'Panel Title',
+      title: 'Titre du panneau',
       gridPos: { x: gridPos.x, y: gridPos.y, w: gridPos.w, h: gridPos.h },
     };
 
@@ -85,7 +85,7 @@ export const AddPanelWidgetUnconnected: React.FC<Props> = ({ panel, dashboard })
 
     const newPanel: any = {
       type: panelPluginInfo.id,
-      title: 'Panel Title',
+      title: 'Titre du panneau',
       gridPos: {
         x: gridPos.x,
         y: gridPos.y,
@@ -135,7 +135,7 @@ export const AddPanelWidgetUnconnected: React.FC<Props> = ({ panel, dashboard })
   return (
     <div className={cx('panel-container', styles.wrapper)}>
       <AddPanelWidgetHandle onCancel={onCancelAddPanel} onBack={addPanelView ? onBack : undefined} styles={styles}>
-        {addPanelView ? 'Add panel from panel library' : 'Add panel'}
+        {addPanelView ? 'Ajouter un tableau depuis la librairie' : 'Ajouter un tableau'}
       </AddPanelWidgetHandle>
       {addPanelView ? (
         <LibraryPanelsView
@@ -149,11 +149,11 @@ export const AddPanelWidgetUnconnected: React.FC<Props> = ({ panel, dashboard })
           <div className={styles.actionsRow}>
             <div onClick={() => onCreateNewPanel()} aria-label={selectors.pages.AddDashboard.addNewPanel}>
               <Icon name="file-blank" size="xl" />
-              Add an empty panel
+              Ajouter un panneau vide
             </div>
             <div onClick={onCreateNewRow}>
               <Icon name="wrap-text" size="xl" />
-              Add a new row
+              Ajouter une nouvelle ligne
             </div>
           </div>
           {(config.featureToggles.panelLibrary || copiedPanelPlugins.length === 1) && (

@@ -9,7 +9,7 @@ export function toggleKioskMode() {
   switch (kiosk) {
     case 'tv':
       kiosk = true;
-      appEvents.emit(AppEvents.alertSuccess, ['Press ESC to exit Kiosk mode']);
+      appEvents.emit(AppEvents.alertSuccess, ['Presser ESC pour quitter le mode kiosque.']);
       break;
     case '1':
     case true:

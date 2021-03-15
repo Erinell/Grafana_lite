@@ -28,11 +28,11 @@ export class ThresholdFormCtrl {
   addThreshold() {
     this.panel.thresholds.push({
       value: undefined,
-      colorMode: 'critical',
+      colorMode: 'Critique',
       op: 'gt',
       fill: true,
       line: true,
-      yaxis: 'left',
+      yaxis: 'gauche',
     });
     this.panelCtrl.render();
   }

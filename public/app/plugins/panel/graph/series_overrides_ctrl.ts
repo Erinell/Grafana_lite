@@ -99,17 +99,17 @@ export function SeriesOverridesCtrl($scope: any, $element: JQuery, popoverSrv: a
     });
   };
 
-  $scope.addOverrideOption('Bars', 'bars', [true, false]);
-  $scope.addOverrideOption('Lines', 'lines', [true, false]);
-  $scope.addOverrideOption('Line fill', 'fill', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  $scope.addOverrideOption('Fill gradient', 'fillGradient', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  $scope.addOverrideOption('Line width', 'linewidth', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  $scope.addOverrideOption('Null point mode', 'nullPointMode', ['connected', 'null', 'null as zero']);
-  $scope.addOverrideOption('Fill below to', 'fillBelowTo', $scope.getSeriesNames());
-  $scope.addOverrideOption('Staircase line', 'steppedLine', [true, false]);
-  $scope.addOverrideOption('Dashes', 'dashes', [true, false]);
-  $scope.addOverrideOption('Hidden Series', 'hiddenSeries', [true, false]);
-  $scope.addOverrideOption('Dash Length', 'dashLength', [
+  $scope.addOverrideOption('Barres', 'bars', [true, false]);
+  $scope.addOverrideOption('Lignes', 'lines', [true, false]);
+  $scope.addOverrideOption('Remplissage ligne', 'fill', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  $scope.addOverrideOption('Remplissage gradiant', 'fillGradient', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  $scope.addOverrideOption('Epaisseur ligne', 'linewidth', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  $scope.addOverrideOption('Mode point nul', 'nullPointMode', ['connected', 'null', 'null as zero']);
+  $scope.addOverrideOption('Remplir sous', 'fillBelowTo', $scope.getSeriesNames());
+  $scope.addOverrideOption('Ligne escalier', 'steppedLine', [true, false]);
+  $scope.addOverrideOption('Tirets', 'dashes', [true, false]);
+  $scope.addOverrideOption('Séries cachées', 'hiddenSeries', [true, false]);
+  $scope.addOverrideOption('Longueur tiret', 'dashLength', [
     1,
     2,
     3,
@@ -131,7 +131,7 @@ export function SeriesOverridesCtrl($scope: any, $element: JQuery, popoverSrv: a
     19,
     20,
   ]);
-  $scope.addOverrideOption('Dash Space', 'spaceLength', [
+  $scope.addOverrideOption('Espace tiret', 'spaceLength', [
     1,
     2,
     3,
@@ -154,14 +154,14 @@ export function SeriesOverridesCtrl($scope: any, $element: JQuery, popoverSrv: a
     20,
   ]);
   $scope.addOverrideOption('Points', 'points', [true, false]);
-  $scope.addOverrideOption('Points Radius', 'pointradius', [1, 2, 3, 4, 5]);
-  $scope.addOverrideOption('Stack', 'stack', [true, false, 'A', 'B', 'C', 'D']);
-  $scope.addOverrideOption('Color', 'color', ['change']);
-  $scope.addOverrideOption('Y-axis', 'yaxis', [1, 2]);
-  $scope.addOverrideOption('Z-index', 'zindex', [-3, -2, -1, 0, 1, 2, 3]);
-  $scope.addOverrideOption('Transform', 'transform', ['constant', 'negative-Y']);
-  $scope.addOverrideOption('Legend', 'legend', [true, false]);
-  $scope.addOverrideOption('Hide in tooltip', 'hideTooltip', [true, false]);
+  $scope.addOverrideOption('Taille points', 'pointradius', [1, 2, 3, 4, 5]);
+  $scope.addOverrideOption('Empiler', 'stack', [true, false, 'A', 'B', 'C', 'D']);
+  $scope.addOverrideOption('Couleur', 'color', ['change']);
+  $scope.addOverrideOption('Axe Y', 'yaxis', [1, 2]);
+  $scope.addOverrideOption('Index Z', 'zindex', [-3, -2, -1, 0, 1, 2, 3]);
+  $scope.addOverrideOption('Transformer', 'transform', ['constant', 'negative-Y']);
+  $scope.addOverrideOption('Légende', 'legend', [true, false]);
+  $scope.addOverrideOption('Cacher en infobulle', 'hideTooltip', [true, false]);
   $scope.updateCurrentOverrides();
 }
 

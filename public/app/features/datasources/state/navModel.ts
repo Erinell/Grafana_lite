@@ -11,13 +11,13 @@ export function buildNavModel(dataSource: DataSourceSettings, plugin: GenericDat
     subTitle: `Type: ${pluginMeta.name}`,
     url: '',
     text: dataSource.name,
-    breadcrumbs: [{ title: 'Data Sources', url: 'datasources' }],
+    breadcrumbs: [{ title: 'Sources de données', url: 'datasources' }],
     children: [
       {
         active: false,
         icon: 'sliders-v-alt',
         id: `datasource-settings-${dataSource.id}`,
-        text: 'Settings',
+        text: 'Options',
         url: `datasources/edit/${dataSource.id}/`,
       },
     ],
@@ -40,7 +40,7 @@ export function buildNavModel(dataSource: DataSourceSettings, plugin: GenericDat
       active: false,
       icon: 'apps',
       id: `datasource-dashboards-${dataSource.id}`,
-      text: 'Dashboards',
+      text: 'Tableaux',
       url: `datasources/edit/${dataSource.id}/dashboards`,
     });
   }
@@ -58,7 +58,7 @@ export function buildNavModel(dataSource: DataSourceSettings, plugin: GenericDat
       active: false,
       icon: 'info-circle',
       id: `datasource-insights-${dataSource.id}`,
-      text: 'Insights',
+      text: 'Aperçus',
       url: `datasources/edit/${dataSource.id}/insights`,
     });
   }
@@ -78,7 +78,7 @@ export function getDataSourceLoadingNav(pageName: string): NavModel {
       id: 1,
       isDefault: false,
       jsonData: { authType: 'credentials', defaultRegion: 'eu-west-2' },
-      name: 'Loading',
+      name: 'Chargement',
       orgId: 1,
       password: '',
       readOnly: false,

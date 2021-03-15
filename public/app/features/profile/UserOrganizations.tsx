@@ -26,12 +26,12 @@ export class UserOrganizations extends PureComponent<Props> {
       <>
         {orgs.length > 0 && (
           <>
-            <h3 className="page-sub-heading">Organizations</h3>
+            <h3 className="page-sub-heading">Organisations</h3>
             <div className="gf-form-group">
               <table className="filter-table form-inline">
                 <thead>
                   <tr>
-                    <th>Name</th>
+                    <th>Nom</th>
                     <th>Role</th>
                     <th />
                   </tr>
@@ -44,7 +44,7 @@ export class UserOrganizations extends PureComponent<Props> {
                         <td>{org.role}</td>
                         <td className="text-right">
                           {org.orgId === user.orgId ? (
-                            <span className="btn btn-primary btn-small">Current</span>
+                            <span className="btn btn-primary btn-small">Actuel</span>
                           ) : (
                             <Button
                               variant="secondary"

@@ -21,7 +21,7 @@ export const fieldNameByRegexMatcherItem: FieldMatcherUIRegistryItem<string> = {
   id: FieldMatcherID.byRegexp,
   component: FieldNameByRegexMatcherEditor,
   matcher: fieldMatchers.get(FieldMatcherID.byRegexp),
-  name: 'Fields with name matching regex',
-  description: 'Set properties for fields with names matching a regex',
+  name: 'Champs avec correspondance de nom regex',
+  description: 'Définir les propriétés des champs dont les noms correspondent a regex',
   optionsToLabel: (options) => options,
 };

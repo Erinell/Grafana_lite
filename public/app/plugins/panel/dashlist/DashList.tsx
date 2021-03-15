@@ -115,12 +115,12 @@ export function DashList(props: PanelProps<DashListOptions>) {
 
   const dashboardGroups: DashboardGroup[] = [
     {
-      header: 'Starred dashboards',
+      header: 'Tableaux favoris',
       dashboards: starredDashboards,
       show: showStarred,
     },
     {
-      header: 'Recently viewed dashboards',
+      header: 'Tableaux vus récemment',
       dashboards: recentDashboards,
       show: showRecentlyViewed,
     },
