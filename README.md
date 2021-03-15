@@ -2,6 +2,13 @@
 
 La platforme open source pour surveiller et visualiser.
 
+⚠️⚠️
+
+**Cette version de grafana est unique et ne doit pas être mise à jour du fait qu'il n'a jamais été prévu le support des langues.
+En cas de mise à jour de quelconque façon, la traduction sera perdue.**
+
+⚠️⚠️
+
 [![Licence](https://img.shields.io/github/license/grafana/grafana)](LICENSE)
 [![Circle CI](https://img.shields.io/circleci/build/gh/grafana/grafana)](https://circleci.com/gh/grafana/grafana)
 [![Go Report Card](https://goreportcard.com/badge/github.com/grafana/grafana)](https://goreportcard.com/report/github.com/grafana/grafana)
