@@ -311,14 +311,14 @@ func UpdateAlertNotificationByUID(c *models.ReqContext, cmd models.UpdateAlertNo
 
 	err := fillWithSecureSettingsDataByUID(&cmd)
 	if err != nil {
-		return response.Error(500, "Failed to update alert notification", err)
+		return response.Error(500, "Echec de mise à jour de la notification", err)
 	}
 
 	if err := bus.Dispatch(&cmd); err != nil {
 		if errors.Is(err, models.ErrAlertNotificationNotFound) {
 			return response.Error(404, err.Error(), nil)
 		}
-		return response.Error(500, "Failed to update alert notification", err)
+		return response.Error(500, "Echec de mise à jour de la notification", err)
 	}
 
 	query := models.GetAlertNotificationsWithUidQuery{
@@ -391,10 +391,10 @@ func DeleteAlertNotification(c *models.ReqContext) response.Response {
 		if errors.Is(err, models.ErrAlertNotificationNotFound) {
 			return response.Error(404, err.Error(), nil)
 		}
-		return response.Error(500, "Failed to delete alert notification", err)
+		return response.Error(500, "Echec de la suppression", err)
 	}
 
-	return response.Success("Notification deleted")
+	return response.Success("Notification supprimée")
 }
 
 func DeleteAlertNotificationByUID(c *models.ReqContext) response.Response {
@@ -407,11 +407,11 @@ func DeleteAlertNotificationByUID(c *models.ReqContext) response.Response {
 		if errors.Is(err, models.ErrAlertNotificationNotFound) {
 			return response.Error(404, err.Error(), nil)
 		}
-		return response.Error(500, "Failed to delete alert notification", err)
+		return response.Error(500, "Echec de la suppression", err)
 	}
 
 	return response.JSON(200, util.DynMap{
-		"message": "Notification deleted",
+		"message": "Notification supprimée",
 		"id":      cmd.DeletedAlertNotificationId,
 	})
 }
@@ -431,10 +431,10 @@ func NotificationTest(c *models.ReqContext, dto dtos.NotificationTestCommand) re
 		if errors.Is(err, models.ErrSmtpNotEnabled) {
 			return response.Error(412, err.Error(), err)
 		}
-		return response.Error(500, "Failed to send alert notifications", err)
+		return response.Error(500, "Echec de la suppression", err)
 	}
 
-	return response.Success("Test notification sent")
+	return response.Success("Notification test envoyée")
 }
 
 // POST /api/alerts/:alertId/pause
@@ -451,20 +451,20 @@ func PauseAlert(c *models.ReqContext, dto dtos.PauseAlertCommand) response.Respo
 	guardian := guardian.New(query.Result.DashboardId, c.OrgId, c.SignedInUser)
 	if canEdit, err := guardian.CanEdit(); err != nil || !canEdit {
 		if err != nil {
-			return response.Error(500, "Error while checking permissions for Alert", err)
+			return response.Error(500, "Erreur de vérification des permissions", err)
 		}
 
-		return response.Error(403, "Access denied to this dashboard and alert", nil)
+		return response.Error(403, "Accès refusé à ce tableau et aux alertes", nil)
 	}
 
 	// Alert state validation
 	if query.Result.State != models.AlertStatePaused && !dto.Paused {
 		result["state"] = "un-paused"
-		result["message"] = "Alert is already un-paused"
+		result["message"] = "Alerte déjà active"
 		return response.JSON(200, result)
 	} else if query.Result.State == models.AlertStatePaused && dto.Paused {
 		result["state"] = models.AlertStatePaused
-		result["message"] = "Alert is already paused"
+		result["message"] = "Alerte déjà en pause"
 		return response.JSON(200, result)
 	}
 
@@ -497,7 +497,7 @@ func PauseAllAlerts(c *models.ReqContext, dto dtos.PauseAllAlertsCommand) respon
 	}
 
 	if err := bus.Dispatch(&updateCmd); err != nil {
-		return response.Error(500, "Failed to pause alerts", err)
+		return response.Error(500, "Echec de mise en pause", err)
 	}
 
 	var resp models.AlertStateType = models.AlertStatePending
@@ -509,7 +509,7 @@ func PauseAllAlerts(c *models.ReqContext, dto dtos.PauseAllAlertsCommand) respon
 
 	result := map[string]interface{}{
 		"state":          resp,
-		"message":        "alerts " + pausedState,
+		"message":        "alertes " + pausedState,
 		"alertsAffected": updateCmd.ResultCount,
 	}
 

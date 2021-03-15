@@ -28,7 +28,7 @@ export const UnsavedChangesModal: React.FC<UnsavedChangesModalProps> = ({
       `}
     >
       <VerticalGroup align={'center'} spacing={'md'}>
-        <h4>Do you want to save your changes?</h4>
+        <h4>Voulez-vous sauvegarder les changements ?</h4>
         <HorizontalGroup justify="center">
           <SaveDashboardButton dashboard={dashboard} onSaveSuccess={onSaveSuccess} />
           <Button
@@ -38,10 +38,10 @@ export const UnsavedChangesModal: React.FC<UnsavedChangesModalProps> = ({
               onDismiss();
             }}
           >
-            Discard
+            Rejeter
           </Button>
           <Button variant="secondary" onClick={onDismiss}>
-            Cancel
+            Annuler
           </Button>
         </HorizontalGroup>
       </VerticalGroup>

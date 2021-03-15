@@ -31,7 +31,7 @@ export const ConfirmModal: FC<Props> = ({
   title,
   body,
   confirmText,
-  dismissText = 'Cancel',
+  dismissText = 'Annuler',
   icon = 'exclamation-triangle',
   onConfirm,
   onDismiss,

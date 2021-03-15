@@ -342,7 +342,7 @@ HTTP/1.1 200
 Content-Type: application/json
 
 {
-  "message": "Notification deleted"
+  "message": "Notification supprimée"
 }
 ```
 
@@ -368,7 +368,7 @@ HTTP/1.1 200
 Content-Type: application/json
 
 {
-  "message": "Notification deleted"
+  "message": "Notification supprimée"
 }
 ```
 

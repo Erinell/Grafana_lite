@@ -179,9 +179,9 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 
 	if setting.ExploreEnabled && (c.OrgRole == models.ROLE_ADMIN || c.OrgRole == models.ROLE_EDITOR || setting.ViewersCanEdit) {
 		navTree = append(navTree, &dtos.NavLink{
-			Text:       "Explore",
+			Text:       "Explorer",
 			Id:         "explore",
-			SubTitle:   "Explore your data",
+			SubTitle:   "Explorer vos données",
 			Icon:       "compass",
 			SortWeight: dtos.WeightExplore,
 			Url:        hs.Cfg.AppSubURL + "/explore",
@@ -287,7 +287,7 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 	if c.IsGrafanaAdmin {
 		adminNavLinks := []*dtos.NavLink{
 			{Text: "Utilisateurs", Id: "global-users", Url: hs.Cfg.AppSubURL + "/admin/users", Icon: "user"},
-			{Text: "Orgs", Id: "global-orgs", Url: hs.Cfg.AppSubURL + "/admin/orgs", Icon: "building"},
+			{Text: "Organisations", Id: "global-orgs", Url: hs.Cfg.AppSubURL + "/admin/orgs", Icon: "building"},
 			{Text: "Options", Id: "server-settings", Url: hs.Cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt"},
 			{Text: "Stats", Id: "server-stats", Url: hs.Cfg.AppSubURL + "/admin/stats", Icon: "graph-bar"},
 		}
