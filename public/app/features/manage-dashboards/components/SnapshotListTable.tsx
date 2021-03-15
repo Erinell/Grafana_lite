@@ -45,7 +45,7 @@ export const SnapshotListTable: FC = () => {
         <thead>
           <tr>
             <th>
-              <strong>Name</strong>
+              <strong>Nom</strong>
             </th>
             <th>
               <strong>Snapshot url</strong>
@@ -70,7 +70,7 @@ export const SnapshotListTable: FC = () => {
                 <td>{snapshot.external && <span className="query-keyword">External</span>}</td>
                 <td className="text-center">
                   <LinkButton href={url} variant="secondary" size="sm" icon="eye">
-                    View
+                    Voir
                   </LinkButton>
                 </td>
                 <td className="text-right">

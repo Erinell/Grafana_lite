@@ -19,11 +19,11 @@ const UsersTable: FC<Props> = (props) => {
       <thead>
         <tr>
           <th />
-          <th>Login</th>
+          <th>Connexion</th>
           <th>Email</th>
-          <th>Name</th>
-          <th>Seen</th>
-          <th>Role</th>
+          <th>Nom</th>
+          <th>Vu</th>
+          <th>Rôle</th>
           <th style={{ width: '34px' }} />
         </tr>
       </thead>

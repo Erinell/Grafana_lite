@@ -73,7 +73,7 @@ export class EditNotificationChannelPage extends PureComponent<Props> {
     return (
       <Page navModel={navModel}>
         <Page.Contents>
-          <h2 className="page-sub-heading">Edit notification channel</h2>
+          <h2 className="page-sub-heading">Edition canal de notification</h2>
           {notificationChannel && notificationChannel.id > 0 ? (
             <Form
               maxWidth={600}
@@ -105,7 +105,7 @@ export class EditNotificationChannelPage extends PureComponent<Props> {
             </Form>
           ) : (
             <div>
-              Loading notification channel
+              Charger
               <Spinner />
             </div>
           )}

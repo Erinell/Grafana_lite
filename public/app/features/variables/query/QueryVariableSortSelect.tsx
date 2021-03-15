@@ -10,13 +10,13 @@ interface Props {
 }
 
 const SORT_OPTIONS = [
-  { label: 'Disabled', value: VariableSort.disabled },
-  { label: 'Alphabetical (asc)', value: VariableSort.alphabeticalAsc },
-  { label: 'Alphabetical (desc)', value: VariableSort.alphabeticalDesc },
-  { label: 'Numerical (asc)', value: VariableSort.numericalAsc },
-  { label: 'Numerical (desc)', value: VariableSort.numericalDesc },
-  { label: 'Alphabetical (case-insensitive, asc)', value: VariableSort.alphabeticalCaseInsensitiveAsc },
-  { label: 'Alphabetical (case-insensitive, desc)', value: VariableSort.alphabeticalCaseInsensitiveDesc },
+  { label: 'Désactivé', value: VariableSort.disabled },
+  { label: 'alphabétique (asc)', value: VariableSort.alphabeticalAsc },
+  { label: 'alphabétique (desc)', value: VariableSort.alphabeticalDesc },
+  { label: 'Numérique (asc)', value: VariableSort.numericalAsc },
+  { label: 'Numérique (desc)', value: VariableSort.numericalDesc },
+  { label: 'alphabétique (case-insensible, asc)', value: VariableSort.alphabeticalCaseInsensitiveAsc },
+  { label: 'alphabétique (case-insensible, desc)', value: VariableSort.alphabeticalCaseInsensitiveDesc },
 ];
 
 export function QueryVariableSortSelect({ onChange, sort }: PropsWithChildren<Props>) {
@@ -24,13 +24,13 @@ export function QueryVariableSortSelect({ onChange, sort }: PropsWithChildren<Pr
 
   return (
     <VariableSelectField
-      name="Sort"
+      name="Trier"
       value={value}
       options={SORT_OPTIONS}
       onChange={onChange}
       labelWidth={10}
       ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.QueryVariable.queryOptionsSortSelect}
-      tooltip="How to sort the values of this variable."
+      tooltip="Comment trier les valeurs de cette variable."
     />
   );
 }

@@ -48,7 +48,7 @@ const AlertRuleItem = ({ rule, search, onTogglePause }: Props) => {
           {rule.state === 'paused' ? 'Resume' : 'Pause'}
         </Button>
         <LinkButton key="edit" variant="secondary" href={ruleUrl} icon="cog">
-          Edit alert
+          Editer alerte
         </LinkButton>
       </Card.Actions>
     </Card>

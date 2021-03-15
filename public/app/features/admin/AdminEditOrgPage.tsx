@@ -56,7 +56,7 @@ export const AdminEditOrgPage: FC<Props> = ({ match }) => {
     <Page navModel={navModel}>
       <Page.Contents>
         <>
-          <Legend>Edit Organization</Legend>
+          <Legend>Editer organisation</Legend>
 
           {orgState.value && (
             <Form
@@ -68,7 +68,7 @@ export const AdminEditOrgPage: FC<Props> = ({ match }) => {
                   <Field label="Name" invalid={!!errors.orgName} error="Name is required">
                     <Input name="orgName" ref={register({ required: true })} />
                   </Field>
-                  <Button>Update</Button>
+                  <Button>Actualiser</Button>
                 </>
               )}
             </Form>
@@ -79,7 +79,7 @@ export const AdminEditOrgPage: FC<Props> = ({ match }) => {
               margin-top: 20px;
             `}
           >
-            <Legend>Organization Users</Legend>
+            <Legend>Utilisateurs</Legend>
             {!!users.length && (
               <UsersTable
                 users={users}

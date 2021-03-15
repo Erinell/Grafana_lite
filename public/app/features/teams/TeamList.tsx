@@ -110,7 +110,7 @@ export class TeamList extends PureComponent<Props, any> {
           <div className="page-action-bar__spacer" />
 
           <LinkButton className={disabledClass} href={newTeamHref}>
-            New Team
+            Nouvelle équipe
           </LinkButton>
         </div>
 
@@ -119,9 +119,9 @@ export class TeamList extends PureComponent<Props, any> {
             <thead>
               <tr>
                 <th />
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Email</th>
-                <th>Members</th>
+                <th>Membres</th>
                 <th style={{ width: '1%' }} />
               </tr>
             </thead>

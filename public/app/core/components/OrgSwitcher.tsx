@@ -49,8 +49,8 @@ export class OrgSwitcher extends React.PureComponent<Props, State> {
         <table className="filter-table form-inline">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Role</th>
+              <th>Nom</th>
+              <th>Rôle</th>
               <th />
             </tr>
           </thead>
@@ -64,7 +64,7 @@ export class OrgSwitcher extends React.PureComponent<Props, State> {
                     <Button size="sm">Current</Button>
                   ) : (
                     <Button variant="secondary" size="sm" onClick={() => this.setCurrentOrg(org)}>
-                      Switch to
+                      Changer
                     </Button>
                   )}
                 </td>

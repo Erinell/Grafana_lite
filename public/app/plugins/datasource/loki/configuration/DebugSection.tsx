@@ -52,8 +52,8 @@ const DebugFields = ({ fields }: DebugFieldItemProps) => {
     <table className={'filter-table'}>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Value</th>
+          <th>Nom</th>
+          <th>Valeur</th>
           <th>Url</th>
         </tr>
       </thead>

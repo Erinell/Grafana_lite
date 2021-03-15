@@ -117,9 +117,9 @@ export class TeamMembers extends PureComponent<Props, State> {
             <thead>
               <tr>
                 <th />
-                <th>Login</th>
+                <th>Connexion</th>
                 <th>Email</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <WithFeatureToggle featureToggle={editorsCanAdmin}>
                   <th>Permission</th>
                 </WithFeatureToggle>

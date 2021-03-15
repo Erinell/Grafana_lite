@@ -14,7 +14,7 @@ export const AdminOrgsTable: FC<Props> = ({ orgs, onDelete }) => {
       <thead>
         <tr>
           <th>Id</th>
-          <th>Name</th>
+          <th>Nom</th>
           <th style={{ width: '1%' }}></th>
         </tr>
       </thead>

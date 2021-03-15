@@ -36,8 +36,8 @@ export const plugin = new PanelPlugin<AlertListOptions>(AlertList)
         path: 'sortOrder',
         settings: {
           options: [
-            { label: 'Alphabetical (asc)', value: SortOrder.AlphaAsc },
-            { label: 'Alphabetical (desc)', value: SortOrder.AlphaDesc },
+            { label: 'alphabétique (asc)', value: SortOrder.AlphaAsc },
+            { label: 'alphabétique (desc)', value: SortOrder.AlphaDesc },
             { label: 'Importance', value: SortOrder.Importance },
             { label: 'Time (asc)', value: SortOrder.TimeAsc },
             { label: 'Time (desc)', value: SortOrder.TimeDesc },
@@ -48,27 +48,27 @@ export const plugin = new PanelPlugin<AlertListOptions>(AlertList)
       })
       .addBooleanSwitch({
         path: 'dashboardAlerts',
-        name: 'Alerts from this dashboard',
+        name: 'Alertes de ce tableau',
         defaultValue: false,
         category: ['Options'],
       })
       .addTextInput({
         path: 'alertName',
-        name: 'Alert name',
+        name: 'Nom alerte',
         defaultValue: '',
         category: ['Filter'],
         showIf: showIfCurrentState,
       })
       .addTextInput({
         path: 'dashboardTitle',
-        name: 'Dashboard title',
+        name: 'Titre tableau',
         defaultValue: '',
         category: ['Filter'],
         showIf: showIfCurrentState,
       })
       .addCustomEditor({
         path: 'folderId',
-        name: 'Folder',
+        name: 'Dossier',
         id: 'folderId',
         defaultValue: null,
         editor: function RenderFolderPicker(props) {
@@ -105,7 +105,7 @@ export const plugin = new PanelPlugin<AlertListOptions>(AlertList)
       })
       .addBooleanSwitch({
         path: 'stateFilter.paused',
-        name: 'Paused',
+        name: 'Pause',
         defaultValue: false,
         category: ['State filter'],
         showIf: showIfCurrentState,
