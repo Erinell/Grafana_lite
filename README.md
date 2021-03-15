@@ -4,7 +4,7 @@ La platforme open source pour surveiller et visualiser.
 
 ⚠️⚠️
 
-**Cette version de grafana est unique et ne doit pas être mise à jour du fait qu'il n'a jamais été prévu le support des langues.
+**Cette version de grafana (basée sur v7.5.0-pre) est unique et ne doit pas être mise à jour du fait qu'il n'a jamais été prévu le support des langues.
 En cas de mise à jour de quelconque façon, la traduction sera perdue.**
 
 ⚠️⚠️
