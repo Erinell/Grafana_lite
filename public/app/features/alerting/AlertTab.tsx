@@ -171,7 +171,7 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
     const onDismiss = () => this.onToggleModal('showStateHistory');
 
     return (
-      <Modal isOpen={true} icon="history" title="State history" onDismiss={onDismiss} onClickBackdrop={onDismiss}>
+      <Modal isOpen={true} icon="history" title="Historique" onDismiss={onDismiss} onClickBackdrop={onDismiss}>
         <StateHistory
           dashboard={dashboard}
           panelId={panel.editSourceId ?? panel.id}
@@ -213,13 +213,13 @@ class UnConnectedAlertTab extends PureComponent<Props, State> {
               {alert && (
                 <HorizontalGroup>
                   <Button onClick={() => this.onToggleModal('showStateHistory')} variant="secondary">
-                    State history
+                    Historique
                   </Button>
                   <Button onClick={() => this.onToggleModal('showTestRule')} variant="secondary">
-                    Test rule
+                    Tester
                   </Button>
                   <Button onClick={() => this.onToggleModal('showDeleteConfirmation')} variant="destructive">
-                    Delete
+                    Supprimer
                   </Button>
                 </HorizontalGroup>
               )}

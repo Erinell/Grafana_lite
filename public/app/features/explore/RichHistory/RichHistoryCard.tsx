@@ -247,10 +247,10 @@ export function RichHistoryCard(props: Props) {
       />
       <div className={styles.commentButtonRow}>
         <Button onClick={onUpdateComment} aria-label="Submit button">
-          Save comment
+          Sauvegarder
         </Button>
         <Button variant="secondary" onClick={onCancelUpdateComment}>
-          Cancel
+          Annuler
         </Button>
       </div>
     </div>

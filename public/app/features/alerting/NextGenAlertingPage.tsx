@@ -113,13 +113,13 @@ class NextGenAlertingPageUnconnected extends PureComponent<Props> {
   renderToolbarActions() {
     return [
       <ToolbarButton variant="destructive" key="discard" onClick={this.onDiscard}>
-        Discard
+        Rejeter
       </ToolbarButton>,
       <ToolbarButton key="test" onClick={this.onTest}>
         Test
       </ToolbarButton>,
       <ToolbarButton variant="primary" key="save" onClick={this.onSaveAlert}>
-        Save
+        Sauvegarder
       </ToolbarButton>,
     ];
   }

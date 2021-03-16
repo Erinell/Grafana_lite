@@ -286,7 +286,7 @@ export class UserProfileRow extends PureComponent<UserProfileRowProps, UserProfi
               onConfirm={this.onSave}
               onCancel={this.onCancelClick}
             >
-              Edit
+              Editer
             </ConfirmButton>
           </div>
         </td>

@@ -38,7 +38,7 @@ export const DataLinkEditorModalContent: FC<DataLinkEditorModalContentProps> = (
             onSave(index, dirtyLink);
           }}
         >
-          Save
+          Sauvegarder
         </Button>
         <Button variant="secondary" onClick={() => onCancel(index)}>
           Annuler

@@ -116,10 +116,10 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
           </Field>
           <HorizontalGroup>
             <Button type="submit" aria-label="Save dashboard button">
-              Save
+              Sauvegarder
             </Button>
             <Button variant="secondary" onClick={onCancel}>
-              Cancel
+              Annuler
             </Button>
           </HorizontalGroup>
         </>

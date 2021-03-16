@@ -24,7 +24,7 @@ func TestSlackNotifier(t *testing.T) {
 				}
 
 				_, err = NewSlackNotifier(model)
-				So(err, ShouldBeError, "alert validation error: Could not find url property in settings")
+				So(err, ShouldBeError, "Erreur validation alerte : Impossible de trouver la propriété d'URL dans les paramètres")
 			})
 
 			//nolint:goconst
@@ -157,7 +157,7 @@ func TestSlackNotifier(t *testing.T) {
 
 				_, err = NewSlackNotifier(model)
 
-				So(err, ShouldBeError, "alert validation error: Recipient on invalid format: \"#open tsdb\"")
+				So(err, ShouldBeError, "Erreur validation alerte : Destinataire sur un format non valide : \"#open tsdb\"")
 			})
 
 			Convey("with user recipient with spaces should return an error", func() {
@@ -177,7 +177,7 @@ func TestSlackNotifier(t *testing.T) {
 
 				_, err = NewSlackNotifier(model)
 
-				So(err, ShouldBeError, "alert validation error: Recipient on invalid format: \"@user name\"")
+				So(err, ShouldBeError, "Erreur validation alerte : Destinataire sur un format non valide : \"@user name\"")
 			})
 
 			Convey("with user recipient with uppercase letters should return an error", func() {
@@ -197,7 +197,7 @@ func TestSlackNotifier(t *testing.T) {
 
 				_, err = NewSlackNotifier(model)
 
-				So(err, ShouldBeError, "alert validation error: Recipient on invalid format: \"@User\"")
+				So(err, ShouldBeError, "Erreur validation alerte : Destinataire sur un format non valide : \"@User\"")
 			})
 
 			Convey("with Slack ID for recipient should work", func() {

@@ -125,7 +125,7 @@ class AddPermissions extends Component<Props, NewDashboardAclItem> {
                 width={25}
               />
               <Button data-save-permission type="submit" disabled={!isValid}>
-                Save
+                Sauvegarder
               </Button>
             </HorizontalGroup>
           )}

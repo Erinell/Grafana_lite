@@ -21,7 +21,7 @@ const ButtonRow: FC<Props> = ({ isReadOnly, onDelete, onSubmit, onTest }) => {
           onClick={(event) => onSubmit(event)}
           aria-label={selectors.pages.DataSource.saveAndTest}
         >
-          Save &amp; Test
+          Sauvegarder &amp; Test
         </button>
       )}
       {isReadOnly && (

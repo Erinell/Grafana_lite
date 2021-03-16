@@ -218,7 +218,7 @@ func TestAlertRuleModel(t *testing.T) {
 
 			_, err := NewRuleFromDBAlert(alert, false)
 			So(err, ShouldNotBeNil)
-			So(err.Error(), ShouldEqual, "alert validation error: Neither id nor uid is specified in 'notifications' block, type assertion to string failed AlertId: 1 PanelId: 1 DashboardId: 1")
+			So(err.Error(), ShouldEqual, "Erreur validation alerte : Neither id nor uid is specified in 'notifications' block, type assertion to string failed id alerte : 1 panneau : 1 id : 1")
 		})
 	})
 }

@@ -314,14 +314,14 @@ func TestNotificationAsConfig(t *testing.T) {
 			cfgProvider := &configReader{log: log.New("test logger")}
 			_, err := cfgProvider.readConfig(unknownNotifier)
 			So(err, ShouldNotBeNil)
-			So(err.Error(), ShouldEqual, `unsupported notification type "nonexisting"`)
+			So(err.Error(), ShouldEqual, `type de notification non supporté "nonexisting"`)
 		})
 
 		Convey("Read incorrect properties", func() {
 			cfgProvider := &configReader{log: log.New("test logger")}
 			_, err := cfgProvider.readConfig(incorrectSettings)
 			So(err, ShouldNotBeNil)
-			So(err.Error(), ShouldEqual, "alert validation error: Could not find url property in settings")
+			So(err.Error(), ShouldEqual, "Erreur validation alerte : Impossible de trouver la propriété d'URL dans les paramètres ")
 		})
 	})
 }
