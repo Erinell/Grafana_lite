@@ -51,7 +51,7 @@ export class NewDashboardsFolder extends PureComponent<Props> {
             {({ register, errors }) => (
               <>
                 <Field
-                  label="Folder name"
+                  label="Nom du dossier"
                   invalid={!!errors.folderName}
                   error={errors.folderName && errors.folderName.message}
                 >
@@ -63,7 +63,7 @@ export class NewDashboardsFolder extends PureComponent<Props> {
                     })}
                   />
                 </Field>
-                <Button type="submit">Create</Button>
+                <Button type="submit">CréerFi</Button>
               </>
             )}
           </Form>
