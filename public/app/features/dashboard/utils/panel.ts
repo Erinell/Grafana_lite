@@ -23,8 +23,10 @@ import { ShowConfirmModalEvent, ShowModalReactEvent } from '../../../types/event
 export const removePanel = (dashboard: DashboardModel, panel: PanelModel, ask: boolean) => {
   // confirm deletion
   if (ask !== false) {
-    const text2 = panel.alert ? 'Panel includes an alert rule, removing panel will also remove alert rule' : undefined;
-    const confirmText = panel.alert ? 'YES' : undefined;
+    const text2 = panel.alert
+      ? "Le panneau contiens une règle d'alerte, le suppirmer effacera aussi cette règle"
+      : undefined;
+    const confirmText = panel.alert ? 'OUI' : undefined;
 
     appEvents.publish(
       new ShowConfirmModalEvent({
@@ -54,7 +56,7 @@ export const copyPanel = (panel: PanelModel) => {
   }
 
   store.set(LS_PANEL_COPY_KEY, JSON.stringify(saveModel));
-  appEvents.emit(AppEvents.alertSuccess, ['Panel copied. Open Add Panel to paste']);
+  appEvents.emit(AppEvents.alertSuccess, ['Panneau copié, ajouter un tableau pour coller']);
 };
 
 export const sharePanel = (dashboard: DashboardModel, panel: PanelModel) => {

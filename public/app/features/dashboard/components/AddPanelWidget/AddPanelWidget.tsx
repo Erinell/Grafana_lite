@@ -167,7 +167,7 @@ export const AddPanelWidgetUnconnected: React.FC<Props> = ({ panel, dashboard })
               {copiedPanelPlugins.length === 1 && (
                 <div onClick={() => onPasteCopiedPanel(copiedPanelPlugins[0])}>
                   <Icon name="clipboard-alt" size="xl" />
-                  Paste panel from clipboard
+                  Coller le panneau précédemment copié
                 </div>
               )}
             </div>
