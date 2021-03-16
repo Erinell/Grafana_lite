@@ -3,7 +3,7 @@ import { DataSourceApi } from '@grafana/data';
 
 describe('SharedQueryRunner', () => {
   it('should identify shared queries', () => {
-    expect(isSharedDashboardQuery('-- Dashboard --')).toBe(true);
+    expect(isSharedDashboardQuery('-- Tableau --')).toBe(true);
 
     expect(isSharedDashboardQuery('')).toBe(false);
     expect(isSharedDashboardQuery((undefined as unknown) as string | DataSourceApi)).toBe(false);
@@ -11,7 +11,7 @@ describe('SharedQueryRunner', () => {
 
     const ds = {
       meta: {
-        name: '-- Dashboard --',
+        name: '-- Tableau --',
       },
     } as DataSourceApi;
     expect(isSharedDashboardQuery(ds)).toBe(true);

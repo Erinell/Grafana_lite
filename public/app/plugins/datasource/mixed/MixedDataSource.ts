@@ -13,7 +13,7 @@ import {
 } from '@grafana/data';
 import { getDataSourceSrv, toDataQueryError } from '@grafana/runtime';
 
-export const MIXED_DATASOURCE_NAME = '-- Mixed --';
+export const MIXED_DATASOURCE_NAME = '-- Mixé --';
 
 export interface BatchedQueries {
   datasource: Promise<DataSourceApi>;

@@ -80,7 +80,7 @@ describe('given dashboard with repeated panels', () => {
         { id: 7 },
         {
           id: 8,
-          datasource: '-- Mixed --',
+          datasource: '-- Mixé --',
           targets: [{ datasource: 'other' }],
         },
         { id: 9, datasource: '$ds' },
@@ -99,7 +99,7 @@ describe('given dashboard with repeated panels', () => {
             { id: 11 },
             {
               id: 12,
-              datasource: '-- Mixed --',
+              datasource: '-- Mixé --',
               targets: [{ datasource: 'other' }],
             },
             { id: 13, datasource: '$ds' },
@@ -255,7 +255,7 @@ stubs['other2'] = {
   meta: { id: 'other2', info: { version: '1.2.1' }, name: 'OtherDB_2' },
 };
 
-stubs['-- Mixed --'] = {
+stubs['-- Mixé --'] = {
   name: 'mixed',
   meta: {
     id: 'mixed',

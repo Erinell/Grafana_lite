@@ -18,7 +18,7 @@ func init() {
 		Name:        "Email",
 		Description: "Sends notifications using Grafana server configured SMTP settings",
 		Factory:     NewEmailNotifier,
-		Heading:     "Email settings",
+		Heading:     "Options email",
 		Options: []alerting.NotifierOption{
 			{
 				Label:        "Un seul email",

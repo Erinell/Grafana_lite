@@ -69,7 +69,7 @@ export const initialAlertDefinitionState: AlertDefinitionState = {
   /* These are functions as they are mutated later on and redux toolkit will Object.freeze state so
    * we need to store these using functions instead */
   getInstances: () => [] as DataFrame[],
-  getQueryOptions: () => ({ maxDataPoints: 100, dataSource: { name: '-- Mixed --' }, queries: [] }),
+  getQueryOptions: () => ({ maxDataPoints: 100, dataSource: { name: '-- Mixé --' }, queries: [] }),
 };
 
 function convertToAlertRule(dto: AlertRuleDTO, state: string): AlertRule {

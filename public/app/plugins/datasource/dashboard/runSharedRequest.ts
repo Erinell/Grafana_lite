@@ -29,7 +29,7 @@ export function runSharedRequest(options: QueryRunnerOptions): Observable<PanelD
     const listenToPanelId = getPanelIdFromQuery(options.queries);
 
     if (!listenToPanelId) {
-      subscriber.next(getQueryError('Missing panel reference ID'));
+      subscriber.next(getQueryError('ID de référence du panneau manquant'));
       return undefined;
     }
 

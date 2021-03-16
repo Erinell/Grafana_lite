@@ -8,7 +8,7 @@ import { MixedDatasource } from './module';
 
 const defaultDS = new MockDataSourceApi('DefaultDS', { data: ['DDD'] });
 const datasourceSrv = new DatasourceSrvMock(defaultDS, {
-  '-- Mixed --': new MixedDatasource({ name: 'mixed', id: 5 } as DataSourceInstanceSettings),
+  '-- Mixé --': new MixedDatasource({ name: 'mixed', id: 5 } as DataSourceInstanceSettings),
   A: new MockDataSourceApi('DSA', { data: ['AAAA'] }),
   B: new MockDataSourceApi('DSB', { data: ['BBBB'] }),
   C: new MockDataSourceApi('DSC', { data: ['CCCC'] }),
@@ -35,7 +35,7 @@ describe('MixedDatasource', () => {
     const results: any[] = [];
 
     beforeEach(async (done) => {
-      const ds = await getDataSourceSrv().get('-- Mixed --');
+      const ds = await getDataSourceSrv().get('-- Mixé --');
 
       from(ds.query(requestMixed)).subscribe((result) => {
         results.push(result);
@@ -69,7 +69,7 @@ describe('MixedDatasource', () => {
     const results: any[] = [];
 
     beforeEach(async (done) => {
-      const ds = await getDataSourceSrv().get('-- Mixed --');
+      const ds = await getDataSourceSrv().get('-- Mixé --');
 
       from(ds.query(requestMixed)).subscribe((result) => {
         results.push(result);

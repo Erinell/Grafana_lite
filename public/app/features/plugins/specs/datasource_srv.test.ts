@@ -50,12 +50,12 @@ describe('datasource_srv', () => {
       name: '-- Grafana --',
       meta: { builtIn: true, metrics: true, id: 'grafana' },
     },
-    '-- Dashboard --': {
+    '-- Tableau --': {
       type: 'dashboard',
       name: '-- Tableau --',
       meta: { builtIn: true, metrics: true, id: 'dashboard' },
     },
-    '-- Mixed --': {
+    '-- Mixé --': {
       type: 'test-db',
       name: '-- Mixé --',
       meta: { builtIn: true, metrics: true, id: 'mixed' },
@@ -212,7 +212,7 @@ describe('datasource_srv', () => {
               "id": "mixed",
               "metrics": true,
             },
-            "name": "-- Mixed --",
+            "name": "-- Mixé --",
             "type": "test-db",
           },
           Object {
