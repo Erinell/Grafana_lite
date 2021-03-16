@@ -161,7 +161,7 @@ export const AddPanelWidgetUnconnected: React.FC<Props> = ({ panel, dashboard })
               {config.featureToggles.panelLibrary && (
                 <div onClick={() => setAddPanelView(true)}>
                   <Icon name="book-open" size="xl" />
-                  Add a panel from the panel library
+                  Ajouter un panneau depuis la librairie
                 </div>
               )}
               {copiedPanelPlugins.length === 1 && (
