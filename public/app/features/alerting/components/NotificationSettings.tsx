@@ -13,7 +13,7 @@ export const NotificationSettings: FC<Props> = ({ currentFormValues, imageRender
         <Checkbox
           name="isDefault"
           ref={register}
-          label="Default"
+          label="Défaut"
           description="Utiliser cette notification pour toutes les alertes"
         />
       </Field>

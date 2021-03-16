@@ -86,7 +86,7 @@ export class ShareModal extends React.Component<Props, State> {
   renderTitle() {
     const { panel } = this.props;
     const { activeTab } = this.state;
-    const title = panel ? 'Share Panel' : 'Share';
+    const title = panel ? 'Partager le panneau' : 'Partager';
     const tabs = this.getTabs();
 
     return (

@@ -6,9 +6,9 @@ import { appEvents } from 'app/core/core';
 import { buildIframeHtml } from './utils';
 
 const themeOptions: Array<SelectableValue<string>> = [
-  { label: 'Current', value: 'current' },
-  { label: 'Dark', value: 'dark' },
-  { label: 'Light', value: 'light' },
+  { label: 'Actuel', value: 'current' },
+  { label: 'Sombre', value: 'dark' },
+  { label: 'Clair', value: 'light' },
 ];
 
 interface Props {
@@ -77,10 +77,10 @@ export class ShareEmbed extends PureComponent<Props, State> {
       <div className="share-modal-body">
         <div className="share-modal-header">
           <div className="share-modal-content">
-            <p className="share-modal-info-text">Generate HTML for embedding an iframe with this panel.</p>
+            <p className="share-modal-info-text">Génerer une balise iframe avec ce panneau.</p>
             <Field
-              label="Current time range"
-              description={isRelativeTime ? 'Transforms the current relative time range to an absolute time range' : ''}
+              label="Plage de temps actuelle"
+              description={isRelativeTime ? 'Change la plage de temps relative en plage de temps absolue' : ''}
             >
               <Switch
                 id="share-current-time-range"
@@ -88,18 +88,18 @@ export class ShareEmbed extends PureComponent<Props, State> {
                 onChange={this.onUseCurrentTimeRangeChange}
               />
             </Field>
-            <Field label="Theme">
+            <Field label="Thème">
               <RadioButtonGroup options={themeOptions} value={selectedTheme} onChange={this.onThemeChange} />
             </Field>
             <Field
-              label="Embed html"
-              description="The html code below can be pasted and included in another web page. Unless anonymous access is enabled, 
-                the user viewing that page need to be signed into grafana for the graph to load."
+              label="Balise html"
+              description="Le code html ci-dessous peut être coller et inclus dans une autre page web. Sauf si l'accès
+              anonyme est activé, les utilisateurs doivent être connecté pour que la panneau charge."
             >
               <TextArea rows={5} value={iframeHtml} onChange={this.onIframeHtmlChange}></TextArea>
             </Field>
             <ClipboardButton variant="primary" getText={this.getIframeHtml} onClipboardCopy={this.onIframeHtmlCopy}>
-              Copy to clipboard
+              Copier dans le presse-papier
             </ClipboardButton>
           </div>
         </div>

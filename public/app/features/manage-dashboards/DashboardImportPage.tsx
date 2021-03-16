@@ -78,11 +78,11 @@ class DashboardImportUnConnected extends PureComponent<Props> {
       <>
         <div className={styles.option}>
           <FileUpload accept="application/json" onFileUpload={this.onFileUpload}>
-            Upload JSON file
+            Importer fichier JSON
           </FileUpload>
         </div>
         <div className={styles.option}>
-          <Legend>Import via grafana.com</Legend>
+          <Legend>Importer de grafana.com</Legend>
           <Form onSubmit={this.getGcomDashboard} defaultValues={{ gcomDashboard: '' }}>
             {({ register, errors }) => (
               <Field invalid={!!errors.gcomDashboard} error={errors.gcomDashboard && errors.gcomDashboard.message}>
@@ -94,14 +94,14 @@ class DashboardImportUnConnected extends PureComponent<Props> {
                     required: 'A Grafana dashboard url or id is required',
                     validate: validateGcomDashboard,
                   })}
-                  addonAfter={<Button type="submit">Load</Button>}
+                  addonAfter={<Button type="submit">Charger</Button>}
                 />
               </Field>
             )}
           </Form>
         </div>
         <div className={styles.option}>
-          <Legend>Import via panel json</Legend>
+          <Legend>Importer du formulaire json</Legend>
           <Form onSubmit={this.getDashboardFromJson} defaultValues={{ dashboardJson: '' }}>
             {({ register, errors }) => (
               <>
@@ -109,13 +109,13 @@ class DashboardImportUnConnected extends PureComponent<Props> {
                   <TextArea
                     name="dashboardJson"
                     ref={register({
-                      required: 'Need a dashboard json model',
+                      required: 'formulaire vide',
                       validate: validateDashboardJson,
                     })}
                     rows={10}
                   />
                 </Field>
-                <Button type="submit">Load</Button>
+                <Button type="submit">Charger</Button>
               </>
             )}
           </Form>

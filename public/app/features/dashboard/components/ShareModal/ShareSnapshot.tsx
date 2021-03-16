@@ -10,10 +10,10 @@ import { VariableRefresh } from '../../../variables/types';
 const snapshotApiUrl = '/api/snapshots';
 
 const expireOptions: Array<SelectableValue<number>> = [
-  { label: 'Never', value: 0 },
-  { label: '1 Hour', value: 60 * 60 },
-  { label: '1 Day', value: 60 * 60 * 24 },
-  { label: '7 Days', value: 60 * 60 * 24 * 7 },
+  { label: 'Jamais', value: 0 },
+  { label: '1 heure', value: 60 * 60 },
+  { label: '1 jour', value: 60 * 60 * 24 },
+  { label: '7 jours', value: 60 * 60 * 24 * 7 },
 ];
 
 interface Props {
@@ -192,7 +192,7 @@ export class ShareSnapshot extends PureComponent<Props, State> {
   };
 
   onSnapshotUrlCopy = () => {
-    appEvents.emit(AppEvents.alertSuccess, ['Content copied to clipboard']);
+    appEvents.emit(AppEvents.alertSuccess, ['Contenu copié']);
   };
 
   renderStep1() {
@@ -210,32 +210,32 @@ export class ShareSnapshot extends PureComponent<Props, State> {
       <>
         <div>
           <p className="share-modal-info-text">
-            A snapshot is an instant way to share an interactive dashboard publicly. When created, we{' '}
-            <strong>strip sensitive data</strong> like queries (metric, template and annotation) and panel links,
-            leaving only the visible metric data and series names embedded into your dashboard.
+            Un instantané est un moyen de partager un tableau interactif publiquement. Une fois créés, nous{' '}
+            <strong>supprimons les données sensibles</strong> telles que les requêtes et les liens de panneaux, ne
+            laissant queriesles données visibles et les noms des séries intégrés dans votre tableau.
           </p>
           <p className="share-modal-info-text">
-            Keep in mind, your <strong>snapshot can be viewed by anyone</strong> that has the link and can reach the
-            URL. Share wisely.
+            N&apos;oubliez pas que vitre instantané <strong>peut être consulté par toute personne</strong> disposant du
+            lien et pouvant accéder à&apos;URL. Partagez le judicieusement.
           </p>
         </div>
-        <Field label="Snapshot name">
+        <Field label="Nom de l'instantané">
           <Input width={30} value={snapshotName} onChange={this.onSnapshotNameChange} />
         </Field>
         <Field label="Expire">
           <Select width={30} options={expireOptions} value={selectedExpireOption} onChange={this.onExpireChange} />
         </Field>
         <Field
-          label="Timeout (seconds)"
-          description="You may need to configure the timeout value if it takes a long time to collect your dashboard's
-            metrics."
+          label="Timeout (secondes)"
+          description="Vous devrez peut-être configurer la valeur du délai d'expiration si la collecte des données de votre
+          tableau prend du temps."
         >
           <Input type="number" width={21} value={timeoutSeconds} onChange={this.onTimeoutChange} />
         </Field>
 
         <div className="gf-form-button-row">
           <Button variant="primary" disabled={isLoading} onClick={this.createSnapshot()}>
-            Local Snapshot
+            Instantané local
           </Button>
           {externalEnabled && (
             <Button variant="secondary" disabled={isLoading} onClick={this.createSnapshot(true)}>
@@ -243,7 +243,7 @@ export class ShareSnapshot extends PureComponent<Props, State> {
             </Button>
           )}
           <Button variant="secondary" onClick={onDismiss}>
-            Cancel
+            Annuler
           </Button>
         </div>
       </>
@@ -262,15 +262,15 @@ export class ShareSnapshot extends PureComponent<Props, State> {
             </a>
             <br />
             <ClipboardButton variant="secondary" getText={this.getSnapshotUrl} onClipboardCopy={this.onSnapshotUrlCopy}>
-              Copy Link
+              Copier le lien
             </ClipboardButton>
           </div>
         </div>
 
         <div className="pull-right" style={{ padding: '5px' }}>
-          Did you make a mistake?{' '}
+          Vous avez fait une erreur ?{' '}
           <LinkButton variant="link" target="_blank" onClick={this.deleteSnapshot}>
-            delete snapshot.
+            Supprimer l&apos;instantané.
           </LinkButton>
         </div>
       </>
@@ -281,8 +281,8 @@ export class ShareSnapshot extends PureComponent<Props, State> {
     return (
       <div className="share-modal-header">
         <p className="share-modal-info-text">
-          The snapshot has now been deleted. If you have already accessed it once, it might take up to an hour before it
-          is removed from browser caches or CDN caches.
+          L&apos;instantané est supprimé. Si vous avez encore accès, il est possible que la prenne une heure pour être
+          supprimé du cache.
         </p>
       </div>
     );

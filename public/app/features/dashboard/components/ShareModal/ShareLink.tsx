@@ -8,9 +8,9 @@ import { appEvents } from 'app/core/core';
 import config from 'app/core/config';
 
 const themeOptions: Array<SelectableValue<string>> = [
-  { label: 'Current', value: 'current' },
-  { label: 'Dark', value: 'dark' },
-  { label: 'Light', value: 'light' },
+  { label: 'Actuel', value: 'current' },
+  { label: 'Sombre', value: 'dark' },
+  { label: 'Clair', value: 'light' },
 ];
 
 export interface Props {
@@ -76,7 +76,7 @@ export class ShareLink extends PureComponent<Props, State> {
   };
 
   onShareUrlCopy = () => {
-    appEvents.emit(AppEvents.alertSuccess, ['Content copied to clipboard']);
+    appEvents.emit(AppEvents.alertSuccess, ['Contenu copié']);
   };
 
   getShareUrl = () => {
@@ -94,14 +94,12 @@ export class ShareLink extends PureComponent<Props, State> {
         <div className="share-modal-header">
           <div className="share-modal-content">
             <p className="share-modal-info-text">
-              Create a direct link to this dashboard or panel, customized with the options below.
+              Créer un lien direct à ce tableau ou panneau, modifié avec les options ci-dessous.
             </p>
             <FieldSet>
               <Field
-                label="Lock time range"
-                description={
-                  isRelativeTime ? 'Transforms the current relative time range to an absolute time range' : ''
-                }
+                label="Plage de temps actuelle"
+                description={isRelativeTime ? 'Changer la plage de temps relative en plage de temps absolue' : ''}
               >
                 <Switch
                   id="share-current-time-range"
@@ -109,20 +107,20 @@ export class ShareLink extends PureComponent<Props, State> {
                   onChange={this.onUseCurrentTimeRangeChange}
                 />
               </Field>
-              <Field label="Theme">
+              <Field label="Thème">
                 <RadioButtonGroup options={themeOptions} value={selectedTheme} onChange={this.onThemeChange} />
               </Field>
-              <Field label="Shorten URL">
+              <Field label="URL court">
                 <Switch id="share-shorten-url" value={useShortUrl} onChange={this.onUrlShorten} />
               </Field>
 
-              <Field label="Link URL">
+              <Field label="Lien URL">
                 <Input
                   value={shareUrl}
                   readOnly
                   addonAfter={
                     <ClipboardButton variant="primary" getText={this.getShareUrl} onClipboardCopy={this.onShareUrlCopy}>
-                      <Icon name="copy" /> Copy
+                      <Icon name="copy" /> Copier
                     </ClipboardButton>
                   }
                 />
@@ -131,23 +129,23 @@ export class ShareLink extends PureComponent<Props, State> {
             {panel && config.rendererAvailable && (
               <div className="gf-form">
                 <a href={imageUrl} target="_blank" rel="noreferrer" aria-label={selectors.linkToRenderedImage}>
-                  <Icon name="camera" /> Direct link rendered image
+                  <Icon name="camera" /> Lien direct du rendu image
                 </a>
               </div>
             )}
             {panel && !config.rendererAvailable && (
               <InfoBox>
                 <p>
-                  <>To render a panel image, you must install the </>
+                  <>Pour le rendu image, vous devez installer le </>
                   <a
                     href="https://grafana.com/grafana/plugins/grafana-image-renderer"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="external-link"
                   >
-                    Grafana Image Renderer plugin
+                    plugin de rendu
                   </a>
-                  . Please contact your Grafana administrator to install the plugin.
+                  . Veuillez contacter votre adminstrateur Grafana pour installer ce plugin.
                 </p>
               </InfoBox>
             )}

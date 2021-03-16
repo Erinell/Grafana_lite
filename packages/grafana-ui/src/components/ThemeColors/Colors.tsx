@@ -31,7 +31,7 @@ export const Colors = () => {
   return (
     <div className={styles.container}>
       <div>
-        <h2>Light theme</h2>
+        <h2>Thème clair</h2>
         <h3 className={styles.subheader}>Palette</h3>
         {renderColors(lightTheme.palette)}
         <h3 className={styles.subheader}>Colors</h3>
@@ -39,7 +39,7 @@ export const Colors = () => {
       </div>
 
       <div>
-        <h2>Dark theme</h2>
+        <h2>Thème sombre</h2>
         <h3 className={styles.subheader}>Palette</h3>
         {renderColors(darkTheme.palette)}
         <h3 className={styles.subheader}>Colors</h3>
