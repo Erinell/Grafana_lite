@@ -228,7 +228,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "-- Dashboard --",
+      "datasource": "-- Tableau --",
       "gridPos": {
         "h": 8,
         "w": 9,
@@ -292,7 +292,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": "-- Dashboard --",
+      "datasource": "-- Tableau --",
       "gridPos": {
         "h": 8,
         "w": 9,

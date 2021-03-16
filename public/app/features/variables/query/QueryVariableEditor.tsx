@@ -239,8 +239,8 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
           />
 
           <VerticalGroup spacing="none">
-            <h5>Value group tags</h5>
-            <em className="muted p-b-1">Experimental feature, will be deprecated in Grafana v8.</em>
+            <h5>Tags de groupe de valeurs</h5>
+            <em className="muted p-b-1">Expérimental, sera obsolète dans Grafana v8.</em>
 
             <VariableSwitchField
               value={this.props.variable.useTags}

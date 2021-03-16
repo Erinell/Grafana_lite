@@ -316,7 +316,10 @@ export class QueryGroup extends PureComponent<Props, State> {
         )}
         {isAddingMixed && this.renderMixedPicker()}
         {config.expressionsEnabled && this.isExpressionsSupported(dsSettings) && (
-          <Tooltip content="Experimental feature: queries could stop working in next version" placement="right">
+          <Tooltip
+            content="Expérimental : Les requêtes peuvent arreter de fonctionner dans la prochaine version"
+            placement="right"
+          >
             <Button
               icon="plus"
               onClick={this.onAddExpressionClick}

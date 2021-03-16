@@ -52,12 +52,12 @@ describe('datasource_srv', () => {
     },
     '-- Dashboard --': {
       type: 'dashboard',
-      name: '-- Dashboard --',
+      name: '-- Tableau --',
       meta: { builtIn: true, metrics: true, id: 'dashboard' },
     },
     '-- Mixed --': {
       type: 'test-db',
-      name: '-- Mixed --',
+      name: '-- Mixé --',
       meta: { builtIn: true, metrics: true, id: 'mixed' },
     },
     ZZZ: {
@@ -221,7 +221,7 @@ describe('datasource_srv', () => {
               "id": "dashboard",
               "metrics": true,
             },
-            "name": "-- Dashboard --",
+            "name": "-- Tableau --",
             "type": "dashboard",
           },
           Object {

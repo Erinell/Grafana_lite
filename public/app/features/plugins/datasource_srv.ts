@@ -206,11 +206,11 @@ export class DatasourceSrv implements DataSourceService {
 
     if (!filters.pluginId) {
       if (filters.mixed) {
-        base.push(this.getInstanceSettings('-- Mixed --')!);
+        base.push(this.getInstanceSettings('-- Mixé --')!);
       }
 
       if (filters.dashboard) {
-        base.push(this.getInstanceSettings('-- Dashboard --')!);
+        base.push(this.getInstanceSettings('-- Tableau --')!);
       }
 
       if (!filters.tracing) {

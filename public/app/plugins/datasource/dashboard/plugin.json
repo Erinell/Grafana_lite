@@ -1,6 +1,6 @@
 {
   "type": "datasource",
-  "name": "-- Dashboard --",
+  "name": "-- Tableau --",
   "id": "dashboard",
 
   "builtIn": true,
