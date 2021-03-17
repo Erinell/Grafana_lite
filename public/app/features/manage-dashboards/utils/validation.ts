@@ -34,7 +34,7 @@ export const validateUid = (value: string) => {
   return getBackendSrv()
     .get(`/api/dashboards/uid/${value}`)
     .then((existingDashboard) => {
-      return `Dashboard named '${existingDashboard?.dashboard.title}' in folder '${existingDashboard?.meta.folderTitle}' has the same uid`;
+      return `Tableau nommé '${existingDashboard?.dashboard.title}' dans le dossier '${existingDashboard?.meta.folderTitle}' avec le même uid`;
     })
     .catch((error) => {
       error.isHandled = true;

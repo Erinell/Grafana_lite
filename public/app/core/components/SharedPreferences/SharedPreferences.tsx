@@ -127,7 +127,7 @@ export class SharedPreferences extends PureComponent<Props, State> {
       <Form onSubmit={this.onSubmitForm}>
         {() => {
           return (
-            <FieldSet label="Preferences">
+            <FieldSet label="Préférences">
               <Field label="Thème interface">
                 <RadioButtonGroup
                   options={themes}

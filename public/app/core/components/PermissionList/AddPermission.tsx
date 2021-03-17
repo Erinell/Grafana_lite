@@ -96,7 +96,7 @@ class AddPermissions extends Component<Props, NewDashboardAclItem> {
         <button className="cta-form__close btn btn-transparent" onClick={onCancel}>
           <Icon name="times" />
         </button>
-        <h5>Add Permission For</h5>
+        <h5>Ajouter permission pour</h5>
         <Form maxWidth="none" onSubmit={this.onSubmit}>
           {() => (
             <HorizontalGroup>

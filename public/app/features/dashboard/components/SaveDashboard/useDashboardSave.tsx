@@ -29,7 +29,7 @@ export const useDashboardSave = (dashboard: DashboardModel) => {
       dashboard.version = state.value.version;
       // important that these happen before location redirect below
       appEvents.publish(new DashboardSavedEvent());
-      appEvents.emit(AppEvents.alertSuccess, ['Tableau sauvegarder']);
+      appEvents.emit(AppEvents.alertSuccess, ['Tableau sauvegardé']);
 
       // Using global locationService because save modals are rendered as a separate React tree
       const currentPath = locationService.getLocation().pathname;

@@ -101,7 +101,7 @@ export class DashboardPermissionsUnconnected extends PureComponent<Props, State>
           </Tooltip>
           <div className="page-action-bar__spacer" />
           <Button className="pull-right" onClick={this.onOpenAddPermissions} disabled={isAdding}>
-            Add Permission
+            Ajouter permission
           </Button>
         </div>
         <SlideDown in={isAdding}>

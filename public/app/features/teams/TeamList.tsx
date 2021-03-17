@@ -76,11 +76,11 @@ export class TeamList extends PureComponent<Props, any> {
   renderEmptyList() {
     return (
       <EmptyListCTA
-        title="You haven't created any teams yet."
+        title="Vous n'avez pas créé d'équipes pour le moment."
         buttonIcon="users-alt"
         buttonLink="org/teams/new"
-        buttonTitle=" New team"
-        proTip="Assign folder and dashboard permissions to teams instead of users to ease administration."
+        buttonTitle="Nouvelle équipe"
+        proTip="Attribuez des autorisations de dossier et de tableau aux équipes plutôt qu'aux utilisateurs pour faciliter l'administration."
         proTipLink=""
         proTipLinkTitle=""
         proTipTarget="_blank"

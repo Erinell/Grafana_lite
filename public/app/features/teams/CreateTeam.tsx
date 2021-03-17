@@ -55,12 +55,12 @@ export class CreateTeam extends PureComponent<Props, State> {
       <Page navModel={navModel}>
         <Page.Contents>
           <>
-            <h3 className="page-sub-heading">New Team</h3>
+            <h3 className="page-sub-heading">Nouvelle équipe</h3>
 
             <form className="gf-form-group" onSubmit={this.create}>
               <FormField
                 className="gf-form"
-                label="Name"
+                label="Nom"
                 value={name}
                 onChange={this.onNameChange}
                 inputWidth={30}
@@ -76,11 +76,11 @@ export class CreateTeam extends PureComponent<Props, State> {
                 inputWidth={30}
                 labelWidth={10}
                 placeholder="email@test.com"
-                tooltip="This is optional and is primarily used for allowing custom team avatars."
+                tooltip="C'est optionnel et surtout utile pour autoriser les avatars d'équipe personnalisés."
               />
               <div className="gf-form-button-row">
                 <Button type="submit" variant="primary">
-                  Create
+                  Créer
                 </Button>
               </div>
             </form>

@@ -30,20 +30,21 @@ export class AnnotationsEditorCtrl {
   emptyListCta = {
     title: 'There are no custom annotation queries added yet',
     buttonIcon: 'comment-alt',
-    buttonTitle: 'Add Annotation Query',
+    buttonTitle: 'Ajouter ',
     infoBox: {
-      __html: `<p>Annotations provide a way to integrate event data into your graphs. They are visualized as vertical lines
-    and icons on all graph panels. When you hover over an annotation icon you can get event text &amp; tags for
-    the event. You can add annotation events directly from grafana by holding CTRL or CMD + click on graph (or
-    drag region). These will be stored in Grafana's annotation database.
+      __html: `<p>Les annotations permettent d'intégrer des données d'évenement dans vos graphiques. Elles sont
+      visualisées sous forme de lignes verticales et d'icônes sur tous les panneaux graphiques. Quand vous
+      survolez une icône d'annotation, vous pouvez obtenir le text et les balises del'évènement. 
+      Vous pouvez ajouter des évènements d'annotation directement à partir de grafana en maintenant CTRL ou CMD + clique 
+      sur le graphique (ou zone de déplacement). Celles-ci sernt stockées dans la base de donnée d'annotations de Gragana.
   </p>
-  Checkout the
+  Voir
   <a class='external-link' target='_blank' href='http://docs.grafana.org/reference/annotations/'
-    >Annotations documentation</a
+    >la documentation des annotations</a
   >
-  for more information.`,
+  pour plus d'information.`,
     },
-    infoBoxTitle: 'What are annotations?',
+    infoBoxTitle: 'Que sont les annotations ?',
   };
 
   showOptions: any = [

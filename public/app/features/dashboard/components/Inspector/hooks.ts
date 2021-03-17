@@ -42,7 +42,7 @@ export const useInspectTabs = (
   return useMemo(() => {
     const tabs = [];
     if (supportsDataQuery(plugin)) {
-      tabs.push({ label: 'Data', value: InspectTab.Data });
+      tabs.push({ label: 'Données', value: InspectTab.Data });
       tabs.push({ label: 'Stats', value: InspectTab.Stats });
     }
 
@@ -53,11 +53,11 @@ export const useInspectTabs = (
     tabs.push({ label: 'JSON', value: InspectTab.JSON });
 
     if (error && error.message) {
-      tabs.push({ label: 'Error', value: InspectTab.Error });
+      tabs.push({ label: 'Erreurs', value: InspectTab.Error });
     }
 
     if (dashboard.meta.canEdit && supportsDataQuery(plugin)) {
-      tabs.push({ label: 'Query', value: InspectTab.Query });
+      tabs.push({ label: 'Requêtes', value: InspectTab.Query });
     }
     return tabs;
   }, [plugin, metaDs, dashboard, error]);

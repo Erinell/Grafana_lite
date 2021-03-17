@@ -153,12 +153,12 @@ export class InspectDataTab extends PureComponent<Props, State> {
       }
 
       if (options.withFieldConfig) {
-        parts.push('Formatted data');
+        parts.push('Données formatées');
       }
     }
 
     if (this.state.downloadForExcel) {
-      parts.push('Excel header');
+      parts.push('en-tête Excel');
     }
 
     return parts.join(', ');
@@ -198,7 +198,7 @@ export class InspectDataTab extends PureComponent<Props, State> {
       <QueryOperationRow
         id="Data options"
         index={0}
-        title="Data options"
+        title="Options de données"
         headerElement={<DetailText>{this.getActiveString()}</DetailText>}
         isOpen={false}
       >
@@ -229,8 +229,8 @@ export class InspectDataTab extends PureComponent<Props, State> {
               )}
               {showFieldConfigsOption && (
                 <Field
-                  label="Formatted data"
-                  description="Table data is formatted with options defined in the Field and Override tabs."
+                  label="Données formatées"
+                  description="Les données sont formatées avec les options définies dans les onglets Champs et Remplacements."
                 >
                   <Switch
                     value={!!options.withFieldConfig}
@@ -238,7 +238,7 @@ export class InspectDataTab extends PureComponent<Props, State> {
                   />
                 </Field>
               )}
-              <Field label="Download for Excel" description="Adds header to CSV for use with Excel">
+              <Field label="Télécharger pour Excel" description="Ajoute une en-tête au CSV pour Excel">
                 <Switch
                   value={this.state.downloadForExcel}
                   onChange={() => this.setState({ downloadForExcel: !this.state.downloadForExcel })}
@@ -285,7 +285,7 @@ export class InspectDataTab extends PureComponent<Props, State> {
               margin-bottom: 10px;
             `}
           >
-            Download CSV
+            Télécharger CSV
           </Button>
         </div>
         <Container grow={1}>

@@ -36,7 +36,7 @@
       "options": {
         "feedUrl": "https://grafana.com/blog/news.xml"
       },
-      "title": "Latest from the blog",
+      "title": "Informations du blog",
       "type": "news"
     }
   ],

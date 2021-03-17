@@ -24,13 +24,13 @@ export const InspectStatsTab: React.FC<InspectStatsTabProps> = ({ data, timeZone
   }
 
   if (requestTime > 0) {
-    stats.push({ displayName: 'Total request time', value: requestTime, unit: 'ms' });
+    stats.push({ displayName: 'Tmpes total de requête', value: requestTime, unit: 'ms' });
   }
   if (processingTime > 0) {
-    stats.push({ displayName: 'Data processing time', value: processingTime, unit: 'ms' });
+    stats.push({ displayName: 'Temps de traitement des données', value: processingTime, unit: 'ms' });
   }
-  stats.push({ displayName: 'Number of queries', value: data.request.targets.length });
-  stats.push({ displayName: 'Total number rows', value: dataRows });
+  stats.push({ displayName: 'Nombre de requêtes', value: data.request.targets.length });
+  stats.push({ displayName: 'Nombre total de lignes', value: dataRows });
 
   let dataStats: QueryResultMetaStat[] = [];
 

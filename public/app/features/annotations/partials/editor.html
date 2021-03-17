@@ -2,8 +2,8 @@
   <div class="page-action-bar">
     <h3 class="dashboard-settings__header">
       <a ng-click="ctrl.backToList()">Annotations</a>
-      <span ng-show="ctrl.mode === 'new'"><icon name="'angle-right'"></icon> New</span>
-      <span ng-show="ctrl.mode === 'edit'"><icon name="'angle-right'"></icon> Edit</span>
+      <span ng-show="ctrl.mode === 'new'"><icon name="'angle-right'"></icon> Nouveau</span>
+      <span ng-show="ctrl.mode === 'edit'"><icon name="'angle-right'"></icon> Editer</span>
     </h3>
 
     <div class="page-action-bar__spacer"></div>
@@ -15,7 +15,7 @@
       ng-if="ctrl.dashboard.annotations.list.length > 1"
       ng-hide="ctrl.mode === 'edit' || ctrl.mode === 'new'"
     >
-      New
+      Nouveau
     </a>
   </div>
 
@@ -23,8 +23,8 @@
     <table class="filter-table filter-table--hover">
       <thead>
         <tr>
-          <th>Query name</th>
-          <th>Data source</th>
+          <th>Nom</th>
+          <th>Source</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -74,14 +74,14 @@
 
   <div class="annotations-basic-settings" ng-if="ctrl.mode === 'edit' || ctrl.mode === 'new'">
     <div class="gf-form-group">
-      <h5 class="section-heading">General</h5>
+      <h5 class="section-heading">Général</h5>
       <div class="gf-form-inline">
         <div class="gf-form">
-          <span class="gf-form-label width-7">Name</span>
-          <input type="text" class="gf-form-input width-20" ng-model="ctrl.currentAnnotation.name" placeholder="name" />
+          <span class="gf-form-label width-7">Nom</span>
+          <input type="text" class="gf-form-input width-20" ng-model="ctrl.currentAnnotation.name" placeholder="nom" />
         </div>
         <div class="gf-form">
-          <span class="gf-form-label width-7">Data source</span>
+          <span class="gf-form-label width-7">Source</span>
           <div class="gf-form-select-wrapper">
             <select
               class="gf-form-input"
@@ -96,18 +96,18 @@
 
     <div class="gf-form-group">
       <div class="gf-form-inline">
-        <gf-form-switch class="gf-form" label="Enabled" checked="ctrl.currentAnnotation.enable" label-class="width-7">
+        <gf-form-switch class="gf-form" label="Activé" checked="ctrl.currentAnnotation.enable" label-class="width-7">
         </gf-form-switch>
         <gf-form-switch
           class="gf-form"
-          label="Hidden"
-          tooltip="Hides the annotation query toggle from showing at the top of the dashboard"
+          label="Caché"
+          tooltip="Masque le bouton pour qu'elle ne s'affiche pas en haut du tableau"
           checked="ctrl.currentAnnotation.hide"
           label-class="width-7"
         >
         </gf-form-switch>
         <div class="gf-form">
-          <label class="gf-form-label width-9">Color</label>
+          <label class="gf-form-label width-9">Couleur</label>
           <span class="gf-form-label">
             <color-picker color="ctrl.currentAnnotation.iconColor" onChange="ctrl.onColorChange"></color-picker>
           </span>
@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <h5 class="section-heading">Query</h5>
+    <h5 class="section-heading">Requête</h5>
     <rebuild-on-change property="ctrl.currentDatasource">
       <!-- Legacy angular -->
       <plugin-component ng-if="!ctrl.currentDatasource.annotations" type="annotations-query-ctrl"> </plugin-component>
@@ -136,10 +136,10 @@
           class="btn gf-form-button btn-primary"
           ng-click="ctrl.add()"
         >
-          Add
+          Ajouter
         </button>
         <button ng-show="ctrl.mode === 'edit'" type="button" class="btn btn-primary pull-left" ng-click="ctrl.update()">
-          Update
+          Actualiser
         </button>
       </div>
     </div>

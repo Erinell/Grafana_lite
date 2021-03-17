@@ -53,5 +53,5 @@ function formatStats(data: PanelData) {
   const requestTime = request.endTime ? request.endTime - request.startTime : 0;
   const formatted = formattedValueToString(getValueFormat('ms')(requestTime));
 
-  return `${queryCount} queries with total query time of ${formatted}`;
+  return `${queryCount} requête(s) avec un temps total de ${formatted}`;
 }

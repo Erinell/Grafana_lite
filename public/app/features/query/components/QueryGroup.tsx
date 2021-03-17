@@ -215,7 +215,7 @@ export class QueryGroup extends PureComponent<Props, State> {
                     onClick={onOpenQueryInspector}
                     aria-label={selectors.components.QueryTab.queryInspectorButton}
                   >
-                    Query inspector
+                    Inspecteur
                   </Button>
                 </div>
               )}

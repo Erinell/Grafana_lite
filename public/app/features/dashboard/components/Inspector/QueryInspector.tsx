@@ -267,10 +267,11 @@ export class QueryInspector extends PureComponent<Props, State> {
     return (
       <>
         <div aria-label={selectors.components.PanelInspector.Query.content}>
-          <h3 className="section-heading">Query inspector</h3>
+          <h3 className="section-heading">Inspecteur de requêtes</h3>
           <p className="small muted">
-            Query inspector allows you to view raw request and response. To collect this data Grafana needs to issue a
-            new query. Hit refresh button below to trigger a new query.
+            L&apos;inspecteur vous permet d&apos;afficher la demande et la réponse brute. Pour collecter ces données,
+            Grafana doit émettre une nouvelle requête. Appuyez sur le bouton d&apos;actualisation ci-dessous pour
+            déclencher une nouvelle requête.
           </p>
         </div>
         {this.renderExecutedQueries(executedQueries)}
@@ -280,17 +281,17 @@ export class QueryInspector extends PureComponent<Props, State> {
             onClick={this.onIssueNewQuery}
             aria-label={selectors.components.PanelInspector.Query.refreshButton}
           >
-            Refresh
+            Rafraichir
           </Button>
 
           {haveData && allNodesExpanded && (
             <Button icon="minus" variant="secondary" className={styles.toolbarItem} onClick={this.onToggleExpand}>
-              Collapse all
+              Réduire tout
             </Button>
           )}
           {haveData && !allNodesExpanded && (
             <Button icon="plus" variant="secondary" className={styles.toolbarItem} onClick={this.onToggleExpand}>
-              Expand all
+              Etendre tout
             </Button>
           )}
 
@@ -302,18 +303,18 @@ export class QueryInspector extends PureComponent<Props, State> {
               className={styles.toolbarItem}
             >
               <Button icon="copy" variant="secondary">
-                Copy to clipboard
+                Copier
               </Button>
             </CopyToClipboard>
           )}
           <div className="flex-grow-1" />
         </div>
         <div className={styles.contentQueryInspector}>
-          {isLoading && <LoadingPlaceholder text="Loading query inspector..." />}
+          {isLoading && <LoadingPlaceholder text="Chargement..." />}
           {!isLoading && haveData && (
             <JSONFormatter json={response} open={openNodes} onDidRender={this.setFormattedJson} />
           )}
-          {!isLoading && !haveData && <p className="muted">No request & response collected yet. Hit refresh button</p>}
+          {!isLoading && !haveData && <p className="muted">Aucune requête et réponse collectées pour le moment.</p>}
         </div>
       </>
     );

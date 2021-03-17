@@ -51,13 +51,13 @@ export const getStandardFieldConfigs = () => {
   const displayName: FieldConfigPropertyItem<any, string, StringFieldConfigSettings> = {
     id: 'displayName',
     path: 'displayName',
-    name: 'Display name',
-    description: 'Change the field or series name',
+    name: 'Nom affiché',
+    description: 'Changer le nom des séries ou champs',
     editor: standardEditorsRegistry.get('text').editor as any,
     override: standardEditorsRegistry.get('text').editor as any,
     process: stringOverrideProcessor,
     settings: {
-      placeholder: 'none',
+      placeholder: 'rien',
       expandTemplateVars: true,
     },
     shouldApply: () => true,
@@ -67,7 +67,7 @@ export const getStandardFieldConfigs = () => {
   const unit: FieldConfigPropertyItem<any, string, StringFieldConfigSettings> = {
     id: 'unit',
     path: 'unit',
-    name: 'Unit',
+    name: 'Unité',
     description: '',
 
     editor: standardEditorsRegistry.get('unit').editor as any,

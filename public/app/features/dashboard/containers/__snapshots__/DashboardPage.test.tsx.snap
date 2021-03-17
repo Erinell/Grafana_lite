@@ -369,7 +369,7 @@ exports[`DashboardPage Dashboard is fetching slowly Should render slow init stat
           size="md"
           variant="secondary"
         >
-          Cancel loading dashboard
+          Annuler le chargement
         </Button>
       </HorizontalGroup>
     </VerticalGroup>

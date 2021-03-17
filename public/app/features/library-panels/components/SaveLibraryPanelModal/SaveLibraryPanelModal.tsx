@@ -82,12 +82,12 @@ export const SaveLibraryPanelModal: React.FC<Props> = ({
           onChange={(e) => setSearchString(e.currentTarget.value)}
         />
         {dashState.loading ? (
-          <p>Loading connected dashboards...</p>
+          <p>Chargement des tableaux connectés...</p>
         ) : (
           <table className={styles.myTable}>
             <thead>
               <tr>
-                <th>Dashboard name</th>
+                <th>Nom du tableau</th>
               </tr>
             </thead>
             <tbody>

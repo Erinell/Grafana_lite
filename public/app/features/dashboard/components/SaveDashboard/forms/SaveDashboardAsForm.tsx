@@ -90,7 +90,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
     >
       {({ register, control, errors, getValues }) => (
         <>
-          <Field label="Dashboard name" invalid={!!errors.title} error={errors.title?.message}>
+          <Field label="Nom du tableau" invalid={!!errors.title} error={errors.title?.message}>
             <Input
               name="title"
               ref={register({

@@ -12,9 +12,9 @@ interface Props {
 }
 
 const GRAPH_TOOLTIP_OPTIONS = [
-  { value: 0, label: 'Default' },
-  { value: 1, label: 'Shared crosshair' },
-  { value: 2, label: 'Shared Tooltip' },
+  { value: 0, label: 'Défaut' },
+  { value: 1, label: 'Réticule partagé' },
+  { value: 2, label: 'Info-bulle partagée' },
 ];
 
 export const GeneralSettings: React.FC<Props> = ({ dashboard }) => {

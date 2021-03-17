@@ -52,7 +52,7 @@ export class TimePickerSettings extends PureComponent<Props, State> {
 
   render() {
     return (
-      <CollapsableSection label="Time options" isOpen={true}>
+      <CollapsableSection label="Options de temps" isOpen={true}>
         <Field label="Timezone" aria-label={selectors.components.TimeZonePicker.container}>
           <TimeZonePicker
             includeInternal={true}
