@@ -32,7 +32,7 @@ export const ForgottenPassword: FC = () => {
   if (emailSent) {
     return (
       <div>
-        <p>An email with a reset link has been sent to the email address. You should receive it shortly.</p>
+        <p>Un email avec un lien de réinitialisation vous a été envoyé. Vous aller le recevoir rapidement</p>
         <Container margin="md" />
         <LinkButton variant="primary" href={loginHref}>
           Back to login
@@ -44,23 +44,23 @@ export const ForgottenPassword: FC = () => {
     <Form onSubmit={sendEmail}>
       {({ register, errors }) => (
         <>
-          <Legend>Reset password</Legend>
+          <Legend>Réinitialiser mot de passe</Legend>
           <Field
-            label="User"
-            description="Enter your information to get a reset link sent to you"
+            label="Utilisateur"
+            description="Entrez vos informations pour recevoir un lien de réinitialisation"
             invalid={!!errors.userOrEmail}
             error={errors?.userOrEmail?.message}
           >
-            <Input placeholder="Email or username" name="userOrEmail" ref={register({ required: true })} />
+            <Input placeholder="Email ou nom" name="userOrEmail" ref={register({ required: true })} />
           </Field>
           <HorizontalGroup>
-            <Button>Send reset email</Button>
+            <Button>Emvoyer un lien</Button>
             <LinkButton variant="link" href={loginHref}>
-              Back to login
+              Revenir à la connexion
             </LinkButton>
           </HorizontalGroup>
 
-          <p className={styles}>Did you forget your username or email? Contact your Grafana administrator.</p>
+          <p className={styles}>Vous avez oublier votre email ou nom ? Contactez votre administrateur Grafana.</p>
         </>
       )}
     </Form>
