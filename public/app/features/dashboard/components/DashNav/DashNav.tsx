@@ -125,7 +125,7 @@ class DashNav extends PureComponent<Props> {
     if (canStar) {
       buttons.push(
         <DashNavButton
-          tooltip="Mark as favorite"
+          tooltip="Mettre en favoris"
           icon={isStarred ? 'favorite' : 'star'}
           iconType={isStarred ? 'mono' : 'default'}
           iconSize="lg"
@@ -140,7 +140,7 @@ class DashNav extends PureComponent<Props> {
         <ModalsController key="button-share">
           {({ showModal, hideModal }) => (
             <DashNavButton
-              tooltip="Share dashboard or panel"
+              tooltip="Partager le tableau ou panneau"
               icon="share-alt"
               iconSize="lg"
               onClick={() => {
@@ -163,7 +163,7 @@ class DashNav extends PureComponent<Props> {
     return (
       <ButtonGroup key="playlist-buttons">
         <ToolbarButton tooltip="Aller au tableau précédent" icon="backward" onClick={this.onPlaylistPrev} narrow />
-        <ToolbarButton onClick={this.onPlaylistStop}>Stop playlist</ToolbarButton>
+        <ToolbarButton onClick={this.onPlaylistStop}>Arreter playlist</ToolbarButton>
         <ToolbarButton tooltip="Aller au tableau suivant" icon="forward" onClick={this.onPlaylistNext} narrow />
       </ButtonGroup>
     );

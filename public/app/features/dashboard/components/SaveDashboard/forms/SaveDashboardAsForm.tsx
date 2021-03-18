@@ -15,7 +15,7 @@ const getSaveAsDashboardClone = (dashboard: DashboardModel) => {
   const clone: any = dashboard.getSaveModelClone();
   clone.id = null;
   clone.uid = '';
-  clone.title += ' Copy';
+  clone.title += ' Copie';
   clone.editable = true;
   clone.hideControls = false;
 
@@ -41,7 +41,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
   onSuccess,
 }) => {
   const defaultValues: SaveDashboardAsFormDTO = {
-    title: `${dashboard.title} Copy`,
+    title: `${dashboard.title} Copie`,
     $folder: {
       id: dashboard.meta.folderId,
       title: dashboard.meta.folderTitle,
@@ -51,7 +51,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
 
   const validateDashboardName = (getFormValues: () => SaveDashboardAsFormDTO) => async (dashboardName: string) => {
     if (dashboardName && dashboardName === getFormValues().$folder.title?.trim()) {
-      return 'Dashboard name cannot be the same as folder';
+      return 'Le nom du tableau ne peux pas être le même que celui du dossier';
     }
     try {
       await validationSrv.validateNewDashboardName(getFormValues().$folder.id, dashboardName);
@@ -100,7 +100,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
               autoFocus
             />
           </Field>
-          <Field label="Folder">
+          <Field label="Dossier">
             <InputControl
               as={FolderPicker}
               control={control}
@@ -111,7 +111,7 @@ export const SaveDashboardAsForm: React.FC<SaveDashboardFormProps & { isNew?: bo
               enableCreateNew
             />
           </Field>
-          <Field label="Copy tags">
+          <Field label="Copier tags">
             <Switch name="copyTags" ref={register} />
           </Field>
           <HorizontalGroup>

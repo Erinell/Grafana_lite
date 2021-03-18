@@ -58,8 +58,8 @@ func PostAnnotation(c *models.ReqContext, cmd dtos.PostAnnotationsCmd) response.
 	repo := annotations.GetRepository()
 
 	if cmd.Text == "" {
-		err := &CreateAnnotationError{"text field should not be empty"}
-		return response.Error(500, "Failed to save annotation", err)
+		err := &CreateAnnotationError{"Le champs de texte ne doit pas être vide"}
+		return response.Error(500, "Erreur de sauvegarde de l'annotation", err)
 	}
 
 	item := annotations.Item{
@@ -75,13 +75,13 @@ func PostAnnotation(c *models.ReqContext, cmd dtos.PostAnnotationsCmd) response.
 	}
 
 	if err := repo.Save(&item); err != nil {
-		return response.Error(500, "Failed to save annotation", err)
+		return response.Error(500, "Erreur de sauvegarde de l'annotation", err)
 	}
 
 	startID := item.Id
 
 	return response.JSON(200, util.DynMap{
-		"message": "Annotation added",
+		"message": "Annotation ajoutée",
 		"id":      startID,
 	})
 }
@@ -249,10 +249,10 @@ func DeleteAnnotationByID(c *models.ReqContext) response.Response {
 		Id:    annotationID,
 	})
 	if err != nil {
-		return response.Error(500, "Failed to delete annotation", err)
+		return response.Error(500, "Erreur de suppression de l'annotation", err)
 	}
 
-	return response.Success("Annotation deleted")
+	return response.Success("Annotation supprimée")
 }
 
 func canSaveByDashboardID(c *models.ReqContext, dashboardID int64) (bool, error) {
