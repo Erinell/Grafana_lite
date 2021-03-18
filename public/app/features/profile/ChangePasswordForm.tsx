@@ -34,31 +34,35 @@ export const ChangePasswordForm: FC<Props> = ({ user, onChangePassword, isSaving
         {({ register, errors, getValues }) => {
           return (
             <>
-              <Field label="Old password" invalid={!!errors.oldPassword} error={errors?.oldPassword?.message}>
-                <Input type="password" name="oldPassword" ref={register({ required: 'Old password is required' })} />
+              <Field label="Ancien mot de passe" invalid={!!errors.oldPassword} error={errors?.oldPassword?.message}>
+                <Input type="password" name="oldPassword" ref={register({ required: 'Ancien mot de passe requis' })} />
               </Field>
 
-              <Field label="New password" invalid={!!errors.newPassword} error={errors?.newPassword?.message}>
+              <Field label="Nouveau mot de passe" invalid={!!errors.newPassword} error={errors?.newPassword?.message}>
                 <Input
                   type="password"
                   name="newPassword"
                   ref={register({
-                    required: 'New password is required',
+                    required: 'Nouveau mot de passe requis',
                     validate: {
-                      confirm: (v) => v === getValues().confirmNew || 'Passwords must match',
-                      old: (v) => v !== getValues().oldPassword || `New password can't be the same as the old one.`,
+                      confirm: (v) => v === getValues().confirmNew || 'Les mots de passe doivent correspondre',
+                      old: (v) => v !== getValues().oldPassword || `Le nouveau mot de passe doit être différent.`,
                     },
                   })}
                 />
               </Field>
 
-              <Field label="Confirm password" invalid={!!errors.confirmNew} error={errors?.confirmNew?.message}>
+              <Field
+                label="Confirmer le mot de passe"
+                invalid={!!errors.confirmNew}
+                error={errors?.confirmNew?.message}
+              >
                 <Input
                   type="password"
                   name="confirmNew"
                   ref={register({
-                    required: 'New password confirmation is required',
-                    validate: (v) => v === getValues().newPassword || 'Passwords must match',
+                    required: 'Confirmer le mot de passe requis',
+                    validate: (v) => v === getValues().newPassword || 'Les mots de passe doivent correspondre',
                   })}
                 />
               </Field>

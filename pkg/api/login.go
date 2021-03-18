@@ -235,7 +235,7 @@ func (hs *HTTPServer) LoginPost(c *models.ReqContext, cmd dtos.LoginCommand) res
 	}
 
 	result := map[string]interface{}{
-		"message": "Logged in",
+		"message": "Connecté",
 	}
 
 	if redirectTo := c.GetCookie("redirect_to"); len(redirectTo) > 0 {

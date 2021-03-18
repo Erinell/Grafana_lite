@@ -18,5 +18,5 @@ export const login = (username = DEFAULT_USERNAME, password = DEFAULT_PASSWORD) 
   }
 
   e2e().get('.login-page').should('not.exist');
-  e2e().logToConsole('Logged in with username:', username);
+  e2e().logToConsole('Connecté avec le nom :', username);
 };
