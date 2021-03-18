@@ -83,7 +83,7 @@ describe('DashboardSearch', () => {
     locationService.push('/');
     setup();
 
-    const message = await screen.findByText('No dashboards matching your query were found.');
+    const message = await screen.findByText("Aucun tableau correspondant à votre requête n'a été trouvé.");
     expect(message).toBeInTheDocument();
   });
 
