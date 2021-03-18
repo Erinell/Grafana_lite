@@ -24,12 +24,12 @@ func GetSignUpOptions(c *models.ReqContext) response.Response {
 // POST /api/user/signup
 func SignUp(c *models.ReqContext, form dtos.SignUpForm) response.Response {
 	if !setting.AllowUserSignUp {
-		return response.Error(401, "User signup is disabled", nil)
+		return response.Error(401, "Inscription désactivé", nil)
 	}
 
 	existing := models.GetUserByLoginQuery{LoginOrEmail: form.Email}
 	if err := bus.Dispatch(&existing); err == nil {
-		return response.Error(422, "User with same email address already exists", nil)
+		return response.Error(422, "Utilisateur avec cet email déjà existant", nil)
 	}
 
 	cmd := models.CreateTempUserCommand{}
@@ -62,7 +62,7 @@ func SignUp(c *models.ReqContext, form dtos.SignUpForm) response.Response {
 
 func (hs *HTTPServer) SignUpStep2(c *models.ReqContext, form dtos.SignUpStep2Form) response.Response {
 	if !setting.AllowUserSignUp {
-		return response.Error(401, "User signup is disabled", nil)
+		return response.Error(401, "Inscription désactivé", nil)
 	}
 
 	createUserCmd := models.CreateUserCommand{
@@ -84,10 +84,10 @@ func (hs *HTTPServer) SignUpStep2(c *models.ReqContext, form dtos.SignUpStep2For
 	// dispatch create command
 	if err := bus.Dispatch(&createUserCmd); err != nil {
 		if errors.Is(err, models.ErrUserAlreadyExists) {
-			return response.Error(401, "User with same email address already exists", nil)
+			return response.Error(401, "Utilisateur avec cet email déjà existant", nil)
 		}
 
-		return response.Error(500, "Failed to create user", err)
+		return response.Error(500, "Erreur de création de l'utilisateur", err)
 	}
 
 	// publish signup event
@@ -110,7 +110,7 @@ func (hs *HTTPServer) SignUpStep2(c *models.ReqContext, form dtos.SignUpStep2For
 		return response.Error(500, "Failed to query database for invites", err)
 	}
 
-	apiResponse := util.DynMap{"message": "User sign up completed successfully", "code": "redirect-to-landing-page"}
+	apiResponse := util.DynMap{"message": "Inscription complète", "code": "redirect-to-landing-page"}
 	for _, invite := range invitesQuery.Result {
 		if ok, rsp := applyUserInvite(user, invite, false); !ok {
 			return rsp
@@ -120,7 +120,7 @@ func (hs *HTTPServer) SignUpStep2(c *models.ReqContext, form dtos.SignUpStep2For
 
 	err := hs.loginUserWithUser(user, c)
 	if err != nil {
-		return response.Error(500, "failed to login user", err)
+		return response.Error(500, "Erreur de connexion", err)
 	}
 
 	metrics.MApiUserSignUpCompleted.Inc()
@@ -133,7 +133,7 @@ func verifyUserSignUpEmail(email string, code string) (bool, response.Response) 
 
 	if err := bus.Dispatch(&query); err != nil {
 		if errors.Is(err, models.ErrTempUserNotFound) {
-			return false, response.Error(404, "Invalid email verification code", nil)
+			return false, response.Error(404, "Code de vérification invalide", nil)
 		}
 		return false, response.Error(500, "Failed to read temp user", err)
 	}

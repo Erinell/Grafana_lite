@@ -185,11 +185,11 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
   render() {
     return (
       <VerticalGroup spacing="xs">
-        <VariableSectionHeader name="Query Options" />
+        <VariableSectionHeader name="Options de requête" />
         <VerticalGroup spacing="lg">
           <VerticalGroup spacing="none">
             <InlineFieldRow>
-              <InlineField label="Data source" labelWidth={20}>
+              <InlineField label="Source de données" labelWidth={20}>
                 <DataSourcePicker
                   current={this.props.variable.datasource}
                   onChange={this.onDataSourceChange}
@@ -215,13 +215,14 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
               labelWidth={20}
               tooltip={
                 <div>
-                  Optional, if you want to extract part of a series name or metric node segment. Named capture groups
-                  can be used to separate the display text and value (
+                  Facultatif, si vous souhaitez extraire une partie d&apos;un nom de série ou d&apos;un segment de noeud
+                  métrique. Des groupes de capture nommés peuvent être utilisés pour séparer le texte d&apos;affichage
+                  et la valeur. (
                   <a
                     href="https://grafana.com/docs/grafana/latest/variables/filter-variables-with-regex#filter-and-modify-using-named-text-and-value-capture-groups"
                     target="__blank"
                   >
-                    see examples
+                    voir exemples
                   </a>
                   ).
                 </div>
@@ -244,7 +245,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
             <VariableSwitchField
               value={this.props.variable.useTags}
-              name="Enabled"
+              name="Activé"
               onChange={this.onUseTagsChange}
               ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.QueryVariable.valueGroupsTagsEnabledSwitch}
             />
@@ -252,8 +253,8 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
               <VerticalGroup spacing="none">
                 <VariableTextField
                   value={this.state.tagsQuery ?? this.props.variable.tagsQuery}
-                  name="Tags query"
-                  placeholder="metric name or tags query"
+                  name="Requête de tags"
+                  placeholder="nom métrique ou tag"
                   onChange={this.onTagsQueryChange}
                   onBlur={this.onTagsQueryBlur}
                   ariaLabel={

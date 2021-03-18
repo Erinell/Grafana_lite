@@ -10,9 +10,9 @@ interface Props {
 }
 
 const REFRESH_OPTIONS = [
-  { label: 'Never', value: VariableRefresh.never },
-  { label: 'On Dashboard Load', value: VariableRefresh.onDashboardLoad },
-  { label: 'On Time Range Change', value: VariableRefresh.onTimeRangeChanged },
+  { label: 'Jamais', value: VariableRefresh.never },
+  { label: 'Au chargement du tableau', value: VariableRefresh.onDashboardLoad },
+  { label: 'Au changement de plage de temps', value: VariableRefresh.onTimeRangeChanged },
 ];
 
 export function QueryVariableRefreshSelect({ onChange, refresh }: PropsWithChildren<Props>) {
@@ -20,13 +20,13 @@ export function QueryVariableRefreshSelect({ onChange, refresh }: PropsWithChild
 
   return (
     <VariableSelectField
-      name="Refresh"
+      name="Rafraichir"
       value={value}
       options={REFRESH_OPTIONS}
       onChange={onChange}
       labelWidth={10}
       ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.QueryVariable.queryOptionsRefreshSelect}
-      tooltip="When to update the values of this variable."
+      tooltip="Quand mettre à jour les valeurs."
     />
   );
 }

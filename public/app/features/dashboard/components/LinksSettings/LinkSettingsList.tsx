@@ -36,13 +36,13 @@ export const LinkSettingsList: React.FC<LinkSettingsListProps> = ({ dashboard, s
       {dashboard.links.length === 0 ? (
         <EmptyListCTA
           onClick={setupNew}
-          title="There are no dashboard links added yet"
+          title="Pas de liens pour le moment"
           buttonIcon="link"
-          buttonTitle="Add Dashboard Link"
-          infoBoxTitle="What are Dashboard Links?"
+          buttonTitle="Ajouter un lien de tableau"
+          infoBoxTitle="Qu'est-ce qu'un lien de tableau ?"
           infoBox={{
             __html:
-              '<p>Dashboard Links allow you to place links to other dashboards and web sites directly below the dashboard header.</p>',
+              "<p>Les liens de tableau vous permettent de placer des liens vers d'autres tableaux et sites web directement sous l'en-tête du tableau.</p>",
           }}
         />
       ) : (

@@ -45,14 +45,14 @@ export const changeVariableName = (identifier: VariableIdentifier, newName: stri
     }
 
     if (!newName.match(/^\w+$/)) {
-      errorText = 'Only word and digit characters are allowed in variable names';
+      errorText = 'Seuls les lettres et les chiffres sont autorisés';
     }
 
     const variables = getVariables(getState());
     const foundVariables = variables.filter((v) => v.name === newName && v.id !== identifier.id);
 
     if (foundVariables.length) {
-      errorText = 'Variable with the same name already exists';
+      errorText = 'Variable avec le même nom déjà existant';
     }
 
     if (errorText) {

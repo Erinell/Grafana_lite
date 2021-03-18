@@ -147,7 +147,7 @@ export class DashboardSettings extends PureComponent<Props> {
 
     return (
       <div className="dashboard-settings">
-        <PageToolbar title={`${dashboard.title} / Settings`} parent={folderTitle} onGoBack={this.onClose} />
+        <PageToolbar title={`${dashboard.title} / Options`} parent={folderTitle} onGoBack={this.onClose} />
         <CustomScrollbar>
           <div className={styles.scrollInner}>
             <div className={styles.settingsWrapper}>

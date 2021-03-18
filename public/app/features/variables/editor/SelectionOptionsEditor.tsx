@@ -37,12 +37,12 @@ export const SelectionOptionsEditor: FunctionComponent<SelectionOptionsEditorPro
   );
   return (
     <VerticalGroup spacing="none">
-      <VariableSectionHeader name="Selection Options" />
+      <VariableSectionHeader name="Options de sélection" />
       <InlineFieldRow>
         <VariableSwitchField
           value={props.variable.multi}
-          name="Multi-value"
-          tooltip="Enables multiple values to be selected at the same time"
+          name="Multi-valeur"
+          tooltip="Permet de sélectionner plusieurs valeurs en même temps"
           onChange={onMultiChanged}
           ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsMultiSwitch}
         />
@@ -50,8 +50,8 @@ export const SelectionOptionsEditor: FunctionComponent<SelectionOptionsEditorPro
       <InlineFieldRow>
         <VariableSwitchField
           value={props.variable.includeAll}
-          name="Include All option"
-          tooltip="Enables an option to include all variables"
+          name="Option inclure tout"
+          tooltip="Active l'option pour inclure toutes les variables"
           onChange={onIncludeAllChanged}
           ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsIncludeAllSwitch}
         />
@@ -61,7 +61,7 @@ export const SelectionOptionsEditor: FunctionComponent<SelectionOptionsEditorPro
           <VariableTextField
             value={props.variable.allValue ?? ''}
             onChange={onAllValueChanged}
-            name="Custom all value"
+            name="Valeur personnalisée"
             placeholder="blank = auto"
             ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.General.selectionOptionsCustomAllInput}
             labelWidth={20}

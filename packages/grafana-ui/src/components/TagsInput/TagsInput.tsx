@@ -59,7 +59,7 @@ export const TagsInput: FC<Props> = ({ placeholder = 'Nouveau tag (Entrer pour a
               size="md"
               disabled={newTagName.length === 0}
             >
-              Add
+              Ajouter
             </Button>
           }
         />

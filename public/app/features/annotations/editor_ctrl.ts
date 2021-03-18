@@ -28,7 +28,7 @@ export class AnnotationsEditorCtrl {
   };
 
   emptyListCta = {
-    title: 'There are no custom annotation queries added yet',
+    title: "Pas d'annotations pour le moment",
     buttonIcon: 'comment-alt',
     buttonTitle: 'Ajouter ',
     infoBox: {

@@ -26,7 +26,7 @@ export function VariableHideSelect({ onChange, hide, type }: PropsWithChildren<P
 
   return (
     <VariableSelectField
-      name="Hide"
+      name="Cacher"
       value={value}
       options={HIDE_OPTIONS}
       onChange={onChange}

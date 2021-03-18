@@ -57,22 +57,23 @@ export class VariableEditorList extends PureComponent<Props> {
           {this.props.variables.length === 0 && (
             <div>
               <EmptyListCTA
-                title="There are no variables yet"
+                title="Pas de variables pour le moment"
                 buttonIcon="calculator-alt"
-                buttonTitle="Add variable"
+                buttonTitle="Ajouter"
                 infoBox={{
                   __html: ` <p>
-                    Variables enable more interactive and dynamic dashboards. Instead of hard-coding things like server
-                    or sensor names in your metric queries you can use variables in their place. Variables are shown as
-                    dropdown select boxes at the top of the dashboard. These dropdowns make it easy to change the data
-                    being displayed in your dashboard. Check out the
+                    Les variables permettent des tableaux plus intéractifs et dynamiques. Au lieu de coder en dur des
+                    éléments tels que les noms de serveurs ou de capteurs dans vos requêtes, vous pouvez utiliser des
+                    variables à leur place. Les variables sont affichées sous forme de zones de sélection déroulantes en 
+                    haut du tableau. Ces listes déroulantes facilitent la modification des données affichées dans votre 
+                    tableau. Consultez
                     <a class="external-link" href="http://docs.grafana.org/reference/templating/" target="_blank">
-                      Templating documentation
+                      la documentation
                     </a>
-                    for more information.
+                    pour plus d'informations
                   </p>`,
                 }}
-                infoBoxTitle="What do variables do?"
+                infoBoxTitle="Que font les variables ?"
                 onClick={this.props.onAddClick}
               />
             </div>

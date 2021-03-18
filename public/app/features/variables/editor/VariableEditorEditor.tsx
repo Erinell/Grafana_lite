@@ -130,8 +130,8 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
                 <VariableTextField
                   value={this.props.editor.name}
                   onChange={this.onNameChange}
-                  name="Name"
-                  placeholder="name"
+                  name="Nom"
+                  placeholder="nom"
                   required
                   ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.General.generalNameInput}
                 />
@@ -149,7 +149,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
                   value={this.props.variable.label ?? ''}
                   onChange={this.onLabelChange}
                   name="Label"
-                  placeholder="optional display name"
+                  placeholder="label affiché facultatif"
                   ariaLabel={selectors.pages.Dashboard.Settings.Variables.Edit.General.generalLabelInput}
                 />
                 <VariableHideSelect
@@ -162,7 +162,7 @@ export class VariableEditorEditorUnConnected extends PureComponent<Props> {
               <VariableTextField
                 name="Description"
                 value={variable.description ?? ''}
-                placeholder="descriptive text"
+                placeholder="description"
                 onChange={this.onDescriptionChange}
                 grow
               />

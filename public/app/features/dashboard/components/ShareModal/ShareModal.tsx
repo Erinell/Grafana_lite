@@ -30,17 +30,17 @@ function getInitialState(props: Props): State {
 function getTabs(props: Props) {
   const { panel } = props;
 
-  const tabs: ShareModalTabModel[] = [{ label: 'Link', value: 'link', component: ShareLink }];
+  const tabs: ShareModalTabModel[] = [{ label: 'Lien', value: 'link', component: ShareLink }];
 
   if (contextSrv.isSignedIn) {
-    tabs.push({ label: 'Snapshot', value: 'snapshot', component: ShareSnapshot });
+    tabs.push({ label: 'Instantané', value: 'snapshot', component: ShareSnapshot });
   }
 
   if (panel) {
-    tabs.push({ label: 'Embed', value: 'embed', component: ShareEmbed });
+    tabs.push({ label: 'Incorporer', value: 'embed', component: ShareEmbed });
     tabs.push(...customPanelTabs);
   } else {
-    tabs.push({ label: 'Export', value: 'export', component: ShareExport });
+    tabs.push({ label: 'Exporter', value: 'export', component: ShareExport });
     tabs.push(...customDashboardTabs);
   }
 
