@@ -20,17 +20,21 @@ export const ChangePassword: FC<Props> = ({ onSubmit, onSkip }) => {
     <Form onSubmit={submit}>
       {({ errors, register, getValues }) => (
         <>
-          <Field label="New password" invalid={!!errors.newPassword} error={errors?.newPassword?.message}>
+          <Field label="Nouveau mot de passe" invalid={!!errors.newPassword} error={errors?.newPassword?.message}>
             <Input
               autoFocus
               type="password"
               name="newPassword"
               ref={register({
-                required: 'New password required',
+                required: 'Nouveau mot de passe requis',
               })}
             />
           </Field>
-          <Field label="Confirm new password" invalid={!!errors.confirmNew} error={errors?.confirmNew?.message}>
+          <Field
+            label="Confirmer le nouveau mot de passe"
+            invalid={!!errors.confirmNew}
+            error={errors?.confirmNew?.message}
+          >
             <Input
               type="password"
               name="confirmNew"
@@ -42,16 +46,16 @@ export const ChangePassword: FC<Props> = ({ onSubmit, onSkip }) => {
           </Field>
           <VerticalGroup>
             <Button type="submit" className={submitButton}>
-              Submit
+              Envoyer
             </Button>
 
             {onSkip && (
               <Tooltip
-                content="If you skip you will be prompted to change password next time you log in."
+                content="Si vous sauter cette étape, elle vous sera demander à la prochaine connexion."
                 placement="bottom"
               >
                 <Button variant="link" onClick={onSkip} type="button" aria-label={selectors.pages.Login.skip}>
-                  Skip
+                  Sauter
                 </Button>
               </Tooltip>
             )}

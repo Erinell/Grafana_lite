@@ -62,8 +62,8 @@ export const SignupPage: FC<Props> = (props) => {
         <Form defaultValues={defaultValues} onSubmit={onSubmit}>
           {({ errors, register, getValues }) => (
             <>
-              <Field label="Your name">
-                <Input name="name" placeholder="(optional)" ref={register} />
+              <Field label="Votre nom">
+                <Input name="name" placeholder="(facultatif)" ref={register} />
               </Field>
               <Field label="Email" invalid={!!errors.email} error={errors.email?.message}>
                 <Input
@@ -71,10 +71,10 @@ export const SignupPage: FC<Props> = (props) => {
                   type="email"
                   placeholder="Email"
                   ref={register({
-                    required: 'Email is required',
+                    required: 'Email requis',
                     pattern: {
                       value: /^\S+@\S+$/,
-                      message: 'Email is invalid',
+                      message: 'Email invalide',
                     },
                   })}
                 />
@@ -85,7 +85,7 @@ export const SignupPage: FC<Props> = (props) => {
                 </Field>
               )}
               {getConfig().verifyEmailEnabled && (
-                <Field label="Email verification code (sent to your email)">
+                <Field label="Code de vérification (envoyé par email)">
                   <Input name="code" ref={register} placeholder="Code" />
                 </Field>
               )}
@@ -95,17 +95,17 @@ export const SignupPage: FC<Props> = (props) => {
                   type="password"
                   name="password"
                   ref={register({
-                    required: 'Password is required',
+                    required: 'Mot de passe requis',
                   })}
                 />
               </Field>
-              <Field label="Confirm password" invalid={!!errors.confirm} error={errors?.confirm?.message}>
+              <Field label="Confirmer le mot de passe" invalid={!!errors.confirm} error={errors?.confirm?.message}>
                 <Input
                   type="password"
                   name="confirm"
                   ref={register({
-                    required: 'Confirmed password is required',
-                    validate: (v) => v === getValues().password || 'Passwords must match!',
+                    required: 'Confirmer le mot de passe requis',
+                    validate: (v) => v === getValues().password || 'Mot de passe invalide !',
                   })}
                 />
               </Field>

@@ -27,13 +27,13 @@ func (hs *HTTPServer) getProfileNode(c *models.ReqContext) *dtos.NavLink {
 
 	children := []*dtos.NavLink{
 		{
-			Text: "Preferences", Id: "profile-settings", Url: hs.Cfg.AppSubURL + "/profile", Icon: "sliders-v-alt",
+			Text: "Préférences", Id: "profile-settings", Url: hs.Cfg.AppSubURL + "/profile", Icon: "sliders-v-alt",
 		},
 	}
 
 	if setting.AddChangePasswordLink() {
 		children = append(children, &dtos.NavLink{
-			Text: "Change Password", Id: "change-password", Url: hs.Cfg.AppSubURL + "/profile/password",
+			Text: "Changer mot de passe", Id: "change-password", Url: hs.Cfg.AppSubURL + "/profile/password",
 			Icon: "lock", HideFromMenu: true,
 		})
 	}
@@ -41,7 +41,7 @@ func (hs *HTTPServer) getProfileNode(c *models.ReqContext) *dtos.NavLink {
 	if !setting.DisableSignoutMenu {
 		// add sign out first
 		children = append(children, &dtos.NavLink{
-			Text:         "Sign out",
+			Text:         "Déconnexion",
 			Id:           "sign-out",
 			Url:          hs.Cfg.AppSubURL + "/logout",
 			Icon:         "arrow-from-right",
