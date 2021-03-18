@@ -39,7 +39,7 @@ export const LoginForm: FC<Props> = ({ children, onSubmit, isLoggingIn, password
                 aria-label={selectors.pages.Login.username}
               />
             </Field>
-            <Field label="Password" invalid={!!errors.password} error={errors.password?.message}>
+            <Field label="Mot de passe" invalid={!!errors.password} error={errors.password?.message}>
               <Input
                 name="password"
                 type="password"
