@@ -56,8 +56,8 @@ export const UserInviteForm: FC<Props> = ({}) => {
           <>
             <Field
               invalid={!!errors.loginOrEmail}
-              error={!!errors.loginOrEmail ? 'Email or Username is required' : undefined}
-              label="Email or Username"
+              error={!!errors.loginOrEmail ? 'email ou nom requis' : undefined}
+              label="Email ou nom"
             >
               <Input name="loginOrEmail" placeholder="email@example.com" ref={register({ required: true })} />
             </Field>
@@ -71,9 +71,9 @@ export const UserInviteForm: FC<Props> = ({}) => {
               <Switch name="sendEmail" ref={register} />
             </Field>
             <HorizontalGroup>
-              <Button type="submit">Submit</Button>
+              <Button type="submit">Envoyer</Button>
               <LinkButton href={locationUtil.assureBaseUrl(getConfig().appSubUrl + '/org/users')} variant="secondary">
-                Back
+                Retour
               </LinkButton>
             </HorizontalGroup>
           </>
