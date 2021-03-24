@@ -2,9 +2,7 @@
 
 La platforme open source pour surveiller et visualiser.
 
-⚠️⚠️
 **Cette version est une version allégée de Grafana. Certaines fonctionalitées ne sont donc pas disponible.**
-⚠️⚠️
 
 [![Licence](https://img.shields.io/github/license/grafana/grafana)](LICENSE)
 [![Circle CI](https://img.shields.io/circleci/build/gh/grafana/grafana)](https://circleci.com/gh/grafana/grafana)
