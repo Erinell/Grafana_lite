@@ -204,7 +204,7 @@ func (hs *HTTPServer) LoginPost(c *models.ReqContext, cmd dtos.LoginCommand) res
 	err := bus.Dispatch(authQuery)
 	authModule = authQuery.AuthModule
 	if err != nil {
-		resp = response.Error(401, "Invalid username or password", err)
+		resp = response.Error(401, "Nom ou mot de passe invalide", err)
 		if errors.Is(err, login.ErrInvalidCredentials) || errors.Is(err, login.ErrTooManyLoginAttempts) || errors.Is(err,
 			models.ErrUserNotFound) {
 			return resp

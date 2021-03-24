@@ -41,8 +41,8 @@ export class DashboardLoaderSrv {
         .getDashboardByUid(uid)
         .then((result: any) => {
           if (result.meta.isFolder) {
-            appEvents.emit(AppEvents.alertError, ['Dashboard not found']);
-            throw new Error('Dashboard not found');
+            appEvents.emit(AppEvents.alertError, ['Tableau non trouvé']);
+            throw new Error('Tableau non trouvé');
           }
           return result;
         })

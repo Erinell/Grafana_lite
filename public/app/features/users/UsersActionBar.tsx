@@ -29,8 +29,8 @@ export class UsersActionBar extends PureComponent<Props> {
       showInvites,
     } = this.props;
     const options = [
-      { label: 'Users', value: 'users' },
-      { label: `Pending Invites (${pendingInvitesCount})`, value: 'invites' },
+      { label: 'Utilisateurs', value: 'users' },
+      { label: `Invitations en attente (${pendingInvitesCount})`, value: 'invites' },
     ];
 
     return (

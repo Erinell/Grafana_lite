@@ -28,7 +28,7 @@ export class PluginHelp extends PureComponent<Props, State> {
   }
 
   constructPlaceholderInfo() {
-    return 'No plugin help or readme markdown file was found';
+    return "aucun fichier d'aide ou README pour ce plugin";
   }
 
   loadHelp = () => {

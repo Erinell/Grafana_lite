@@ -6,6 +6,6 @@ export interface UserOrgDTO {
 
 export enum OrgRole {
   Admin = 'Admin',
-  Editor = 'Editor',
-  Viewer = 'Viewer',
+  Editor = 'Editeur',
+  Viewer = 'Membre',
 }

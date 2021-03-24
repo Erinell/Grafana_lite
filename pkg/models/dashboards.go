@@ -17,7 +17,7 @@ const RootFolderName = "General"
 // Typed errors
 var (
 	ErrDashboardNotFound = DashboardErr{
-		Reason:     "Dashboard not found",
+		Reason:     "Tableau non trouvé",
 		StatusCode: 404,
 		Status:     "not-found",
 	}

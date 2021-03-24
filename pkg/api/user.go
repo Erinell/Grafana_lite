@@ -250,7 +250,7 @@ func ChangeUserPassword(c *models.ReqContext, cmd models.ChangeUserPasswordComma
 		return response.Error(500, "Failed to change user password", err)
 	}
 
-	return response.Success("User password changed")
+	return response.Success("Mot de passe mis à jour")
 }
 
 // redirectToChangePassword handles GET /.well-known/change-password.

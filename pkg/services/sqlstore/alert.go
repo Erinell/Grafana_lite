@@ -156,7 +156,7 @@ func deleteAlertDefinition(dashboardId int64, sess *DBSession) error {
 	}
 
 	for _, alert := range alerts {
-		if err := deleteAlertByIdInternal(alert.Id, "Dashboard deleted", sess); err != nil {
+		if err := deleteAlertByIdInternal(alert.Id, "Tableau supprimé", sess); err != nil {
 			// If we return an error, the current transaction gets rolled back, so no use
 			// trying to delete more
 			return err

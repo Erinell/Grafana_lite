@@ -1209,7 +1209,7 @@ func readUserSettings(iniFile *ini.File, cfg *Cfg) error {
 	AutoAssignOrg = cfg.AutoAssignOrg
 	cfg.AutoAssignOrgId = users.Key("auto_assign_org_id").MustInt(1)
 	AutoAssignOrgId = cfg.AutoAssignOrgId
-	cfg.AutoAssignOrgRole = users.Key("auto_assign_org_role").In("Editor", []string{"Editor", "Admin", "Viewer"})
+	cfg.AutoAssignOrgRole = users.Key("auto_assign_org_role").In("Editor", []string{"Editeur", "Admin", "Membre"})
 	AutoAssignOrgRole = cfg.AutoAssignOrgRole
 	VerifyEmailEnabled = users.Key("verify_email_enabled").MustBool(false)
 

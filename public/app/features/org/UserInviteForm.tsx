@@ -1,15 +1,5 @@
 import React, { FC } from 'react';
-import {
-  HorizontalGroup,
-  Button,
-  LinkButton,
-  Input,
-  Switch,
-  RadioButtonGroup,
-  Form,
-  Field,
-  InputControl,
-} from '@grafana/ui';
+import { HorizontalGroup, Button, LinkButton, Input, RadioButtonGroup, Form, Field, InputControl } from '@grafana/ui';
 import { getConfig } from 'app/core/config';
 import { OrgRole } from 'app/types';
 import { getBackendSrv, locationService } from '@grafana/runtime';
@@ -37,7 +27,7 @@ export const UserInviteForm: FC<Props> = ({}) => {
     try {
       await getBackendSrv().post('/api/org/invites', formData);
     } catch (err) {
-      appEvents.emit(AppEvents.alertError, ['Failed to send invite', err.message]);
+      appEvents.emit(AppEvents.alertError, ["Erreur lors de l'invitation", err.message]);
     }
     locationService.push('/org/users/');
   };
@@ -46,7 +36,7 @@ export const UserInviteForm: FC<Props> = ({}) => {
     name: '',
     email: '',
     role: OrgRole.Editor,
-    sendEmail: true,
+    sendEmail: false,
   };
 
   return (
@@ -56,19 +46,26 @@ export const UserInviteForm: FC<Props> = ({}) => {
           <>
             <Field
               invalid={!!errors.loginOrEmail}
-              error={!!errors.loginOrEmail ? 'email ou nom requis' : undefined}
-              label="Email ou nom"
+              error={!!errors.loginOrEmail ? 'Email invalide' : undefined}
+              label="Email"
             >
-              <Input name="loginOrEmail" placeholder="email@example.com" ref={register({ required: true })} />
+              <Input
+                name="loginOrEmail"
+                placeholder="email@example.com"
+                ref={register({
+                  required: true,
+                  pattern: {
+                    value: /^\S+@\S+$/,
+                    message: 'Email invalide',
+                  },
+                })}
+              />
             </Field>
             <Field invalid={!!errors.name} label="Nom">
               <Input name="name" placeholder="(facultatif)" ref={register} />
             </Field>
             <Field invalid={!!errors.role} label="Rôle">
               <InputControl as={RadioButtonGroup} control={control} options={roles} name="role" />
-            </Field>
-            <Field label="Envoyer un email d'invitation">
-              <Switch name="sendEmail" ref={register} />
             </Field>
             <HorizontalGroup>
               <Button type="submit">Envoyer</Button>

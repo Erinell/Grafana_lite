@@ -63,7 +63,7 @@ export class NewDashboardsFolder extends PureComponent<Props> {
                     })}
                   />
                 </Field>
-                <Button type="submit">CréerFi</Button>
+                <Button type="submit">Créer</Button>
               </>
             )}
           </Form>

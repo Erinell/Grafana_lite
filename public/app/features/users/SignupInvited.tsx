@@ -3,7 +3,6 @@ import { getBackendSrv } from '@grafana/runtime';
 import { Button, Field, Form, Input } from '@grafana/ui';
 import { useAsync } from 'react-use';
 import Page from 'app/core/components/Page/Page';
-import { contextSrv } from 'app/core/core';
 import { getConfig } from 'app/core/config';
 import { GrafanaRouteComponentProps } from 'app/core/navigation/types';
 
@@ -17,9 +16,9 @@ interface FormModel {
 const navModel = {
   main: {
     icon: 'grafana',
-    text: 'Invite',
-    subTitle: 'Register your Grafana account',
-    breadcrumbs: [{ title: 'Login', url: 'login' }],
+    text: 'Invitation',
+    subTitle: 'Enregistrer votre compte Grafana',
+    breadcrumbs: [{ title: 'Connexion', url: 'login' }],
   },
   node: {
     text: '',
@@ -59,13 +58,12 @@ export const SignupInvitedPage: FC<Props> = ({ match }) => {
   return (
     <Page navModel={navModel}>
       <Page.Contents>
-        <h3 className="page-sub-heading">Hello {greeting || 'there'}.</h3>
+        <h3 className="page-sub-heading">Bonjour {greeting || ''}.</h3>
 
         <div className="modal-tagline p-b-2">
-          <em>{invitedBy || 'Someone'}</em> has invited you to join Grafana and the organization{' '}
-          <span className="highlight-word">{contextSrv.user.orgName}</span>
+          <em>{invitedBy || "Quelqu'un"}</em> vous à invité à rejoindre Grafana
           <br />
-          Please complete the following and choose a password to accept your invitation and continue:
+          Complétez les informations et continuez pour valider l&apos;inscription :
         </div>
         <Form defaultValues={initFormModel} onSubmit={onSubmit}>
           {({ register, errors }) => (
@@ -75,30 +73,38 @@ export const SignupInvitedPage: FC<Props> = ({ match }) => {
                   placeholder="email@example.com"
                   name="email"
                   ref={register({
-                    required: 'Email is required',
+                    required: 'Email requis',
                     pattern: {
                       value: /^\S+@\S+$/,
-                      message: 'Email is invalid',
+                      message: 'Email invalide',
                     },
                   })}
                 />
               </Field>
-              <Field invalid={!!errors.name} error={errors.name && errors.name.message} label="Name">
-                <Input placeholder="Name (optional)" name="name" ref={register} />
+              <Field invalid={!!errors.name} error={errors.name && errors.name.message} label="Nom">
+                <Input placeholder="Nom (facultatif)" name="name" ref={register} />
               </Field>
-              <Field invalid={!!errors.username} error={errors.username && errors.username.message} label="Username">
-                <Input placeholder="Username" name="username" ref={register({ required: 'Username is required' })} />
+              <Field
+                invalid={!!errors.username}
+                error={errors.username && errors.username.message}
+                label="Nom d'utilisateur"
+              >
+                <Input placeholder="Nom d'utilisateur" name="username" ref={register({ required: 'Nom requis' })} />
               </Field>
-              <Field invalid={!!errors.password} error={errors.password && errors.password.message} label="Password">
+              <Field
+                invalid={!!errors.password}
+                error={errors.password && errors.password.message}
+                label="Mot de passe"
+              >
                 <Input
                   type="password"
-                  placeholder="Password"
+                  placeholder="mot de passe"
                   name="password"
-                  ref={register({ required: 'Password is required' })}
+                  ref={register({ required: 'Mot de passe requis' })}
                 />
               </Field>
 
-              <Button type="submit">Sign Up</Button>
+              <Button type="submit">Inscription</Button>
             </>
           )}
         </Form>

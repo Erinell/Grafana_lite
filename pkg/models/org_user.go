@@ -17,8 +17,8 @@ var (
 type RoleType string
 
 const (
-	ROLE_VIEWER RoleType = "Viewer"
-	ROLE_EDITOR RoleType = "Editor"
+	ROLE_VIEWER RoleType = "Membre"
+	ROLE_EDITOR RoleType = "Editeur"
 	ROLE_ADMIN  RoleType = "Admin"
 )
 

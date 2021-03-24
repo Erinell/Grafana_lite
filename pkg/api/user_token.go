@@ -129,7 +129,7 @@ func (hs *HTTPServer) revokeUserAuthTokenInternal(c *models.ReqContext, userID i
 	}
 
 	if c.UserToken != nil && c.UserToken.Id == token.Id {
-		return response.Error(400, "Cannot revoke active user auth token", nil)
+		return response.Error(400, "Impossible de révoquer une session active", nil)
 	}
 
 	err = hs.AuthTokenService.RevokeToken(c.Req.Context(), token)
@@ -141,6 +141,6 @@ func (hs *HTTPServer) revokeUserAuthTokenInternal(c *models.ReqContext, userID i
 	}
 
 	return response.JSON(200, util.DynMap{
-		"message": "User auth token revoked",
+		"message": "Athentification révoquée",
 	})
 }

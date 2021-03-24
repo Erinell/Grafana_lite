@@ -18,7 +18,7 @@ class InviteeRow extends PureComponent<Props> {
         <td>{invitee.name}</td>
         <td className="text-right">
           <ClipboardButton variant="secondary" size="sm" getText={() => invitee.url}>
-            Copy Invite
+            Copier l&apos;invitation
           </ClipboardButton>
           &nbsp;
         </td>

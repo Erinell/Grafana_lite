@@ -60,5 +60,5 @@ func ResetPassword(c *models.ReqContext, form dtos.ResetUserPasswordForm) respon
 		return response.Error(500, "Failed to change user password", err)
 	}
 
-	return response.Success("User password changed")
+	return response.Success("Mot de passe mis à jour")
 }

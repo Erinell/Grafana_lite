@@ -44,7 +44,7 @@ func AddOrgInvite(c *models.ReqContext, inviteDto dtos.AddInviteForm) response.R
 	}
 
 	if setting.DisableLoginForm {
-		return response.Error(400, "Cannot invite when login is disabled.", nil)
+		return response.Error(400, "Impossible d'inviter la connexion est désactivée.", nil)
 	}
 
 	cmd := models.CreateTempUserCommand{}
@@ -92,10 +92,10 @@ func AddOrgInvite(c *models.ReqContext, inviteDto dtos.AddInviteForm) response.R
 			return response.Error(500, "Failed to update invite with email sent info", err)
 		}
 
-		return response.Success(fmt.Sprintf("Sent invite to %s", inviteDto.LoginOrEmail))
+		return response.Success(fmt.Sprintf("Invitation envoyée à %s", inviteDto.LoginOrEmail))
 	}
 
-	return response.Success(fmt.Sprintf("Created invite for %s", inviteDto.LoginOrEmail))
+	return response.Success(fmt.Sprintf("Invitation créée pour %s", inviteDto.LoginOrEmail))
 }
 
 func inviteExistingUserToOrg(c *models.ReqContext, user *models.User, inviteDto *dtos.AddInviteForm) response.Response {
@@ -135,7 +135,7 @@ func RevokeInvite(c *models.ReqContext) response.Response {
 		return rsp
 	}
 
-	return response.Success("Invite revoked")
+	return response.Success("Invitation annulée")
 }
 
 // GetInviteInfoByCode gets a pending user invite corresponding to a certain code.
@@ -145,14 +145,14 @@ func GetInviteInfoByCode(c *models.ReqContext) response.Response {
 	query := models.GetTempUserByCodeQuery{Code: c.Params(":code")}
 	if err := bus.Dispatch(&query); err != nil {
 		if errors.Is(err, models.ErrTempUserNotFound) {
-			return response.Error(404, "Invite not found", nil)
+			return response.Error(404, "Invitation non trouvée", nil)
 		}
 		return response.Error(500, "Failed to get invite", err)
 	}
 
 	invite := query.Result
 	if invite.Status != models.TmpUserInvitePending {
-		return response.Error(404, "Invite not found", nil)
+		return response.Error(404, "Invitation non trouvée", nil)
 	}
 
 	return response.JSON(200, dtos.InviteInfo{
@@ -168,7 +168,7 @@ func (hs *HTTPServer) CompleteInvite(c *models.ReqContext, completeInvite dtos.C
 
 	if err := bus.Dispatch(&query); err != nil {
 		if errors.Is(err, models.ErrTempUserNotFound) {
-			return response.Error(404, "Invite not found", nil)
+			return response.Error(404, "Invitation non trouvée", nil)
 		}
 		return response.Error(500, "Failed to get invite", err)
 	}
@@ -216,7 +216,7 @@ func (hs *HTTPServer) CompleteInvite(c *models.ReqContext, completeInvite dtos.C
 	metrics.MApiUserSignUpInvite.Inc()
 
 	return response.JSON(200, util.DynMap{
-		"message": "User created and logged in",
+		"message": "Utilisateur créé et connecté",
 		"id":      user.Id,
 	})
 }
