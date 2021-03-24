@@ -17,8 +17,8 @@ import { appEvents } from 'app/core/core';
 import { AppEvents, locationUtil } from '@grafana/data';
 
 const roles = [
-  { label: 'Viewer', value: OrgRole.Viewer },
-  { label: 'Editor', value: OrgRole.Editor },
+  { label: 'Membre', value: OrgRole.Viewer },
+  { label: 'Editeur', value: OrgRole.Editor },
   { label: 'Admin', value: OrgRole.Admin },
 ];
 
@@ -61,13 +61,13 @@ export const UserInviteForm: FC<Props> = ({}) => {
             >
               <Input name="loginOrEmail" placeholder="email@example.com" ref={register({ required: true })} />
             </Field>
-            <Field invalid={!!errors.name} label="Name">
-              <Input name="name" placeholder="(optional)" ref={register} />
+            <Field invalid={!!errors.name} label="Nom">
+              <Input name="name" placeholder="(facultatif)" ref={register} />
             </Field>
-            <Field invalid={!!errors.role} label="Role">
+            <Field invalid={!!errors.role} label="Rôle">
               <InputControl as={RadioButtonGroup} control={control} options={roles} name="role" />
             </Field>
-            <Field label="Send invite email">
+            <Field label="Envoyer un email d'invitation">
               <Switch name="sendEmail" ref={register} />
             </Field>
             <HorizontalGroup>

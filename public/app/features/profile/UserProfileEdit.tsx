@@ -11,7 +11,6 @@ import { SharedPreferences } from 'app/core/components/SharedPreferences/SharedP
 import Page from 'app/core/components/Page/Page';
 import { UserTeams } from './UserTeams';
 import { UserSessions } from './UserSessions';
-import { UserOrganizations } from './UserOrganizations';
 import { UserProfileEditForm } from './UserProfileEditForm';
 
 export interface Props {
@@ -44,13 +43,6 @@ export const UserProfileEdit: FC<Props> = ({ navModel }) => (
             <UserTeams isLoading={states.loadTeams} loadTeams={api.loadTeams} teams={teams} />
             {!states.loadUser && (
               <>
-                <UserOrganizations
-                  isLoading={states.loadOrgs}
-                  setUserOrg={api.setUserOrg}
-                  loadOrgs={api.loadOrgs}
-                  orgs={orgs}
-                  user={user!}
-                />
                 <UserSessions
                   isLoading={states.loadSessions}
                   loadSessions={api.loadSessions}

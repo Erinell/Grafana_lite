@@ -21,7 +21,7 @@ export const UserProfileEditForm: FC<Props> = ({ user, isSavingUser, updateProfi
     <Form onSubmit={onSubmitProfileUpdate} validateOn="onBlur">
       {({ register, errors }) => {
         return (
-          <FieldSet label="Edition profile">
+          <FieldSet label="Edition profil">
             <Field label="Nom" invalid={!!errors.name} error="Le nom est requis" disabled={disableLoginForm}>
               <Input
                 name="name"

@@ -431,18 +431,6 @@ func (hs *HTTPServer) addGettingStartedPanelToHomeDashboard(c *models.ReqContext
 
 	panels := dash.Get("panels").MustArray()
 
-	newpanel := simplejson.NewFromAny(map[string]interface{}{
-		"type": "gettingstarted",
-		"id":   123123,
-		"gridPos": map[string]interface{}{
-			"x": 0,
-			"y": 3,
-			"w": 24,
-			"h": 9,
-		},
-	})
-
-	panels = append(panels, newpanel)
 	dash.Set("panels", panels)
 }
 
@@ -468,17 +456,17 @@ func GetDashboardVersions(c *models.ReqContext) response.Response {
 
 	for _, version := range query.Result {
 		if version.RestoredFrom == version.Version {
-			version.Message = "Initial save (created by migration)"
+			version.Message = "Sauvegarde initiale (créé par migration)"
 			continue
 		}
 
 		if version.RestoredFrom > 0 {
-			version.Message = fmt.Sprintf("Restored from version %d", version.RestoredFrom)
+			version.Message = fmt.Sprintf("Réstoré de la version %d", version.RestoredFrom)
 			continue
 		}
 
 		if version.ParentVersion == 0 {
-			version.Message = "Initial save"
+			version.Message = "Sauvegarde initiale"
 		}
 	}
 

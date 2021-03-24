@@ -255,58 +255,16 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 			Icon:        "plug",
 			Url:         hs.Cfg.AppSubURL + "/plugins",
 		})
-
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Préférences",
-			Id:          "org-settings",
-			Description: "Préférences organisation",
-			Icon:        "sliders-v-alt",
-			Url:         hs.Cfg.AppSubURL + "/org",
-		})
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Clés API",
-			Id:          "apikeys",
-			Description: "Gérer et créer les clés API",
-			Icon:        "key-skeleton-alt",
-			Url:         hs.Cfg.AppSubURL + "/org/apikeys",
-		})
 	}
 
 	if len(configNodes) > 0 {
 		navTree = append(navTree, &dtos.NavLink{
 			Id:         dtos.NavIDCfg,
 			Text:       "Configuration",
-			SubTitle:   "Organisation : " + c.OrgName,
 			Icon:       "cog",
 			Url:        configNodes[0].Url,
 			SortWeight: dtos.WeightConfig,
 			Children:   configNodes,
-		})
-	}
-
-	if c.IsGrafanaAdmin {
-		adminNavLinks := []*dtos.NavLink{
-			{Text: "Utilisateurs", Id: "global-users", Url: hs.Cfg.AppSubURL + "/admin/users", Icon: "user"},
-			{Text: "Organisations", Id: "global-orgs", Url: hs.Cfg.AppSubURL + "/admin/orgs", Icon: "building"},
-			{Text: "Options", Id: "server-settings", Url: hs.Cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt"},
-			{Text: "Stats", Id: "server-stats", Url: hs.Cfg.AppSubURL + "/admin/stats", Icon: "graph-bar"},
-		}
-
-		if hs.Cfg.LDAPEnabled {
-			adminNavLinks = append(adminNavLinks, &dtos.NavLink{
-				Text: "LDAP", Id: "ldap", Url: hs.Cfg.AppSubURL + "/admin/ldap", Icon: "book",
-			})
-		}
-
-		navTree = append(navTree, &dtos.NavLink{
-			Text:         "Serveur admin",
-			SubTitle:     "Gérer les utilisateurs et orgs",
-			HideFromTabs: true,
-			Id:           "admin",
-			Icon:         "shield",
-			Url:          hs.Cfg.AppSubURL + "/admin/users",
-			SortWeight:   dtos.WeightAdmin,
-			Children:     adminNavLinks,
 		})
 	}
 

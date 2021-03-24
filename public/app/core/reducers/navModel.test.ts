@@ -40,7 +40,7 @@ describe('navModelReducer', () => {
 
   describe('when updateConfigurationSubtitle is dispatched', () => {
     it('then state should be correct', () => {
-      const originalCfg = { id: 'cfg', subTitle: 'Organization: Org 1', text: 'Configuration' };
+      const originalCfg = { id: 'cfg', subTitle: 'Organisation : Org 1', text: 'Configuration' };
       const datasources = { id: 'datasources', text: 'Data Sources' };
       const users = { id: 'users', text: 'Users' };
       const teams = { id: 'teams', text: 'Teams' };

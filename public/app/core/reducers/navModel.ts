@@ -72,7 +72,7 @@ export const navIndexReducer = (state: NavIndex = initialState, action: AnyActio
 
     return { ...state, ...newPages };
   } else if (updateConfigurationSubtitle.match(action)) {
-    const subTitle = `Organization: ${action.payload}`;
+    const subTitle = `Organisation : ${action.payload}`;
 
     return {
       ...state,

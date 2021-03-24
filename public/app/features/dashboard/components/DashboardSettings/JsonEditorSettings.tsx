@@ -26,7 +26,7 @@ export const JsonEditorSettings: React.FC<Props> = ({ dashboard }) => {
     <>
       <h3 className="dashboard-settings__header">Modèle JSON</h3>
       <div className="dashboard-settings__subheader">
-        Le modèle JSON est la strucutre de données qui définissent le tableau. Inclus options, requêtes, options de
+        Le modèle JSON est la structure de données qui définissent le tableau. Inclus options, requêtes, options de
         panneaux etc.
       </div>
 

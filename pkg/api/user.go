@@ -103,7 +103,7 @@ func UpdateUserActiveOrg(c *models.ReqContext) response.Response {
 		return response.Error(500, "Failed to change active organization", err)
 	}
 
-	return response.Success("Active organization changed")
+	return response.Success("Organisation active changée")
 }
 
 func handleUpdateUser(cmd models.UpdateUserCommand) response.Response {
@@ -196,7 +196,7 @@ func UserSetUsingOrg(c *models.ReqContext) response.Response {
 		return response.Error(500, "Failed to change active organization", err)
 	}
 
-	return response.Success("Active organization changed")
+	return response.Success("Organisation active changée")
 }
 
 // GET /profile/switch-org/:id

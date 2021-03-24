@@ -37,7 +37,7 @@ export interface Props {
 }
 
 const emptyListModel = {
-  title: "Il n'y à pas encore de source ici.",
+  title: "Il n'y à pas de source pour le moment.",
   buttonIcon: 'database' as IconName,
   buttonLink: 'datasources/new',
   buttonTitle: 'Ajouter une source',

@@ -163,16 +163,6 @@ export function getAppRoutes(): RouteDescriptor[] {
       ),
     },
     {
-      path: '/org',
-      component: SafeDynamicImport(
-        () => import(/* webpackChunkName: "OrgDetailsPage" */ '../features/org/OrgDetailsPage')
-      ),
-    },
-    {
-      path: '/org/new',
-      component: SafeDynamicImport(() => import(/* webpackChunkName: "NewOrgPage" */ 'app/features/org/NewOrgPage')),
-    },
-    {
       path: '/org/users',
       component: SafeDynamicImport(
         () => import(/* webpackChunkName: "UsersListPage" */ 'app/features/users/UsersListPage')

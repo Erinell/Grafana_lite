@@ -215,7 +215,7 @@ func AddDataSource(c *models.ReqContext, cmd models.AddDataSourceCommand) respon
 
 	ds := convertModelToDtos(cmd.Result)
 	return response.JSON(200, util.DynMap{
-		"message":    "Datasource added",
+		"message":    "Source de données ajoutée",
 		"id":         cmd.Result.Id,
 		"name":       cmd.Result.Name,
 		"datasource": ds,

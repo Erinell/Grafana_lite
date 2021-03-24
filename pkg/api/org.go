@@ -79,7 +79,7 @@ func getOrgHelper(orgID int64) response.Response {
 // POST /api/orgs
 func CreateOrg(c *models.ReqContext, cmd models.CreateOrgCommand) response.Response {
 	if !c.IsSignedIn || (!setting.AllowUserOrgCreate && !c.IsGrafanaAdmin) {
-		return response.Error(403, "Access denied", nil)
+		return response.Error(403, "Accès refusé", nil)
 	}
 
 	cmd.UserId = c.UserId
@@ -94,7 +94,7 @@ func CreateOrg(c *models.ReqContext, cmd models.CreateOrgCommand) response.Respo
 
 	return response.JSON(200, &util.DynMap{
 		"orgId":   cmd.Result.Id,
-		"message": "Organization created",
+		"message": "Organisation créée",
 	})
 }
 
@@ -112,12 +112,12 @@ func updateOrgHelper(form dtos.UpdateOrgForm, orgID int64) response.Response {
 	cmd := models.UpdateOrgCommand{Name: form.Name, OrgId: orgID}
 	if err := bus.Dispatch(&cmd); err != nil {
 		if errors.Is(err, models.ErrOrgNameTaken) {
-			return response.Error(400, "Organization name taken", err)
+			return response.Error(400, "Nom de l'organisation déjà prise", err)
 		}
 		return response.Error(500, "Failed to update organization", err)
 	}
 
-	return response.Success("Organization updated")
+	return response.Success("Organisation mise à jour")
 }
 
 // PUT /api/org/address
@@ -158,7 +158,7 @@ func DeleteOrgByID(c *models.ReqContext) response.Response {
 		}
 		return response.Error(500, "Failed to update organization", err)
 	}
-	return response.Success("Organization deleted")
+	return response.Success("Organisation supprimée")
 }
 
 func SearchOrgs(c *models.ReqContext) response.Response {

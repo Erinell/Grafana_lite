@@ -37,7 +37,7 @@ export default class BottomNavLinks extends PureComponent<Props, State> {
   };
 
   render() {
-    const { link, user } = this.props;
+    const { link } = this.props;
     const { showSwitcherModal } = this.state;
     const subMenuIconClassName = css`
       margin-right: 8px;
@@ -61,20 +61,6 @@ export default class BottomNavLinks extends PureComponent<Props, State> {
           {link.subTitle && (
             <li className="sidemenu-subtitle">
               <span className="sidemenu-item-text">{link.subTitle}</span>
-            </li>
-          )}
-          {link.showOrgSwitcher && (
-            <li className="sidemenu-org-switcher">
-              <a onClick={this.toggleSwitcherModal}>
-                <div>
-                  <div className="sidemenu-org-switcher__org-current">Current Org.:</div>
-                  <div className="sidemenu-org-switcher__org-name">{user.orgName}</div>
-                </div>
-                <div className="sidemenu-org-switcher__switch">
-                  <Icon name="arrow-random" className={subMenuIconClassName} />
-                  Switch
-                </div>
-              </a>
             </li>
           )}
 
